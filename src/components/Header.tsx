@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { getAvatarUrl } from '../services/api';
 import { extractDominantColor } from '../utils/colorExtraction';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   avatarFilename: string;
@@ -27,7 +28,7 @@ export function Header({ avatarFilename, userName, onSwitchAccount, onEditProfil
   return (
     <header className="app-header">
       <div className="header-left">
-        <img src="/logo.svg" alt="WatchBox Logo" className="brand-logo-header" />
+        <Logo className="brand-logo-header" />
         <h1 className="app-title">WatchBox</h1>
       </div>
       <div className="header-right">

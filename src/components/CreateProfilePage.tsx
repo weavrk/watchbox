@@ -302,10 +302,16 @@ export function CreateProfilePage({ onBack, onCreate }: CreateProfilePageProps) 
         </div>
         <div className="profile-actions-bottom-sheet">
           <button 
-            type="submit"
-            form="create-profile-form"
+            type="button"
             className="ds-button-primary"
             disabled={!name.trim() || !selectedAvatar}
+            onClick={(e) => {
+              e.preventDefault();
+              if (name.trim() && selectedAvatar) {
+                const birthday = formatBirthday();
+                onCreate(name.trim(), selectedAvatar, selectedServices, birthday);
+              }
+            }}
           >
             Create
           </button>

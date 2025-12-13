@@ -5,6 +5,7 @@ import { useUser } from '../contexts/UserContext';
 import { CreateProfilePage } from './CreateProfilePage';
 import { EditProfileModal } from './EditProfileModal';
 import { extractDominantColor } from '../utils/colorExtraction';
+import { Logo } from './Logo';
 
 export function ProfileSelectionScreen() {
   const [users, setUsers] = useState<UserSummary[]>([]);
@@ -285,7 +286,7 @@ export function ProfileSelectionScreen() {
       )}
       <div className="profile-container">
         <div className="brand-header">
-          <img src="/logo.svg" alt="WatchBox Logo" className="brand-logo-large" />
+          <Logo className="brand-logo-large" />
           <h1 className="app-title-large">WatchBox</h1>
         </div>
         <div className={`profiles-wrapper ${editMode ? 'edit-mode' : ''}`}>

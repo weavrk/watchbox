@@ -206,9 +206,11 @@ img {
 }
 
 .brand-logo-large {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) saturate(100%) invert(80%) sepia(27%) saturate(965%) hue-rotate(153deg) brightness(95%) contrast(90%);
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  color: var(--color-brand-primary);
 }
 
 .app-title-large {
@@ -484,18 +486,20 @@ img {
 .header-left {
   display: flex;
   align-items: center;
-  gap: calc(var(--spacing-md) * 0.5);
+  gap: calc(var(--spacing-md) * 0.75);
 }
 
 .brand-logo-header {
-  height: 20px;
+  height: 16px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(80%) sepia(27%) saturate(965%) hue-rotate(153deg) brightness(95%) contrast(90%);
+  object-fit: contain;
+  display: block;
+  color: var(--color-brand-primary);
 }
 
 .app-title {
   font-family: var(--font-brand);
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-brand-primary);
