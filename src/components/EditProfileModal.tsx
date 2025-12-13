@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, Check, X, Plus } from 'lucide-react';
+import { ArrowLeft, X, Plus } from 'lucide-react';
 import { getAvatarUrl, getAvailableAvatars, getDefaultStreamingServices, getServiceLogoUrl, clearAvatarCache } from '../services/api';
 import type { UserSummary, StreamingService } from '../types';
 import { extractDominantColor } from '../utils/colorExtraction';
@@ -275,9 +275,8 @@ export function EditProfileModal({ user, onClose, onSave, onDelete }: EditProfil
             
             {showAddServiceModal && (
               <AddServiceModal
-                userId={user.user_id}
                 onClose={() => setShowAddServiceModal(false)}
-                onServiceAdded={handleServiceAdded}
+                onAdd={handleServiceAdded}
               />
             )}
             <div className="form-group">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Loader } from 'lucide-react';
 import { searchTMDBProviders, type TMDBProvider } from '../services/api';
 import type { StreamingService } from '../types';
