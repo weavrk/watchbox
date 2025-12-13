@@ -103,6 +103,26 @@ export function MainWatchBoxScreen() {
     return <div>Loading...</div>;
   }
 
+  // Show edit profile modal as full page (like create profile)
+  if (showEditProfile && editingUser) {
+    return (
+      <EditProfileModal
+        user={editingUser}
+        onClose={() => {
+          setShowEditProfile(false);
+          setEditingUser(null);
+        }}
+        onSave={handleSaveProfile}
+        onDelete={async () => {
+          // Handle delete - switch to profile selection
+          setShowEditProfile(false);
+          setEditingUser(null);
+          logout();
+        }}
+      />
+    );
+  }
+
   const queueItems = items.filter(item => item.listType === 'top');
   const watchlistItems = items.filter(item => item.listType === 'watch');
 
@@ -152,22 +172,6 @@ export function MainWatchBoxScreen() {
           <ExploreTab currentUser={currentUser} onAddItem={handleAddClick} />
         )}
       </main>
-      {showEditProfile && editingUser && (
-        <EditProfileModal
-          user={editingUser}
-          onClose={() => {
-            setShowEditProfile(false);
-            setEditingUser(null);
-          }}
-          onSave={handleSaveProfile}
-          onDelete={async () => {
-            // Handle delete - switch to profile selection
-            setShowEditProfile(false);
-            setEditingUser(null);
-            logout();
-          }}
-        />
-      )}
     </div>
   );
 }

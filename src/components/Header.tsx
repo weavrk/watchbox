@@ -18,11 +18,19 @@ export function Header({ avatarFilename, userName, onSwitchAccount, onEditProfil
   // Reset color when avatar changes to force re-extraction
   useEffect(() => {
     setAvatarColor('#4A90E2'); // Reset to default
+    // If image is already loaded, extract color immediately
+    if (imageRef.current && imageRef.current.complete) {
+      const color = extractDominantColor(imageRef.current, avatarFilename);
+      setAvatarColor(color);
+    }
   }, [avatarFilename]);
 
   const handleImageLoad = (img: HTMLImageElement) => {
-    const color = extractDominantColor(img, avatarFilename);
-    setAvatarColor(color);
+    // Ensure image is fully loaded before extracting
+    if (img.complete && img.naturalWidth > 0) {
+      const color = extractDominantColor(img, avatarFilename);
+      setAvatarColor(color);
+    }
   };
 
   return (
@@ -45,6 +53,10 @@ export function Header({ avatarFilename, userName, onSwitchAccount, onEditProfil
             ref={(img) => {
               if (img) {
                 imageRef.current = img;
+                // If image is already loaded (cached), extract color immediately
+                if (img.complete && img.naturalWidth > 0) {
+                  handleImageLoad(img);
+                }
               }
             }}
             src={getAvatarUrl(avatarFilename)}
@@ -53,6 +65,10 @@ export function Header({ avatarFilename, userName, onSwitchAccount, onEditProfil
             onLoad={(e) => {
               const img = e.target as HTMLImageElement;
               handleImageLoad(img);
+            }}
+            onError={() => {
+              // Keep default color on error
+              setAvatarColor('#4A90E2');
             }}
           />
         </button>
