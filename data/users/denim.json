@@ -3,7 +3,43 @@
   "name": "denim",
   "avatar_filename": "avatar-04.svg",
   "items": [],
-  "streaming_services": [],
+  "streaming_services": [
+    {
+      "name": "Amazon Prime",
+      "logo": "amazon-prime.webp",
+      "tmdb_provider_id": 9
+    },
+    {
+      "name": "Apple TV",
+      "logo": "apple-tv.webp",
+      "tmdb_provider_id": 350
+    },
+    {
+      "name": "Disney Plus",
+      "logo": "disney-plue.webp",
+      "tmdb_provider_id": 337
+    },
+    {
+      "name": "Hulu",
+      "logo": "hulu.webp",
+      "tmdb_provider_id": 15
+    },
+    {
+      "name": "Netflix",
+      "logo": "netflix.webp",
+      "tmdb_provider_id": 8
+    },
+    {
+      "name": "Paramount",
+      "logo": "paramount.webp",
+      "tmdb_provider_id": 531
+    },
+    {
+      "name": "Peacock",
+      "logo": "peacock.webp",
+      "tmdb_provider_id": 387
+    }
+  ],
   "birthday": "",
   "updated_at": "2025-11-30T21:40:37.256Z"
 }

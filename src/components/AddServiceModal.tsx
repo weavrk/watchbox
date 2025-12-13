@@ -13,7 +13,7 @@ export function AddServiceModal({ onClose, onAdd }: AddServiceModalProps) {
   const [searchResults, setSearchResults] = useState<TMDBProvider[]>([]);
   const [imageBaseUrl, setImageBaseUrl] = useState('');
   const [isSearching, setIsSearching] = useState(false);
-  const [selectedProvider, setSelectedProvider] = useState<TMDBProvider | null>(null);
+  const [selectedProviders, setSelectedProviders] = useState<TMDBProvider[]>([]);
   const [error, setError] = useState('');
 
   // Debounced search effect
@@ -55,30 +55,35 @@ export function AddServiceModal({ onClose, onAdd }: AddServiceModalProps) {
   }, [searchQuery]);
 
   const handleSelectProvider = (provider: TMDBProvider) => {
-    setSelectedProvider(provider);
+    // Add to selected providers (create chips)
+    if (!selectedProviders.some(p => p.provider_id === provider.provider_id)) {
+      setSelectedProviders(prev => [...prev, provider]);
+    }
+    
+    // Clear search to allow adding another service
     setSearchQuery('');
     setSearchResults([]);
   };
 
-  const handleRemoveSelection = () => {
-    setSelectedProvider(null);
+  const handleRemoveChip = (providerId: number) => {
+    setSelectedProviders(prev => prev.filter(p => p.provider_id !== providerId));
   };
 
-  const handleAdd = () => {
-    if (!selectedProvider) return;
+  const handleAddAll = () => {
+    // Convert all selected providers to StreamingService objects and add them
+    selectedProviders.forEach(provider => {
+      const newService: StreamingService = {
+        name: provider.provider_name,
+        logo: `${provider.provider_name.toLowerCase().replace(/[^a-z0-9]/g, '-')}.webp`,
+        tmdb_provider_id: provider.provider_id
+      };
 
-    // Create StreamingService object with temporary logo path
-    // The actual download will happen when profile is saved
-    const newService: StreamingService = {
-      name: selectedProvider.provider_name,
-      logo: `${selectedProvider.provider_name.toLowerCase().replace(/[^a-z0-9]/g, '-')}.webp`,
-      tmdb_provider_id: selectedProvider.provider_id
-    };
+      // Store the full logo URL so we can display it immediately
+      (newService as any).logo_url = `${imageBaseUrl}${provider.logo_path}`;
 
-    // Store the full logo URL for later download
-    (newService as any).logo_url = `${imageBaseUrl}${selectedProvider.logo_path}`;
-
-    onAdd(newService);
+      onAdd(newService);
+    });
+    
     onClose();
   };
 
@@ -101,28 +106,31 @@ export function AddServiceModal({ onClose, onAdd }: AddServiceModalProps) {
               placeholder="Search for streaming service (e.g., HBO, Paramount+)"
               className="search-input"
               autoFocus
-              disabled={selectedProvider !== null}
             />
             {isSearching && <Loader size={20} className="search-loader spinner" />}
           </div>
 
-          {/* Selected service chip */}
-          {selectedProvider && (
-            <div className="selected-service-chip">
-              <img
-                src={`${imageBaseUrl}${selectedProvider.logo_path}`}
-                alt={selectedProvider.provider_name}
-                className="chip-logo"
-              />
-              <span className="chip-name">{selectedProvider.provider_name}</span>
-              <button
-                type="button"
-                className="chip-remove"
-                onClick={handleRemoveSelection}
-                aria-label="Remove selection"
-              >
-                <X size={16} />
-              </button>
+          {/* Selected service chips */}
+          {selectedProviders.length > 0 && (
+            <div className="chips-container">
+              {selectedProviders.map((provider) => (
+                <div key={provider.provider_id} className="selected-service-chip">
+                  <img
+                    src={`${imageBaseUrl}${provider.logo_path}`}
+                    alt={provider.provider_name}
+                    className="chip-logo"
+                  />
+                  <span className="chip-name">{provider.provider_name}</span>
+                  <button
+                    type="button"
+                    className="chip-remove"
+                    onClick={() => handleRemoveChip(provider.provider_id)}
+                    aria-label="Remove selection"
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
+              ))}
             </div>
           )}
 
@@ -133,9 +141,9 @@ export function AddServiceModal({ onClose, onAdd }: AddServiceModalProps) {
           )}
 
           {/* Search results */}
-          {searchResults.length > 0 && !selectedProvider && (
+          {searchResults.length > 0 && (
             <div className="search-results">
-              <h3>Select a service:</h3>
+              <h3>Select services to add:</h3>
               <div className="results-grid">
                 {searchResults.map((provider) => (
                   <button
@@ -160,11 +168,11 @@ export function AddServiceModal({ onClose, onAdd }: AddServiceModalProps) {
         <div className="modal-footer">
           <button
             type="button"
-            className="ds-button-primary"
-            onClick={handleAdd}
-            disabled={!selectedProvider}
+            className="btn-add-full"
+            onClick={handleAddAll}
+            disabled={selectedProviders.length === 0}
           >
-            Add
+            Add {selectedProviders.length > 0 && `(${selectedProviders.length})`}
           </button>
         </div>
       </div>

@@ -145,6 +145,8 @@ export function CreateProfilePage({ onBack, onCreate }: CreateProfilePageProps) 
               <div className="services-grid">
                 {defaultServices.map((service) => {
                   const isSelected = selectedServices.some(s => s.name === service.name);
+                  // Use TMDB logo URL if available, otherwise use local
+                  const logoUrl = (service as any).logo_url || getServiceLogoUrl(service.logo);
                   return (
                     <button
                       key={service.name}
@@ -153,7 +155,7 @@ export function CreateProfilePage({ onBack, onCreate }: CreateProfilePageProps) 
                       onClick={() => handleServiceToggle(service)}
                     >
                       <img
-                        src={getServiceLogoUrl(service.logo)}
+                        src={logoUrl}
                         alt={service.name}
                         className="service-icon-large"
                       />

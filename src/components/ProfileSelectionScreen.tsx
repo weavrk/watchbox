@@ -274,7 +274,7 @@ export function ProfileSelectionScreen() {
   }
 
   return (
-    <div className="profile-selection-screen">
+    <div className="profile-selection-screen gradient-background">
       <div className="profile-container">
         <div className="brand-header">
           <img src="/logo.svg" alt="WatchBox Logo" className="brand-logo-large" />

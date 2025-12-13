@@ -54,6 +54,21 @@ while (file_exists($usersDir . $userId . '.json')) {
     $counter++;
 }
 
+// Load default streaming services if none provided
+$streamingServices = isset($data['streaming_services']) ? $data['streaming_services'] : [];
+
+// If no services provided, use defaults from file
+if (empty($streamingServices)) {
+    $defaultServicesFile = '../data/default_streaming_services.json';
+    if (file_exists($defaultServicesFile)) {
+        $defaultServicesContent = file_get_contents($defaultServicesFile);
+        $defaultServices = json_decode($defaultServicesContent, true);
+        if ($defaultServices && is_array($defaultServices)) {
+            $streamingServices = $defaultServices;
+        }
+    }
+}
+
 // Create user object
 $user = [
     'user_id' => $userId,
@@ -61,7 +76,7 @@ $user = [
     'avatar_filename' => $data['avatar_filename'],
     'updated_at' => date('c'),
     'items' => [],
-    'streaming_services' => isset($data['streaming_services']) ? $data['streaming_services'] : [],
+    'streaming_services' => $streamingServices,
     'birthday' => isset($data['birthday']) && !empty($data['birthday']) ? $data['birthday'] : ''
 ];
 

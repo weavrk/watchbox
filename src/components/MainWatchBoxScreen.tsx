@@ -107,7 +107,7 @@ export function MainWatchBoxScreen() {
   const watchlistItems = items.filter(item => item.listType === 'watch');
 
   return (
-    <div className="main-screen">
+    <div className="main-screen gradient-background">
       <Header
         avatarFilename={currentUser.avatar_filename}
         userName={currentUser.name}

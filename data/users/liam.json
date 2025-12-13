@@ -1,8 +1,45 @@
 {
   "user_id": "liam",
   "name": "liam",
-  "avatar_filename": "avatar-20.svg",
+  "avatar_filename": "avatar-01.svg",
   "items": [],
-  "streaming_services": [],
-  "updated_at": "2025-12-13T13:40:35.139Z"
+  "streaming_services": [
+    {
+      "name": "Amazon Prime",
+      "logo": "amazon-prime.webp",
+      "tmdb_provider_id": 9
+    },
+    {
+      "name": "Apple TV",
+      "logo": "apple-tv.webp",
+      "tmdb_provider_id": 350
+    },
+    {
+      "name": "Disney Plus",
+      "logo": "disney-plue.webp",
+      "tmdb_provider_id": 337
+    },
+    {
+      "name": "Hulu",
+      "logo": "hulu.webp",
+      "tmdb_provider_id": 15
+    },
+    {
+      "name": "Netflix",
+      "logo": "netflix.webp",
+      "tmdb_provider_id": 8
+    },
+    {
+      "name": "Paramount",
+      "logo": "paramount.webp",
+      "tmdb_provider_id": 531
+    },
+    {
+      "name": "Peacock",
+      "logo": "peacock.webp",
+      "tmdb_provider_id": 387
+    }
+  ],
+  "birthday": "04/16/2012",
+  "updated_at": "2025-12-13T15:43:29.540Z"
 }

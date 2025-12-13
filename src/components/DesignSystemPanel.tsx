@@ -12,8 +12,8 @@ export function DesignSystemPanel() {
     setLocalTokens(tokens);
   }, [tokens]);
 
-  const handleColorChange = (key: keyof typeof tokens, value: string) => {
-    const updated = { ...localTokens, [key]: value };
+  const handleColorChange = (key: string, value: string) => {
+    const updated = { ...localTokens, [key]: value } as typeof tokens;
     setLocalTokens(updated);
     updateTokens(updated);
   };
@@ -22,6 +22,47 @@ export function DesignSystemPanel() {
     applyTokens();
     setIsOpen(false);
   };
+
+  // Get all primitive color names
+  const getPrimitiveNames = (): string[] => {
+    return [
+      'gray-100', 'gray-200', 'gray-300', 'gray-400', 'gray-500',
+      'gray-600', 'gray-700', 'gray-800', 'gray-900',
+      'cyan-light', 'cyan-dark',
+      'magenta-light', 'magenta-dark',
+      'yellow-light', 'yellow-dark'
+    ];
+  };
+
+  // Get the actual color value for display
+  const getColorValue = (primitiveName: string): string => {
+    if (primitiveName.startsWith('#')) {
+      return primitiveName;
+    }
+    return (tokens as any)[primitiveName] || '#000000';
+  };
+
+  // Get display name for primitive
+  const getDisplayName = (name: string): string => {
+    return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  };
+
+  const primitiveNames = getPrimitiveNames();
+  const grayScale = ['gray-100', 'gray-200', 'gray-300', 'gray-400', 'gray-500', 'gray-600', 'gray-700', 'gray-800', 'gray-900'];
+  const cmykColors = ['cyan-light', 'cyan-dark', 'magenta-light', 'magenta-dark', 'yellow-light', 'yellow-dark'];
+  const semanticColors = [
+    { key: 'brand-primary', label: 'Brand Primary' },
+    { key: 'primary', label: 'Primary' },
+    { key: 'secondary', label: 'Secondary' },
+    { key: 'tertiary', label: 'Tertiary' },
+    { key: 'accent', label: 'Accent' },
+    { key: 'accent-2', label: 'Accent 2' },
+    { key: 'accent-3', label: 'Accent 3' },
+    { key: 'button-primary', label: 'Button Primary' },
+    { key: 'background-primary', label: 'Background Primary' },
+    { key: 'background-secondary', label: 'Background Secondary' },
+    { key: 'background-tertiary', label: 'Background Tertiary' }
+  ];
 
   return (
     <>
@@ -56,321 +97,78 @@ export function DesignSystemPanel() {
                   <h3 className="section-header">Primitive Colors</h3>
                   
                   <div className="color-grid">
-                    {/* Neutrals */}
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.white}
-                        onChange={(e) => handleColorChange('white', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">White</span>
+                    {/* Gray Scale */}
+                    {grayScale.map((grayName) => (
+                      <div key={grayName} className="color-swatch-card">
                         <input
-                          type="text"
-                          value={localTokens.white}
-                          onChange={(e) => handleColorChange('white', e.target.value)}
-                          className="color-hex"
+                          type="color"
+                          value={(localTokens as any)[grayName]}
+                          onChange={(e) => handleColorChange(grayName, e.target.value)}
+                          className="color-swatch"
                         />
+                        <div className="color-info">
+                          <span className="color-name">{getDisplayName(grayName)}</span>
+                          <input
+                            type="text"
+                            value={(localTokens as any)[grayName]}
+                            onChange={(e) => handleColorChange(grayName, e.target.value)}
+                            className="color-hex"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    ))}
 
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.grayLight}
-                        onChange={(e) => handleColorChange('grayLight', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Gray Light</span>
+                    {/* CMYK Colors */}
+                    {cmykColors.map((cmykName) => (
+                      <div key={cmykName} className="color-swatch-card">
                         <input
-                          type="text"
-                          value={localTokens.grayLight}
-                          onChange={(e) => handleColorChange('grayLight', e.target.value)}
-                          className="color-hex"
+                          type="color"
+                          value={(localTokens as any)[cmykName]}
+                          onChange={(e) => handleColorChange(cmykName, e.target.value)}
+                          className="color-swatch"
                         />
+                        <div className="color-info">
+                          <span className="color-name">{getDisplayName(cmykName)}</span>
+                          <input
+                            type="text"
+                            value={(localTokens as any)[cmykName]}
+                            onChange={(e) => handleColorChange(cmykName, e.target.value)}
+                            className="color-hex"
+                          />
+                        </div>
                       </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.grayDark}
-                        onChange={(e) => handleColorChange('grayDark', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Gray Dark</span>
-                        <input
-                          type="text"
-                          value={localTokens.grayDark}
-                          onChange={(e) => handleColorChange('grayDark', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Cyan Tones */}
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.cyanLight}
-                        onChange={(e) => handleColorChange('cyanLight', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Cyan Light</span>
-                        <input
-                          type="text"
-                          value={localTokens.cyanLight}
-                          onChange={(e) => handleColorChange('cyanLight', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.cyanDark}
-                        onChange={(e) => handleColorChange('cyanDark', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Cyan Dark</span>
-                        <input
-                          type="text"
-                          value={localTokens.cyanDark}
-                          onChange={(e) => handleColorChange('cyanDark', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Magenta Tones */}
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.magentaLight}
-                        onChange={(e) => handleColorChange('magentaLight', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Magenta Light</span>
-                        <input
-                          type="text"
-                          value={localTokens.magentaLight}
-                          onChange={(e) => handleColorChange('magentaLight', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.magentaDark}
-                        onChange={(e) => handleColorChange('magentaDark', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Magenta Dark</span>
-                        <input
-                          type="text"
-                          value={localTokens.magentaDark}
-                          onChange={(e) => handleColorChange('magentaDark', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Yellow Tones */}
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.yellowLight}
-                        onChange={(e) => handleColorChange('yellowLight', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Yellow Light</span>
-                        <input
-                          type="text"
-                          value={localTokens.yellowLight}
-                          onChange={(e) => handleColorChange('yellowLight', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.yellowDark}
-                        onChange={(e) => handleColorChange('yellowDark', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Yellow Dark</span>
-                        <input
-                          type="text"
-                          value={localTokens.yellowDark}
-                          onChange={(e) => handleColorChange('yellowDark', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </section>
 
                 <section className="design-system-section">
                   <h3 className="section-header">Semantic Colors</h3>
                   
-                  <div className="color-grid">
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.brandPrimary}
-                        onChange={(e) => handleColorChange('brandPrimary', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Brand Primary</span>
-                        <input
-                          type="text"
-                          value={localTokens.brandPrimary}
-                          onChange={(e) => handleColorChange('brandPrimary', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.primary}
-                        onChange={(e) => handleColorChange('primary', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Primary</span>
-                        <input
-                          type="text"
-                          value={localTokens.primary}
-                          onChange={(e) => handleColorChange('primary', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.secondary}
-                        onChange={(e) => handleColorChange('secondary', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Secondary</span>
-                        <input
-                          type="text"
-                          value={localTokens.secondary}
-                          onChange={(e) => handleColorChange('secondary', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.tertiary}
-                        onChange={(e) => handleColorChange('tertiary', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Tertiary</span>
-                        <input
-                          type="text"
-                          value={localTokens.tertiary}
-                          onChange={(e) => handleColorChange('tertiary', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.accent}
-                        onChange={(e) => handleColorChange('accent', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Accent</span>
-                        <input
-                          type="text"
-                          value={localTokens.accent}
-                          onChange={(e) => handleColorChange('accent', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.accent2}
-                        onChange={(e) => handleColorChange('accent2', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Accent 2</span>
-                        <input
-                          type="text"
-                          value={localTokens.accent2}
-                          onChange={(e) => handleColorChange('accent2', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.accent3}
-                        onChange={(e) => handleColorChange('accent3', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Accent 3</span>
-                        <input
-                          type="text"
-                          value={localTokens.accent3}
-                          onChange={(e) => handleColorChange('accent3', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="color-swatch-card">
-                      <input
-                        type="color"
-                        value={localTokens.buttonPrimary}
-                        onChange={(e) => handleColorChange('buttonPrimary', e.target.value)}
-                        className="color-swatch"
-                      />
-                      <div className="color-info">
-                        <span className="color-name">Button Primary</span>
-                        <input
-                          type="text"
-                          value={localTokens.buttonPrimary}
-                          onChange={(e) => handleColorChange('buttonPrimary', e.target.value)}
-                          className="color-hex"
-                        />
-                      </div>
-                    </div>
+                  <div className="semantic-colors-list">
+                    {semanticColors.map(({ key, label }) => {
+                      const currentValue = (localTokens as any)[key];
+                      const displayColor = getColorValue(currentValue);
+                      
+                      return (
+                        <div key={key} className="semantic-color-item">
+                          <div className="semantic-color-preview" style={{ backgroundColor: displayColor }}></div>
+                          <div className="semantic-color-info">
+                            <span className="semantic-color-label">{label}</span>
+                            <select
+                              value={currentValue}
+                              onChange={(e) => handleColorChange(key, e.target.value)}
+                              className="semantic-color-select"
+                            >
+                              {primitiveNames.map((primitiveName) => (
+                                <option key={primitiveName} value={primitiveName}>
+                                  {getDisplayName(primitiveName)}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </section>
 
@@ -403,7 +201,6 @@ export function DesignSystemPanel() {
                               className="ds-button-confirm-destructive"
                               onClick={() => {
                                 setShowDestructiveConfirm(false);
-                                // In real usage, this would trigger the destructive action
                               }}
                             >
                               Yes
@@ -445,4 +242,3 @@ export function DesignSystemPanel() {
     </>
   );
 }
-

@@ -198,10 +198,12 @@ export function EditProfileModal({ user, onClose, onSave, onDelete }: EditProfil
                 {/* Show user's selected services */}
                 {selectedServices.map((service) => {
                   const isRemoving = showRemoveConfirm === service.name;
+                  // Use TMDB logo URL if available, otherwise use local
+                  const logoUrl = (service as any).logo_url || getServiceLogoUrl(service.logo);
                   return (
                     <div key={service.name} className="service-option selected">
                       <img
-                        src={getServiceLogoUrl(service.logo)}
+                        src={logoUrl}
                         alt={service.name}
                         className="service-icon-large"
                       />

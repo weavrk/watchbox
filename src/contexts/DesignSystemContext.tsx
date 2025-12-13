@@ -1,26 +1,36 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface DesignTokens {
-  // Primitive Colors
-  white: string;
-  grayLight: string;
-  grayDark: string;
-  cyanLight: string;
-  cyanDark: string;
-  magentaLight: string;
-  magentaDark: string;
-  yellowLight: string;
-  yellowDark: string;
+  // Primitive Colors - Gray Scale (100-900, where 900 is white)
+  'gray-100': string;
+  'gray-200': string;
+  'gray-300': string;
+  'gray-400': string;
+  'gray-500': string;
+  'gray-600': string;
+  'gray-700': string;
+  'gray-800': string;
+  'gray-900': string;
+  // CMYK Colors
+  'cyan-light': string;
+  'cyan-dark': string;
+  'magenta-light': string;
+  'magenta-dark': string;
+  'yellow-light': string;
+  'yellow-dark': string;
   
-  // Semantic Colors
-  brandPrimary: string;
-  primary: string;
-  secondary: string;
-  tertiary: string;
-  accent: string;
-  accent2: string;
-  accent3: string;
-  buttonPrimary: string;
+  // Semantic Colors (reference primitive names)
+  'brand-primary': string;
+  'primary': string;
+  'secondary': string;
+  'tertiary': string;
+  'accent': string;
+  'accent-2': string;
+  'accent-3': string;
+  'button-primary': string;
+  'background-primary': string;
+  'background-secondary': string;
+  'background-tertiary': string;
 }
 
 interface DesignSystemContextType {
@@ -30,26 +40,36 @@ interface DesignSystemContextType {
 }
 
 const defaultTokens: DesignTokens = {
-  // Primitive Colors
-  white: '#FFFFFF',
-  grayLight: '#6B6B6B',
-  grayDark: '#1A1A1A',
-  cyanLight: '#7EC8E3',
-  cyanDark: '#4A90E2',
-  magentaLight: '#F06292',
-  magentaDark: '#D81B60',
-  yellowLight: '#FFD54F',
-  yellowDark: '#FFA000',
+  // Primitive Colors - Gray Scale (100-900, where 900 is white)
+  'gray-100': '#141414',  // Darkest (background-primary, background-secondary)
+  'gray-200': '#1A1A1A',  // Very dark (tertiary, gray-dark)
+  'gray-300': '#2a2a2a',  // Dark (button-primary)
+  'gray-400': '#6B6B6B',  // Medium (secondary, gray-light)
+  'gray-500': '#808080',  // Mid-gray
+  'gray-600': '#999999',  // Light gray
+  'gray-700': '#B3B3B3',  // Lighter gray
+  'gray-800': '#CCCCCC',  // Very light gray
+  'gray-900': '#FFFFFF',  // White (primary, background-tertiary)
+  // CMYK Colors
+  'cyan-light': '#7EC8E3',
+  'cyan-dark': '#4A90E2',
+  'magenta-light': '#F06292',
+  'magenta-dark': '#D81B60',
+  'yellow-light': '#FFD54F',
+  'yellow-dark': '#FFA000',
   
-  // Semantic Colors (mapped to primitives)
-  brandPrimary: '#7EC8E3', // Cyan-Light (Logo & Brand)
-  primary: '#FFFFFF',      // White
-  secondary: '#6B6B6B',    // Gray-Light
-  tertiary: '#1A1A1A',     // Gray-Dark
-  accent: '#7EC8E3',       // Cyan-Light
-  accent2: '#F06292',      // Magenta-Light
-  accent3: '#FFD54F',      // Yellow-Light
-  buttonPrimary: '#2a2a2a',
+  // Semantic Colors (reference primitive names)
+  'brand-primary': 'cyan-light',
+  'primary': 'gray-900',
+  'secondary': 'gray-400',
+  'tertiary': 'gray-200',
+  'accent': 'cyan-light',
+  'accent-2': 'magenta-light',
+  'accent-3': 'yellow-light',
+  'button-primary': 'gray-300',
+  'background-primary': 'gray-100',
+  'background-secondary': 'gray-100',
+  'background-tertiary': 'gray-900',
 };
 
 const DesignSystemContext = createContext<DesignSystemContextType | undefined>(undefined);
@@ -75,40 +95,71 @@ export function DesignSystemProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const getPrimitiveValue = (primitiveName: string, tokens: DesignTokens): string => {
+    // Check if it's a direct hex value or a primitive reference
+    if (primitiveName.startsWith('#')) {
+      return primitiveName;
+    }
+    // Get the primitive color value
+    return (tokens as any)[primitiveName] || primitiveName;
+  };
+
   const applyTokensToDOM = (tokensToApply: DesignTokens) => {
     const root = document.documentElement;
     
-    // Primitive Colors
-    root.style.setProperty('--white', tokensToApply.white);
-    root.style.setProperty('--gray-light', tokensToApply.grayLight);
-    root.style.setProperty('--gray-dark', tokensToApply.grayDark);
-    root.style.setProperty('--cyan-light', tokensToApply.cyanLight);
-    root.style.setProperty('--cyan-dark', tokensToApply.cyanDark);
-    root.style.setProperty('--magenta-light', tokensToApply.magentaLight);
-    root.style.setProperty('--magenta-dark', tokensToApply.magentaDark);
-    root.style.setProperty('--yellow-light', tokensToApply.yellowLight);
-    root.style.setProperty('--yellow-dark', tokensToApply.yellowDark);
+    // Primitive Colors - Gray Scale
+    root.style.setProperty('--gray-100', tokensToApply['gray-100']);
+    root.style.setProperty('--gray-200', tokensToApply['gray-200']);
+    root.style.setProperty('--gray-300', tokensToApply['gray-300']);
+    root.style.setProperty('--gray-400', tokensToApply['gray-400']);
+    root.style.setProperty('--gray-500', tokensToApply['gray-500']);
+    root.style.setProperty('--gray-600', tokensToApply['gray-600']);
+    root.style.setProperty('--gray-700', tokensToApply['gray-700']);
+    root.style.setProperty('--gray-800', tokensToApply['gray-800']);
+    root.style.setProperty('--gray-900', tokensToApply['gray-900']);
+    // CMYK Colors
+    root.style.setProperty('--cyan-light', tokensToApply['cyan-light']);
+    root.style.setProperty('--cyan-dark', tokensToApply['cyan-dark']);
+    root.style.setProperty('--magenta-light', tokensToApply['magenta-light']);
+    root.style.setProperty('--magenta-dark', tokensToApply['magenta-dark']);
+    root.style.setProperty('--yellow-light', tokensToApply['yellow-light']);
+    root.style.setProperty('--yellow-dark', tokensToApply['yellow-dark']);
     
-    // Semantic Colors
-    root.style.setProperty('--color-brand-primary', tokensToApply.brandPrimary);
-    root.style.setProperty('--color-primary', tokensToApply.primary);
-    root.style.setProperty('--color-secondary', tokensToApply.secondary);
-    root.style.setProperty('--color-tertiary', tokensToApply.tertiary);
-    root.style.setProperty('--color-accent', tokensToApply.accent);
-    root.style.setProperty('--color-accent-2', tokensToApply.accent2);
-    root.style.setProperty('--color-accent-3', tokensToApply.accent3);
+    // Semantic Colors (resolve primitive references)
+    const brandPrimaryValue = getPrimitiveValue(tokensToApply['brand-primary'], tokensToApply);
+    const primaryValue = getPrimitiveValue(tokensToApply['primary'], tokensToApply);
+    const secondaryValue = getPrimitiveValue(tokensToApply['secondary'], tokensToApply);
+    const tertiaryValue = getPrimitiveValue(tokensToApply['tertiary'], tokensToApply);
+    const accentValue = getPrimitiveValue(tokensToApply['accent'], tokensToApply);
+    const accent2Value = getPrimitiveValue(tokensToApply['accent-2'], tokensToApply);
+    const accent3Value = getPrimitiveValue(tokensToApply['accent-3'], tokensToApply);
+    const buttonPrimaryValue = getPrimitiveValue(tokensToApply['button-primary'], tokensToApply);
+    const backgroundPrimaryValue = getPrimitiveValue(tokensToApply['background-primary'], tokensToApply);
+    const backgroundSecondaryValue = getPrimitiveValue(tokensToApply['background-secondary'], tokensToApply);
+    const backgroundTertiaryValue = getPrimitiveValue(tokensToApply['background-tertiary'], tokensToApply);
+    
+    root.style.setProperty('--color-brand-primary', brandPrimaryValue);
+    root.style.setProperty('--color-primary', primaryValue);
+    root.style.setProperty('--color-secondary', secondaryValue);
+    root.style.setProperty('--color-tertiary', tertiaryValue);
+    root.style.setProperty('--color-accent', accentValue);
+    root.style.setProperty('--color-accent-2', accent2Value);
+    root.style.setProperty('--color-accent-3', accent3Value);
+    root.style.setProperty('--color-background-primary', backgroundPrimaryValue);
+    root.style.setProperty('--color-background-secondary', backgroundSecondaryValue);
+    root.style.setProperty('--color-background-tertiary', backgroundTertiaryValue);
     
     // Legacy mappings for existing CSS
-    root.style.setProperty('--accent', tokensToApply.accent);
-    root.style.setProperty('--accent-hover', tokensToApply.accent2);
-    root.style.setProperty('--text-primary', tokensToApply.primary);
-    root.style.setProperty('--text-secondary', tokensToApply.secondary);
-    root.style.setProperty('--accent-secondary', tokensToApply.accent2);
-    root.style.setProperty('--accent-tertiary', tokensToApply.accent3);
-    root.style.setProperty('--button-primary', tokensToApply.buttonPrimary);
+    root.style.setProperty('--accent', accentValue);
+    root.style.setProperty('--accent-hover', accent2Value);
+    root.style.setProperty('--text-primary', primaryValue);
+    root.style.setProperty('--text-secondary', secondaryValue);
+    root.style.setProperty('--accent-secondary', accent2Value);
+    root.style.setProperty('--accent-tertiary', accent3Value);
+    root.style.setProperty('--button-primary', buttonPrimaryValue);
   };
 
-  const updateTokens = (newTokens: Partial<DesignTokens>) => {
+  const updateTokens = (newTokens: Partial<DesignTokens> | DesignTokens) => {
     setPendingTokens(prev => ({ ...prev, ...newTokens }));
   };
 

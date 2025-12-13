@@ -5,9 +5,19 @@
   "items": [],
   "streaming_services": [
     {
-      "name": "Netflix",
-      "logo": "netflix.webp",
-      "tmdb_provider_id": 8
+      "name": "Amazon Prime",
+      "logo": "amazon-prime.webp",
+      "tmdb_provider_id": 9
+    },
+    {
+      "name": "Apple TV",
+      "logo": "apple-tv.webp",
+      "tmdb_provider_id": 350
+    },
+    {
+      "name": "Disney Plus",
+      "logo": "disney-plue.webp",
+      "tmdb_provider_id": 337
     },
     {
       "name": "Hulu",
@@ -15,9 +25,19 @@
       "tmdb_provider_id": 15
     },
     {
-      "name": "Disney Plus",
-      "logo": "disney-plue.webp",
-      "tmdb_provider_id": 337
+      "name": "Netflix",
+      "logo": "netflix.webp",
+      "tmdb_provider_id": 8
+    },
+    {
+      "name": "Paramount",
+      "logo": "paramount.webp",
+      "tmdb_provider_id": 531
+    },
+    {
+      "name": "Peacock",
+      "logo": "peacock.webp",
+      "tmdb_provider_id": 387
     }
   ],
   "birthday": "02/20/1982",
