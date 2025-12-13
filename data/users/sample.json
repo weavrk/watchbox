@@ -1,7 +1,7 @@
 {
   "user_id": "sample",
   "name": "kat",
-  "avatar_filename": "avatar-28.svg",
+  "avatar_filename": "avatar-34.svg",
   "items": [],
   "streaming_services": [
     {
@@ -41,5 +41,5 @@
     }
   ],
   "birthday": "02/20/1982",
-  "updated_at": "2025-12-13T13:54:56.520Z"
+  "updated_at": "2025-12-13T22:52:48.109Z"
 }

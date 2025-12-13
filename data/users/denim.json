@@ -1,7 +1,7 @@
 {
   "user_id": "denim",
   "name": "denim",
-  "avatar_filename": "avatar-04.svg",
+  "avatar_filename": "avatar-08.svg",
   "items": [],
   "streaming_services": [
     {
@@ -40,6 +40,5 @@
       "tmdb_provider_id": 387
     }
   ],
-  "birthday": "",
-  "updated_at": "2025-11-30T21:40:37.256Z"
+  "updated_at": "2025-12-13T22:44:10.550Z"
 }

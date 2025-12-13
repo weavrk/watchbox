@@ -1,7 +1,7 @@
 {
   "user_id": "liam",
   "name": "liam",
-  "avatar_filename": "avatar-01.svg",
+  "avatar_filename": "avatar-12.svg",
   "items": [],
   "streaming_services": [
     {
@@ -41,5 +41,5 @@
     }
   ],
   "birthday": "04/16/2012",
-  "updated_at": "2025-12-13T15:43:29.540Z"
+  "updated_at": "2025-12-13T22:45:03.353Z"
 }

@@ -29,7 +29,8 @@ export function ProfileSelectionScreen() {
         const userCount = users.length;
         const width = window.innerWidth;
         const isMobile = width < 480;
-        const isLargeDesktop = width >= 1280;
+        const isMedium = width >= 960;
+        const isLarge = width >= 1280;
         
         // Determine avatar size
         let avatarWidth = 120; // Default mobile
@@ -38,11 +39,8 @@ export function ProfileSelectionScreen() {
           if (userCount >= 3) {
             avatarWidth = 96;
           }
-        } else if (isLargeDesktop) {
-          // 1280px+: use 200px
-          avatarWidth = 200;
         } else {
-          // 480px-1279px: use 160px
+          // 480px+: use 160px (no increase at 1280px)
           avatarWidth = 160;
         }
         
@@ -66,47 +64,101 @@ export function ProfileSelectionScreen() {
           gridTemplateColumns = 'repeat(3, 1fr)';
         } else if (userCount === 4) {
           if (isMobile) {
-            // Mobile: 2 columns
-            gridTemplateColumns = 'repeat(2, 1fr)';
+            // Mobile: 3 columns (with 1 wrapping)
+            gridTemplateColumns = 'repeat(3, 1fr)';
             gridTemplateRows = 'repeat(2, auto)';
-          } else {
-            // >480: 4 columns
+          } else if (isMedium) {
+            // 960px+: 4 columns (1 row - cleaner layout)
             gridTemplateColumns = 'repeat(4, 1fr)';
+            gridTemplateRows = ''; // Clear rows for single row layout
+          } else {
+            // 480px-959px: 3 columns (2 rows - cleaner layout)
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
           }
         } else if (userCount === 5) {
-          // 3 columns, 2 below centered
-          gridTemplateColumns = 'repeat(3, 1fr)';
-          gridTemplateRows = 'repeat(2, auto)';
+          if (isMobile) {
+            // Mobile: 3 columns (2 rows - cleaner layout)
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          } else if (isLarge) {
+            // 1280px+: 5 columns (1 row - cleaner layout)
+            gridTemplateColumns = 'repeat(5, 1fr)';
+            gridTemplateRows = ''; // Clear rows for single row layout
+          } else if (isMedium) {
+            // 960px-1279px: 4 columns (2 rows - cleaner layout)
+            gridTemplateColumns = 'repeat(4, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          } else {
+            // 480px-959px: 3 columns (2 rows - cleaner layout)
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          }
         } else if (userCount === 6) {
-          // 3x3 (3 columns, 2 rows)
-          gridTemplateColumns = 'repeat(3, 1fr)';
-          gridTemplateRows = 'repeat(2, auto)';
+          if (isMobile) {
+            // Mobile: 3 columns
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          } else if (isLarge) {
+            // 1280px+: 5 columns (2 rows, last one wraps)
+            gridTemplateColumns = 'repeat(5, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          } else if (isMedium) {
+            // 960px-1279px: 4 columns
+            gridTemplateColumns = 'repeat(4, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          } else {
+            // 480px-959px: 3 columns
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = 'repeat(2, auto)';
+          }
         } else if (userCount >= 7) {
-          // Smart layout for 7+
-          // Try to make it as square as possible
-          const cols = Math.ceil(Math.sqrt(userCount));
-          const rows = Math.ceil(userCount / cols);
-          gridTemplateColumns = `repeat(${cols}, 1fr)`;
-          gridTemplateRows = `repeat(${rows}, auto)`;
-        }
-        
-        // Apply grid template
-        if (gridTemplateColumns) {
-          gridRef.current.style.gridTemplateColumns = gridTemplateColumns;
-        }
-        if (gridTemplateRows) {
-          gridRef.current.style.gridTemplateRows = gridTemplateRows;
+          if (isMobile) {
+            // Mobile: 3 columns
+            const rows = Math.ceil(userCount / 3);
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = `repeat(${rows}, auto)`;
+          } else if (isLarge) {
+            // 1280px+: Use 5 columns (or smart layout if more than 5 would be better)
+            // For 7-10: use 5 columns, for 11+: calculate optimal
+            const cols = userCount <= 10 ? 5 : Math.min(5, Math.ceil(Math.sqrt(userCount)));
+            const rows = Math.ceil(userCount / cols);
+            gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            gridTemplateRows = `repeat(${rows}, auto)`;
+          } else if (isMedium) {
+            // 960px-1279px: Use 4 columns (or smart layout if more than 4 would be better)
+            // For 7-8: use 4 columns, for 9+: calculate optimal but cap at 4
+            const cols = userCount <= 8 ? 4 : Math.min(4, Math.ceil(Math.sqrt(userCount)));
+            const rows = Math.ceil(userCount / cols);
+            gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            gridTemplateRows = `repeat(${rows}, auto)`;
+          } else {
+            // 480px-959px: 3 columns
+            const rows = Math.ceil(userCount / 3);
+            gridTemplateColumns = 'repeat(3, 1fr)';
+            gridTemplateRows = `repeat(${rows}, auto)`;
+          }
         }
         
         // Set layout class for CSS targeting
         gridRef.current.className = `profiles-grid layout-${userCount} ${isMobile ? 'mobile' : 'desktop'}`;
+        
+        // Apply grid template AFTER setting className (use setProperty with important to override CSS classes)
+        if (gridTemplateColumns) {
+          gridRef.current.style.setProperty('grid-template-columns', gridTemplateColumns, 'important');
+        }
+        if (gridTemplateRows) {
+          gridRef.current.style.setProperty('grid-template-rows', gridTemplateRows, 'important');
+        } else {
+          // Clear rows if not set (for single-row layouts)
+          gridRef.current.style.setProperty('grid-template-rows', 'none', 'important');
+        }
       }
       
       // Also update the profiles-actions container with the same avatar size
       if (actionsGridRef.current) {
         const width = window.innerWidth;
         const isMobile = width < 480;
-        const isLargeDesktop = width >= 1280;
         let avatarWidth = 120; // Default mobile
         
         if (isMobile) {
@@ -114,11 +166,8 @@ export function ProfileSelectionScreen() {
           if (users.length >= 3) {
             avatarWidth = 96;
           }
-        } else if (isLargeDesktop) {
-          // 1280px+: use 200px
-          avatarWidth = 200;
         } else {
-          // 480px-1279px: use 160px
+          // 480px+: use 160px (no increase at 1280px)
           avatarWidth = 160;
         }
         

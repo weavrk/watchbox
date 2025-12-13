@@ -256,10 +256,11 @@ img {
 
 .profiles-grid {
   display: grid;
-  gap: 44px; /* Mobile: more spacing (44px, was 40px) */
+  gap: 24px; /* Mobile: tighter spacing */
   justify-items: center;
   width: fit-content;
   margin: 0 auto;
+  grid-auto-flow: row; /* Ensure natural row wrapping */
 }
 
 /* Around 680px: perfect spacing (52px) */
@@ -293,12 +294,12 @@ img {
   justify-content: center;
 }
 
-/* Mobile: max 2 columns for all layouts */
+/* Mobile: max 3 columns for all layouts */
 @media (max-width: 479px) {
-  .profiles-grid.layout-3,
+  .profiles-grid.layout-4,
   .profiles-grid.layout-5,
   .profiles-grid.layout-6 {
-    grid-template-columns: repeat(2, auto) !important;
+    grid-template-columns: repeat(3, auto) !important;
   }
 }
 
@@ -314,26 +315,72 @@ img {
   justify-content: center;
 }
 
-/* Layout 5: 3 columns, 2 below centered - hug avatars */
+/* Layout 5: Only set default for mobile, let inline styles handle larger screens */
 .layout-5 {
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
-  justify-content: center;
+  /* Default removed - let inline styles control */
 }
 
-.layout-5 .profile-card:nth-child(4) {
-  grid-column: 2;
+@media (max-width: 959px) {
+  .layout-5 {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+  }
+  
+  .layout-5 .profile-card:nth-child(4) {
+    grid-column: auto; /* Remove fixed positioning, let grid handle it */
+  }
+
+  .layout-5 .profile-card:nth-child(5) {
+    grid-column: auto; /* Remove fixed positioning, let grid handle it */
+  }
 }
 
-.layout-5 .profile-card:nth-child(5) {
-  grid-column: 2;
+/* On larger screens, ensure no grid-column overrides for layout-5 */
+@media (min-width: 960px) {
+  .layout-5 .profile-card:nth-child(4),
+  .layout-5 .profile-card:nth-child(5) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
 }
 
-/* Layout 6: 3x3 (3 columns, 2 rows) - hug avatars */
+/* Layout 6: Only set default for mobile, let inline styles handle larger screens */
 .layout-6 {
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
-  justify-content: center;
+  /* Default removed - let inline styles control */
+}
+
+@media (max-width: 959px) {
+  .layout-6 {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+  }
+}
+
+/* Override layout classes for larger screens to allow 4-5 columns */
+/* These will be overridden by inline styles, but provide fallback */
+@media (min-width: 960px) {
+  .profiles-grid.layout-4,
+  .profiles-grid.layout-5,
+  .profiles-grid.layout-6,
+  .profiles-grid.layout-7,
+  .profiles-grid.layout-8,
+  .profiles-grid.layout-9,
+  .profiles-grid.layout-10 {
+    grid-template-columns: repeat(4, auto) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .profiles-grid.layout-5,
+  .profiles-grid.layout-6,
+  .profiles-grid.layout-7,
+  .profiles-grid.layout-8,
+  .profiles-grid.layout-9,
+  .profiles-grid.layout-10 {
+    grid-template-columns: repeat(5, auto) !important;
+  }
 }
 
 /* Breakpoint: 480px - keep fit-content to hug avatars */
@@ -1944,27 +1991,7 @@ img {
 
 /* Breakpoint: 1280px */
 @media (min-width: 1280px) {
-  .profiles-grid {
-    --avatar-size: 200px;
-  }
-  
-  .profile-avatar {
-    width: var(--avatar-size, 200px);
-    height: var(--avatar-size, 200px);
-  }
-  
-  .profile-card {
-    width: var(--avatar-size, 200px);
-  }
-  
-  .profiles-actions .profile-card {
-    width: var(--action-avatar-size, 100px);
-  }
-  
-  .profiles-actions .profile-avatar {
-    width: var(--action-avatar-size, 100px);
-    height: var(--action-avatar-size, 100px);
-  }
+  /* Avatar size stays at 160px (no increase) */
   
   .plus-icon,
   .edit-icon-large {
