@@ -378,7 +378,7 @@ img {
   align-items: center;
   justify-content: center;
   border: 3px solid transparent;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, outline-color 0.2s;
   box-shadow: none;
   outline: none;
 }
@@ -393,8 +393,14 @@ img {
 }
 
 .plus-icon {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   color: var(--text-secondary);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  transform: translateY(-4px);
 }
 
 .edit-icon-large {
@@ -452,6 +458,22 @@ img {
   opacity: 0.4;
   transition: opacity 0.2s;
 }
+
+/* In edit mode, add white stroke and make fill transparent */
+.profiles-wrapper.edit-mode .profile-avatar {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 4px;
+  background-color: transparent !important;
+}
+
+/* In edit mode, add white stroke to Add/Edit buttons */
+.profiles-wrapper.edit-mode .add-avatar {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 4px;
+  background-color: transparent !important;
+  border: none !important;
+}
+
 
 .edit-icon {
   color: var(--text-primary);

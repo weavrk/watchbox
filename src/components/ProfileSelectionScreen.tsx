@@ -308,7 +308,7 @@ export function ProfileSelectionScreen() {
                   className="profile-avatar"
                   style={{
                     backgroundColor: avatarColors[user.user_id] || '#4A90E2',
-                    outlineColor: avatarColors[user.user_id] || '#4A90E2'
+                    outlineColor: editMode ? undefined : (avatarColors[user.user_id] || '#4A90E2')
                   }}
                 >
                   <img

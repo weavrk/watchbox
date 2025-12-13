@@ -160,12 +160,16 @@ export function DesignSystemProvider({ children }: { children: ReactNode }) {
   };
 
   const updateTokens = (newTokens: Partial<DesignTokens> | DesignTokens) => {
-    setPendingTokens(prev => ({ ...prev, ...newTokens }));
+    const updated = { ...pendingTokens, ...newTokens } as DesignTokens;
+    setPendingTokens(updated);
+    // Apply changes immediately for real-time preview
+    applyTokensToDOM(updated);
   };
 
   const applyTokens = () => {
     setTokens(pendingTokens);
     applyTokensToDOM(pendingTokens);
+    // Save to localStorage as the new defaults
     localStorage.setItem('designTokens', JSON.stringify(pendingTokens));
   };
 
