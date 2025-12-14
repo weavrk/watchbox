@@ -37,6 +37,7 @@ interface DesignSystemContextType {
   tokens: DesignTokens;
   updateTokens: (tokens: Partial<DesignTokens>) => void;
   applyTokens: () => void;
+  exportTokens: () => void;
 }
 
 const defaultTokens: DesignTokens = {
@@ -78,21 +79,42 @@ export function DesignSystemProvider({ children }: { children: ReactNode }) {
   const [tokens, setTokens] = useState<DesignTokens>(defaultTokens);
   const [pendingTokens, setPendingTokens] = useState<DesignTokens>(defaultTokens);
 
-  // Load saved tokens from localStorage on mount
+  // Load tokens: first from JSON file (for all users), then localStorage (for overrides)
   useEffect(() => {
-    const saved = localStorage.getItem('designTokens');
-    if (saved) {
+    const loadTokens = async () => {
       try {
-        const parsed = JSON.parse(saved);
-        setTokens(parsed);
-        setPendingTokens(parsed);
-        applyTokensToDOM(parsed);
+        // First, try to load from the JSON file (source of truth for all users)
+        const response = await fetch('/design-tokens.json');
+        let loadedTokens = defaultTokens;
+        
+        if (response.ok) {
+          const fileTokens = await response.json();
+          loadedTokens = { ...defaultTokens, ...fileTokens } as DesignTokens;
+        }
+        
+        // Then check localStorage for any user-specific overrides (for testing/preview)
+        const saved = localStorage.getItem('designTokens');
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            // Merge: file tokens as base, localStorage as override
+            loadedTokens = { ...loadedTokens, ...parsed } as DesignTokens;
+          } catch (e) {
+            console.error('Failed to parse localStorage tokens:', e);
+          }
+        }
+        
+        setTokens(loadedTokens);
+        setPendingTokens(loadedTokens);
+        applyTokensToDOM(loadedTokens);
       } catch (e) {
         console.error('Failed to load design tokens:', e);
+        // Fallback to defaults
+        applyTokensToDOM(defaultTokens);
       }
-    } else {
-      applyTokensToDOM(defaultTokens);
-    }
+    };
+    
+    loadTokens();
   }, []);
 
   const getPrimitiveValue = (primitiveName: string, tokens: DesignTokens): string => {
@@ -169,12 +191,26 @@ export function DesignSystemProvider({ children }: { children: ReactNode }) {
   const applyTokens = () => {
     setTokens(pendingTokens);
     applyTokensToDOM(pendingTokens);
-    // Save to localStorage as the new defaults
+    // Save to localStorage for immediate persistence (overrides JSON file for this user)
     localStorage.setItem('designTokens', JSON.stringify(pendingTokens));
   };
 
+  const exportTokens = () => {
+    // Create a downloadable JSON file for the user to update public/design-tokens.json
+    const jsonString = JSON.stringify(pendingTokens, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'design-tokens.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
-    <DesignSystemContext.Provider value={{ tokens, updateTokens, applyTokens }}>
+    <DesignSystemContext.Provider value={{ tokens, updateTokens, applyTokens, exportTokens }}>
       {children}
     </DesignSystemContext.Provider>
   );

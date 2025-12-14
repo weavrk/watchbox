@@ -296,8 +296,8 @@ export async function getExploreContent(): Promise<ExploreItem[]> {
   try {
     // Fetch both movies and shows
     const [moviesResponse, showsResponse] = await Promise.all([
-      fetch('/top-movies-by-year-results.json'),
-      fetch('/streaming-shows-results.json')
+      fetch('/data/streaming-movies-results.json'),
+      fetch('/data/streaming-shows-results.json')
     ]);
 
     const [movies, shows] = await Promise.all([
@@ -305,12 +305,40 @@ export async function getExploreContent(): Promise<ExploreItem[]> {
       showsResponse.json()
     ]);
 
-    // Combine and limit to top 200
-    const allContent = [...movies, ...shows].slice(0, 200);
+    // Combine all content (already sorted by priority in JSON files)
+    // Up to 400 movies and 400 shows (800 total)
+    // Non-anime, non-G-rated, non-horror content appears first
+    const allContent = [...movies, ...shows];
     return allContent;
   } catch (error) {
     console.error('Failed to fetch explore content:', error);
     return [];
+  }
+}
+
+/**
+ * Regenerate explore content from TMDB API
+ * @param type - 'movies' | 'shows' | 'all' (default: 'all')
+ */
+export async function regenerateExploreContent(type: 'movies' | 'shows' | 'all' = 'all'): Promise<{ success: boolean; results?: any; error?: string }> {
+  try {
+    const response = await fetch(`/api/regenerate_explore_content.php?type=${type}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+
+    const data = await response.json();
+    
+    if (!response.ok || !data.success) {
+      return { success: false, error: data.error || 'Failed to regenerate content' };
+    }
+    
+    return { success: true, results: data.results };
+  } catch (error) {
+    console.error('Failed to regenerate explore content:', error);
+    return { success: false, error: 'Network error' };
   }
 }
 

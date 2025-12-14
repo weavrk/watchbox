@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { WatchBoxItem } from '../types';
-import { getPosterUrl, getServiceIcon } from '../services/api';
+import { getPosterUrl } from '../services/api';
 
 interface TitleCardProps {
   item: WatchBoxItem;
@@ -39,22 +39,13 @@ export function TitleCard({ item, onDelete, onMove }: TitleCardProps) {
       </div>
       <div className="title-info">
         <span className="title-text">{item.title}</span>
-        <div className="title-actions">
-          {item.services.length > 0 && (
-            <img
-              src={getServiceIcon(item.services[0])}
-              alt={item.services[0]}
-              className="service-icon"
-            />
-          )}
-          <button 
-            className="menu-button"
-            onClick={handleMenuToggle}
-            aria-label="Options"
-          >
-            ⋮
-          </button>
-        </div>
+        <button 
+          className="menu-button"
+          onClick={handleMenuToggle}
+          aria-label="Options"
+        >
+          ⋮
+        </button>
       </div>
       {menuOpen && (
         <>

@@ -1,0 +1,2489 @@
+[
+  {
+    "id": "zootopia-2-1084242",
+    "title": "Zootopia 2",
+    "tmdb_id": 1084242,
+    "poster_filename": "zootopia-2.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-26",
+    "isMovie": true
+  },
+  {
+    "id": "the-running-man-798645",
+    "title": "The Running Man",
+    "tmdb_id": 798645,
+    "poster_filename": "the-running-man.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-14",
+    "isMovie": true
+  },
+  {
+    "id": "tron-ares-533533",
+    "title": "TRON: Ares",
+    "tmdb_id": 533533,
+    "poster_filename": "tron-ares.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-10",
+    "isMovie": true
+  },
+  {
+    "id": "hunting-season-1387382",
+    "title": "Hunting Season",
+    "tmdb_id": 1387382,
+    "poster_filename": "hunting-season.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-12-05",
+    "isMovie": true
+  },
+  {
+    "id": "high-rollers-1149167",
+    "title": "High Rollers",
+    "tmdb_id": 1149167,
+    "poster_filename": "high-rollers.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2025-03-14",
+    "isMovie": true
+  },
+  {
+    "id": "wake-up-dead-man-a-knives-out-mystery-812583",
+    "title": "Wake Up Dead Man: A Knives Out Mystery",
+    "tmdb_id": 812583,
+    "poster_filename": "wake-up-dead-man-a-knives-out-mystery.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "release_date": "2025-11-26",
+    "isMovie": true
+  },
+  {
+    "id": "predator-badlands-1242898",
+    "title": "Predator: Badlands",
+    "tmdb_id": 1242898,
+    "poster_filename": "predator-badlands.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "war-of-the-worlds-755898",
+    "title": "War of the Worlds",
+    "tmdb_id": 755898,
+    "poster_filename": "war-of-the-worlds.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-07-30",
+    "isMovie": true
+  },
+  {
+    "id": "wildcat-1448560",
+    "title": "Wildcat",
+    "tmdb_id": 1448560,
+    "poster_filename": "wildcat.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-25",
+    "isMovie": true
+  },
+  {
+    "id": "old-henry-785663",
+    "title": "Old Henry",
+    "tmdb_id": 785663,
+    "poster_filename": "old-henry.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountpluspremium"
+    ],
+    "release_date": "2021-10-01",
+    "isMovie": true
+  },
+  {
+    "id": "wicked-for-good-967941",
+    "title": "Wicked: For Good",
+    "tmdb_id": 967941,
+    "poster_filename": "wicked-for-good.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-20",
+    "isMovie": true
+  },
+  {
+    "id": "die-my-love-1033148",
+    "title": "Die My Love",
+    "tmdb_id": 1033148,
+    "poster_filename": "die-my-love.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "zootopia-269149",
+    "title": "Zootopia",
+    "tmdb_id": 269149,
+    "poster_filename": "zootopia.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2016-03-04",
+    "isMovie": true
+  },
+  {
+    "id": "avatar-fire-and-ash-83533",
+    "title": "Avatar: Fire and Ash",
+    "tmdb_id": 83533,
+    "poster_filename": "avatar-fire-and-ash.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-12-19",
+    "isMovie": true
+  },
+  {
+    "id": "london-calling-1217602",
+    "title": "London Calling",
+    "tmdb_id": 1217602,
+    "poster_filename": "london-calling.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-09-19",
+    "isMovie": true
+  },
+  {
+    "id": "altered-1309012",
+    "title": "Altered",
+    "tmdb_id": 1309012,
+    "poster_filename": "altered.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-21",
+    "isMovie": true
+  },
+  {
+    "id": "the-family-plan-2-1363123",
+    "title": "The Family Plan 2",
+    "tmdb_id": 1363123,
+    "poster_filename": "the-family-plan-2.jpg",
+    "listType": "top",
+    "services": [
+      "appletv",
+      "appletvamazonchannel"
+    ],
+    "release_date": "2025-11-20",
+    "isMovie": true
+  },
+  {
+    "id": "one-battle-after-another-1054867",
+    "title": "One Battle After Another",
+    "tmdb_id": 1054867,
+    "poster_filename": "one-battle-after-another.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-09-26",
+    "isMovie": true
+  },
+  {
+    "id": "jay-kelly-1069905",
+    "title": "Jay Kelly",
+    "tmdb_id": 1069905,
+    "poster_filename": "jay-kelly.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-11-14",
+    "isMovie": true
+  },
+  {
+    "id": "kpop-demon-hunters-803796",
+    "title": "KPop Demon Hunters",
+    "tmdb_id": 803796,
+    "poster_filename": "kpop-demon-hunters.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-06-20",
+    "isMovie": true
+  },
+  {
+    "id": "now-you-see-me-now-you-dont-425274",
+    "title": "Now You See Me: Now You Don't",
+    "tmdb_id": 425274,
+    "poster_filename": "now-you-see-me-now-you-dont.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-14",
+    "isMovie": true
+  },
+  {
+    "id": "she-rides-shotgun-1196573",
+    "title": "She Rides Shotgun",
+    "tmdb_id": 1196573,
+    "poster_filename": "she-rides-shotgun.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "mgm+amazonchannel",
+      "mgmplusrokupremiumchannel",
+      "mgmplus",
+      "philo"
+    ],
+    "release_date": "2025-08-01",
+    "isMovie": true
+  },
+  {
+    "id": "merv-1255775",
+    "title": "Merv",
+    "tmdb_id": 1255775,
+    "poster_filename": "merv.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-12-10",
+    "isMovie": true
+  },
+  {
+    "id": "border-hunters-1469354",
+    "title": "Border Hunters",
+    "tmdb_id": 1469354,
+    "poster_filename": "border-hunters.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-20",
+    "isMovie": true
+  },
+  {
+    "id": "bugonia-701387",
+    "title": "Bugonia",
+    "tmdb_id": 701387,
+    "poster_filename": "bugonia.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-24",
+    "isMovie": true
+  },
+  {
+    "id": "art-of-eight-limbs-1208561",
+    "title": "Art of Eight Limbs",
+    "tmdb_id": 1208561,
+    "poster_filename": "art-of-eight-limbs.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2024-08-16",
+    "isMovie": true
+  },
+  {
+    "id": "mission-impossible-the-final-reckoning-575265",
+    "title": "Mission: Impossible - The Final Reckoning",
+    "tmdb_id": 575265,
+    "poster_filename": "mission-impossible-the-final-reckoning.jpg",
+    "listType": "top",
+    "services": [
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2025-05-23",
+    "isMovie": true
+  },
+  {
+    "id": "the-fantastic-4-first-steps-617126",
+    "title": "The Fantastic 4: First Steps",
+    "tmdb_id": 617126,
+    "poster_filename": "the-fantastic-4-first-steps.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-07-25",
+    "isMovie": true
+  },
+  {
+    "id": "superman-1061474",
+    "title": "Superman",
+    "tmdb_id": 1061474,
+    "poster_filename": "superman.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2025-07-11",
+    "isMovie": true
+  },
+  {
+    "id": "regretting-you-1327862",
+    "title": "Regretting You",
+    "tmdb_id": 1327862,
+    "poster_filename": "regretting-you.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-24",
+    "isMovie": true
+  },
+  {
+    "id": "f1-911430",
+    "title": "F1",
+    "tmdb_id": 911430,
+    "poster_filename": "f1.jpg",
+    "listType": "top",
+    "services": [
+      "appletv",
+      "appletvamazonchannel"
+    ],
+    "release_date": "2025-06-27",
+    "isMovie": true
+  },
+  {
+    "id": "jurassic-world-rebirth-1234821",
+    "title": "Jurassic World Rebirth",
+    "tmdb_id": 1234821,
+    "poster_filename": "jurassic-world-rebirth.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2025-07-02",
+    "isMovie": true
+  },
+  {
+    "id": "playdate-1248226",
+    "title": "Playdate",
+    "tmdb_id": 1248226,
+    "poster_filename": "playdate.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-11-12",
+    "isMovie": true
+  },
+  {
+    "id": "the-first-snow-of-fraggle-rock-1566269",
+    "title": "The First Snow of Fraggle Rock",
+    "tmdb_id": 1566269,
+    "poster_filename": "the-first-snow-of-fraggle-rock.jpg",
+    "listType": "top",
+    "services": [
+      "appletv",
+      "appletvamazonchannel"
+    ],
+    "release_date": "2025-12-04",
+    "isMovie": true
+  },
+  {
+    "id": "elio-1022787",
+    "title": "Elio",
+    "tmdb_id": 1022787,
+    "poster_filename": "elio.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-06-20",
+    "isMovie": true
+  },
+  {
+    "id": "the-bad-guys-2-1175942",
+    "title": "The Bad Guys 2",
+    "tmdb_id": 1175942,
+    "poster_filename": "the-bad-guys-2.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2025-08-01",
+    "isMovie": true
+  },
+  {
+    "id": "wicked-402431",
+    "title": "Wicked",
+    "tmdb_id": 402431,
+    "poster_filename": "wicked.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2024-11-22",
+    "isMovie": true
+  },
+  {
+    "id": "avatar-the-way-of-water-76600",
+    "title": "Avatar: The Way of Water",
+    "tmdb_id": 76600,
+    "poster_filename": "avatar-the-way-of-water.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2022-12-16",
+    "isMovie": true
+  },
+  {
+    "id": "how-to-train-your-dragon-1087192",
+    "title": "How to Train Your Dragon",
+    "tmdb_id": 1087192,
+    "poster_filename": "how-to-train-your-dragon.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2025-06-13",
+    "isMovie": true
+  },
+  {
+    "id": "diary-of-a-wimpy-kid-the-last-straw-1392796",
+    "title": "Diary of a Wimpy Kid: The Last Straw",
+    "tmdb_id": 1392796,
+    "poster_filename": "diary-of-a-wimpy-kid-the-last-straw.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-12-05",
+    "isMovie": true
+  },
+  {
+    "id": "a-paw-patrol-christmas-1507275",
+    "title": "A Paw Patrol Christmas",
+    "tmdb_id": 1507275,
+    "poster_filename": "a-paw-patrol-christmas.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2025-11-28",
+    "isMovie": true
+  },
+  {
+    "id": "my-secret-santa-1441563",
+    "title": "My Secret Santa",
+    "tmdb_id": 1441563,
+    "poster_filename": "my-secret-santa.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-12-03",
+    "isMovie": true
+  },
+  {
+    "id": "high-ground-1433719",
+    "title": "High Ground",
+    "tmdb_id": 1433719,
+    "poster_filename": "high-ground.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-03-18",
+    "isMovie": true
+  },
+  {
+    "id": "lilo-stitch-552524",
+    "title": "Lilo & Stitch",
+    "tmdb_id": 552524,
+    "poster_filename": "lilo-stitch.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-05-23",
+    "isMovie": true
+  },
+  {
+    "id": "oh-what-fun-1261825",
+    "title": "Oh. What. Fun.",
+    "tmdb_id": 1261825,
+    "poster_filename": "oh-what-fun.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-12-03",
+    "isMovie": true
+  },
+  {
+    "id": "sidelined-2-intercepted-1429520",
+    "title": "Sidelined 2: Intercepted",
+    "tmdb_id": 1429520,
+    "poster_filename": "sidelined-2-intercepted.jpg",
+    "listType": "top",
+    "services": [
+      "tubitv"
+    ],
+    "release_date": "2025-11-27",
+    "isMovie": true
+  },
+  {
+    "id": "stand-your-ground-1296504",
+    "title": "Stand Your Ground",
+    "tmdb_id": 1296504,
+    "poster_filename": "stand-your-ground.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-05-09",
+    "isMovie": true
+  },
+  {
+    "id": "nobody-2-1007734",
+    "title": "Nobody 2",
+    "tmdb_id": 1007734,
+    "poster_filename": "nobody-2.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2025-08-15",
+    "isMovie": true
+  },
+  {
+    "id": "ballerina-541671",
+    "title": "Ballerina",
+    "tmdb_id": 541671,
+    "poster_filename": "ballerina.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "starzrokupremiumchannel",
+      "starz",
+      "philo",
+      "starzamazonchannel"
+    ],
+    "release_date": "2025-06-06",
+    "isMovie": true
+  },
+  {
+    "id": "inside-out-2-1022789",
+    "title": "Inside Out 2",
+    "tmdb_id": 1022789,
+    "poster_filename": "inside-out-2.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2024-06-14",
+    "isMovie": true
+  },
+  {
+    "id": "sidelined-the-qb-and-me-957119",
+    "title": "Sidelined: The QB and Me",
+    "tmdb_id": 957119,
+    "poster_filename": "sidelined-the-qb-and-me.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2024-11-29",
+    "isMovie": true
+  },
+  {
+    "id": "a-minecraft-movie-950387",
+    "title": "A Minecraft Movie",
+    "tmdb_id": 950387,
+    "poster_filename": "a-minecraft-movie.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2025-04-04",
+    "isMovie": true
+  },
+  {
+    "id": "the-grinch-360920",
+    "title": "The Grinch",
+    "tmdb_id": 360920,
+    "poster_filename": "the-grinch.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "peacockpremium",
+      "freeform",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2018-11-09",
+    "isMovie": true
+  },
+  {
+    "id": "moana-2-1241982",
+    "title": "Moana 2",
+    "tmdb_id": 1241982,
+    "poster_filename": "moana-2.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2024-11-27",
+    "isMovie": true
+  },
+  {
+    "id": "a-working-man-1197306",
+    "title": "A Working Man",
+    "tmdb_id": 1197306,
+    "poster_filename": "a-working-man.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "mgm+amazonchannel",
+      "mgmplusrokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-03-28",
+    "isMovie": true
+  },
+  {
+    "id": "roofman-1242419",
+    "title": "Roofman",
+    "tmdb_id": 1242419,
+    "poster_filename": "roofman.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "mgm+amazonchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2025-10-10",
+    "isMovie": true
+  },
+  {
+    "id": "red-one-845781",
+    "title": "Red One",
+    "tmdb_id": 845781,
+    "poster_filename": "red-one.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2024-11-15",
+    "isMovie": true
+  },
+  {
+    "id": "prep-landing-the-snowball-protocol-1550797",
+    "title": "Prep & Landing: The Snowball Protocol",
+    "tmdb_id": 1550797,
+    "poster_filename": "prep-landing-the-snowball-protocol.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "fubotv"
+    ],
+    "release_date": "2025-11-27",
+    "isMovie": true
+  },
+  {
+    "id": "furiosa-a-mad-max-saga-786892",
+    "title": "Furiosa: A Mad Max Saga",
+    "tmdb_id": 786892,
+    "poster_filename": "furiosa-a-mad-max-saga.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2024-05-24",
+    "isMovie": true
+  },
+  {
+    "id": "christy-1287322",
+    "title": "Christy",
+    "tmdb_id": 1287322,
+    "poster_filename": "christy.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "predators-1400382",
+    "title": "Predators",
+    "tmdb_id": 1400382,
+    "poster_filename": "predators.jpg",
+    "listType": "top",
+    "services": [
+      "paramount+amazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2025-09-19",
+    "isMovie": true
+  },
+  {
+    "id": "the-toxic-avenger-unrated-338969",
+    "title": "The Toxic Avenger Unrated",
+    "tmdb_id": 338969,
+    "poster_filename": "the-toxic-avenger-unrated.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-08-29",
+    "isMovie": true
+  },
+  {
+    "id": "the-naked-gun-1035259",
+    "title": "The Naked Gun",
+    "tmdb_id": 1035259,
+    "poster_filename": "the-naked-gun.jpg",
+    "listType": "top",
+    "services": [
+      "mgm+amazonchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2025-08-01",
+    "isMovie": true
+  },
+  {
+    "id": "deadpool-wolverine-533535",
+    "title": "Deadpool & Wolverine",
+    "tmdb_id": 533535,
+    "poster_filename": "deadpool-wolverine.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2024-07-26",
+    "isMovie": true
+  },
+  {
+    "id": "code-3-1161617",
+    "title": "Code 3",
+    "tmdb_id": 1161617,
+    "poster_filename": "code-3.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-09-12",
+    "isMovie": true
+  },
+  {
+    "id": "the-family-mcmullen-1548017",
+    "title": "The Family McMullen",
+    "tmdb_id": 1548017,
+    "poster_filename": "the-family-mcmullen.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2025-10-15",
+    "isMovie": true
+  },
+  {
+    "id": "knives-out-546554",
+    "title": "Knives Out",
+    "tmdb_id": 546554,
+    "poster_filename": "knives-out.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2019-11-27",
+    "isMovie": true
+  },
+  {
+    "id": "200-wolf-974663",
+    "title": "200% Wolf",
+    "tmdb_id": 974663,
+    "poster_filename": "200-wolf.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2024-08-23",
+    "isMovie": true
+  },
+  {
+    "id": "sarahs-oil-1325678",
+    "title": "Sarah's Oil",
+    "tmdb_id": 1325678,
+    "poster_filename": "sarahs-oil.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "ice-road-vengeance-1119878",
+    "title": "Ice Road: Vengeance",
+    "tmdb_id": 1119878,
+    "poster_filename": "ice-road-vengeance.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-06-27",
+    "isMovie": true
+  },
+  {
+    "id": "sonic-the-hedgehog-3-939243",
+    "title": "Sonic the Hedgehog 3",
+    "tmdb_id": 939243,
+    "poster_filename": "sonic-the-hedgehog-3.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "mgm+amazonchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "amazonprimevideowithads",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2024-12-20",
+    "isMovie": true
+  },
+  {
+    "id": "despicable-me-4-519182",
+    "title": "Despicable Me 4",
+    "tmdb_id": 519182,
+    "poster_filename": "despicable-me-4.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2024-07-03",
+    "isMovie": true
+  },
+  {
+    "id": "life-boat-526771",
+    "title": "Life Boat",
+    "tmdb_id": 526771,
+    "poster_filename": "life-boat.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2017-04-01",
+    "isMovie": true
+  },
+  {
+    "id": "venom-the-last-dance-912649",
+    "title": "Venom: The Last Dance",
+    "tmdb_id": 912649,
+    "poster_filename": "venom-the-last-dance.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "release_date": "2024-10-25",
+    "isMovie": true
+  },
+  {
+    "id": "the-super-mario-bros-movie-502356",
+    "title": "The Super Mario Bros. Movie",
+    "tmdb_id": 502356,
+    "poster_filename": "the-super-mario-bros-movie.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2023-04-05",
+    "isMovie": true
+  },
+  {
+    "id": "m3gan-20-1071585",
+    "title": "M3GAN 2.0",
+    "tmdb_id": 1071585,
+    "poster_filename": "m3gan-20.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2025-06-27",
+    "isMovie": true
+  },
+  {
+    "id": "kingdom-of-the-planet-of-the-apes-653346",
+    "title": "Kingdom of the Planet of the Apes",
+    "tmdb_id": 653346,
+    "poster_filename": "kingdom-of-the-planet-of-the-apes.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2024-05-10",
+    "isMovie": true
+  },
+  {
+    "id": "avengers-infinity-war-299536",
+    "title": "Avengers: Infinity War",
+    "tmdb_id": 299536,
+    "poster_filename": "avengers-infinity-war.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "youtubetv"
+    ],
+    "release_date": "2018-04-27",
+    "isMovie": true
+  },
+  {
+    "id": "thunderbolts-986056",
+    "title": "Thunderbolts*",
+    "tmdb_id": 986056,
+    "poster_filename": "thunderbolts.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-05-02",
+    "isMovie": true
+  },
+  {
+    "id": "train-dreams-1241983",
+    "title": "Train Dreams",
+    "tmdb_id": 1241983,
+    "poster_filename": "train-dreams.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "stolen-girl-1280450",
+    "title": "Stolen Girl",
+    "tmdb_id": 1280450,
+    "poster_filename": "stolen-girl.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-09-26",
+    "isMovie": true
+  },
+  {
+    "id": "to-all-the-boys-ive-loved-before-466282",
+    "title": "To All the Boys I've Loved Before",
+    "tmdb_id": 466282,
+    "poster_filename": "to-all-the-boys-ive-loved-before.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2018-08-16",
+    "isMovie": true
+  },
+  {
+    "id": "the-family-plan-1029575",
+    "title": "The Family Plan",
+    "tmdb_id": 1029575,
+    "poster_filename": "the-family-plan.jpg",
+    "listType": "top",
+    "services": [
+      "appletv",
+      "appletvamazonchannel"
+    ],
+    "release_date": "2023-12-14",
+    "isMovie": true
+  },
+  {
+    "id": "spider-man-no-way-home-634649",
+    "title": "Spider-Man: No Way Home",
+    "tmdb_id": 634649,
+    "poster_filename": "spider-man-no-way-home.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "starzrokupremiumchannel",
+      "starz",
+      "philo"
+    ],
+    "release_date": "2021-12-17",
+    "isMovie": true
+  },
+  {
+    "id": "barbie-346698",
+    "title": "Barbie",
+    "tmdb_id": 346698,
+    "poster_filename": "barbie.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "cinemaxamazonchannel",
+      "cinemaxappletvchannel"
+    ],
+    "release_date": "2023-07-21",
+    "isMovie": true
+  },
+  {
+    "id": "sweet-dreams-1062421",
+    "title": "Sweet Dreams",
+    "tmdb_id": 1062421,
+    "poster_filename": "sweet-dreams.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2024-04-12",
+    "isMovie": true
+  },
+  {
+    "id": "predator-killer-of-killers-1376434",
+    "title": "Predator: Killer of Killers",
+    "tmdb_id": 1376434,
+    "poster_filename": "predator-killer-of-killers.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2025-06-05",
+    "isMovie": true
+  },
+  {
+    "id": "the-wild-robot-1184918",
+    "title": "The Wild Robot",
+    "tmdb_id": 1184918,
+    "poster_filename": "the-wild-robot.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2024-09-27",
+    "isMovie": true
+  },
+  {
+    "id": "shang-chi-and-the-legend-of-the-ten-rings-566525",
+    "title": "Shang-Chi and the Legend of the Ten Rings",
+    "tmdb_id": 566525,
+    "poster_filename": "shang-chi-and-the-legend-of-the-ten-rings.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2021-09-03",
+    "isMovie": true
+  },
+  {
+    "id": "spider-man-across-the-spider-verse-569094",
+    "title": "Spider-Man: Across the Spider-Verse",
+    "tmdb_id": 569094,
+    "poster_filename": "spider-man-across-the-spider-verse.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "fubotv"
+    ],
+    "release_date": "2023-06-02",
+    "isMovie": true
+  },
+  {
+    "id": "love-and-wine-1572017",
+    "title": "Love and Wine",
+    "tmdb_id": 1572017,
+    "poster_filename": "love-and-wine.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-12-05",
+    "isMovie": true
+  },
+  {
+    "id": "nuremberg-1214931",
+    "title": "Nuremberg",
+    "tmdb_id": 1214931,
+    "poster_filename": "nuremberg.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "fast-x-385687",
+    "title": "Fast X",
+    "tmdb_id": 385687,
+    "poster_filename": "fast-x.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2023-05-19",
+    "isMovie": true
+  },
+  {
+    "id": "kraven-the-hunter-539972",
+    "title": "Kraven the Hunter",
+    "tmdb_id": 539972,
+    "poster_filename": "kraven-the-hunter.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "release_date": "2024-12-13",
+    "isMovie": true
+  },
+  {
+    "id": "taylor-swift-the-eras-tour-the-final-show-1562010",
+    "title": "Taylor Swift | The Eras Tour | The Final Show",
+    "tmdb_id": 1562010,
+    "poster_filename": "taylor-swift-the-eras-tour-the-final-show.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-12-12",
+    "isMovie": true
+  },
+  {
+    "id": "grand-prix-of-europe-1316147",
+    "title": "Grand Prix of Europe",
+    "tmdb_id": 1316147,
+    "poster_filename": "grand-prix-of-europe.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-07",
+    "isMovie": true
+  },
+  {
+    "id": "hunting-grounds-1305717",
+    "title": "Hunting Grounds",
+    "tmdb_id": 1305717,
+    "poster_filename": "hunting-grounds.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-05-16",
+    "isMovie": true
+  },
+  {
+    "id": "diario-de-el-loro-y-el-cisne-632691",
+    "title": "Diario de el loro y  el cisne",
+    "tmdb_id": 632691,
+    "poster_filename": "diario-de-el-loro-y-el-cisne.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2019-05-03",
+    "isMovie": true
+  },
+  {
+    "id": "top-gun-maverick-361743",
+    "title": "Top Gun: Maverick",
+    "tmdb_id": 361743,
+    "poster_filename": "top-gun-maverick.jpg",
+    "listType": "top",
+    "services": [
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2022-05-27",
+    "isMovie": true
+  },
+  {
+    "id": "oppenheimer-872585",
+    "title": "Oppenheimer",
+    "tmdb_id": 872585,
+    "poster_filename": "oppenheimer.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2023-07-21",
+    "isMovie": true
+  },
+  {
+    "id": "glass-onion-a-knives-out-mystery-661374",
+    "title": "Glass Onion: A Knives Out Mystery",
+    "tmdb_id": 661374,
+    "poster_filename": "glass-onion-a-knives-out-mystery.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2022-11-23",
+    "isMovie": true
+  },
+  {
+    "id": "john-wick-chapter-4-603692",
+    "title": "John Wick: Chapter 4",
+    "tmdb_id": 603692,
+    "poster_filename": "john-wick-chapter-4.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "youtubetv"
+    ],
+    "release_date": "2023-03-24",
+    "isMovie": true
+  },
+  {
+    "id": "dune-438631",
+    "title": "Dune",
+    "tmdb_id": 438631,
+    "poster_filename": "dune.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax"
+    ],
+    "release_date": "2021-10-22",
+    "isMovie": true
+  },
+  {
+    "id": "afterburn-507244",
+    "title": "Afterburn",
+    "tmdb_id": 507244,
+    "poster_filename": "afterburn.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-09-19",
+    "isMovie": true
+  },
+  {
+    "id": "valiant-one-1009640",
+    "title": "Valiant One",
+    "tmdb_id": 1009640,
+    "poster_filename": "valiant-one.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2025-01-31",
+    "isMovie": true
+  },
+  {
+    "id": "the-gorge-950396",
+    "title": "The Gorge",
+    "tmdb_id": 950396,
+    "poster_filename": "the-gorge.jpg",
+    "listType": "top",
+    "services": [
+      "appletv",
+      "appletvamazonchannel"
+    ],
+    "release_date": "2025-02-13",
+    "isMovie": true
+  },
+  {
+    "id": "coco-354912",
+    "title": "Coco",
+    "tmdb_id": 354912,
+    "poster_filename": "coco.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2017-11-22",
+    "isMovie": true
+  },
+  {
+    "id": "hamnet-858024",
+    "title": "Hamnet",
+    "tmdb_id": 858024,
+    "poster_filename": "hamnet.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-26",
+    "isMovie": true
+  },
+  {
+    "id": "aew-revolution-2021-the-buy-in-803512",
+    "title": "AEW Revolution 2021: The Buy In",
+    "tmdb_id": 803512,
+    "poster_filename": "aew-revolution-2021-the-buy-in.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2021-03-07",
+    "isMovie": true
+  },
+  {
+    "id": "the-day-the-earth-blew-up-a-looney-tunes-movie-870360",
+    "title": "The Day the Earth Blew Up: A Looney Tunes Movie",
+    "tmdb_id": 870360,
+    "poster_filename": "the-day-the-earth-blew-up-a-looney-tunes-movie.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2025-03-14",
+    "isMovie": true
+  },
+  {
+    "id": "stitch-head-1214130",
+    "title": "Stitch Head",
+    "tmdb_id": 1214130,
+    "poster_filename": "stitch-head.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-29",
+    "isMovie": true
+  },
+  {
+    "id": "captain-america-brave-new-world-822119",
+    "title": "Captain America: Brave New World",
+    "tmdb_id": 822119,
+    "poster_filename": "captain-america-brave-new-world.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-02-14",
+    "isMovie": true
+  },
+  {
+    "id": "karate-kid-legends-1011477",
+    "title": "Karate Kid: Legends",
+    "tmdb_id": 1011477,
+    "poster_filename": "karate-kid-legends.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "release_date": "2025-05-30",
+    "isMovie": true
+  },
+  {
+    "id": "play-dirty-941109",
+    "title": "Play Dirty",
+    "tmdb_id": 941109,
+    "poster_filename": "play-dirty.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-10-01",
+    "isMovie": true
+  },
+  {
+    "id": "smurfs-936108",
+    "title": "Smurfs",
+    "tmdb_id": 936108,
+    "poster_filename": "smurfs.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "mgm+amazonchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "mgmplus",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2025-07-18",
+    "isMovie": true
+  },
+  {
+    "id": "gabbys-dollhouse-the-movie-1280282",
+    "title": "Gabby's Dollhouse: The Movie",
+    "tmdb_id": 1280282,
+    "poster_filename": "gabbys-dollhouse-the-movie.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-09-26",
+    "isMovie": true
+  },
+  {
+    "id": "eternity-1259102",
+    "title": "Eternity",
+    "tmdb_id": 1259102,
+    "poster_filename": "eternity.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-26",
+    "isMovie": true
+  },
+  {
+    "id": "the-smashing-machine-760329",
+    "title": "The Smashing Machine",
+    "tmdb_id": 760329,
+    "poster_filename": "the-smashing-machine.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-03",
+    "isMovie": true
+  },
+  {
+    "id": "mufasa-the-lion-king-762509",
+    "title": "Mufasa: The Lion King",
+    "tmdb_id": 762509,
+    "poster_filename": "mufasa-the-lion-king.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2024-12-20",
+    "isMovie": true
+  },
+  {
+    "id": "mac-beth-977606",
+    "title": "Mac Beth",
+    "tmdb_id": 977606,
+    "poster_filename": "mac-beth.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2022-05-16",
+    "isMovie": true
+  },
+  {
+    "id": "heads-of-state-749170",
+    "title": "Heads of State",
+    "tmdb_id": 749170,
+    "poster_filename": "heads-of-state.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-06-24",
+    "isMovie": true
+  },
+  {
+    "id": "godzilla-x-kong-the-new-empire-823464",
+    "title": "Godzilla x Kong: The New Empire",
+    "tmdb_id": 823464,
+    "poster_filename": "godzilla-x-kong-the-new-empire.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2024-03-29",
+    "isMovie": true
+  },
+  {
+    "id": "everything-everywhere-all-at-once-545611",
+    "title": "Everything Everywhere All at Once",
+    "tmdb_id": 545611,
+    "poster_filename": "everything-everywhere-all-at-once.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2022-03-25",
+    "isMovie": true
+  },
+  {
+    "id": "fifty-shades-of-grey-216015",
+    "title": "Fifty Shades of Grey",
+    "tmdb_id": 216015,
+    "poster_filename": "fifty-shades-of-grey.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2015-02-13",
+    "isMovie": true
+  },
+  {
+    "id": "bad-boys-ride-or-die-573435",
+    "title": "Bad Boys: Ride or Die",
+    "tmdb_id": 573435,
+    "poster_filename": "bad-boys-ride-or-die.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "release_date": "2024-06-07",
+    "isMovie": true
+  },
+  {
+    "id": "faith-in-the-family-the-spirit-of-christmas-1448808",
+    "title": "Faith In The Family: The Spirit of Christmas",
+    "tmdb_id": 1448808,
+    "poster_filename": "faith-in-the-family-the-spirit-of-christmas.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-24",
+    "isMovie": true
+  },
+  {
+    "id": "dune-part-two-693134",
+    "title": "Dune: Part Two",
+    "tmdb_id": 693134,
+    "poster_filename": "dune-part-two.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2024-03-01",
+    "isMovie": true
+  },
+  {
+    "id": "the-spongebob-movie-search-for-squarepants-991494",
+    "title": "The SpongeBob Movie: Search for SquarePants",
+    "tmdb_id": 991494,
+    "poster_filename": "the-spongebob-movie-search-for-squarepants.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-12-19",
+    "isMovie": true
+  },
+  {
+    "id": "kung-fu-panda-4-1011985",
+    "title": "Kung Fu Panda 4",
+    "tmdb_id": 1011985,
+    "poster_filename": "kung-fu-panda-4.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2024-03-08",
+    "isMovie": true
+  },
+  {
+    "id": "blade-runner-2049-335984",
+    "title": "Blade Runner 2049",
+    "tmdb_id": 335984,
+    "poster_filename": "blade-runner-2049.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2017-10-06",
+    "isMovie": true
+  },
+  {
+    "id": "joker-475557",
+    "title": "Joker",
+    "tmdb_id": 475557,
+    "poster_filename": "joker.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2019-10-04",
+    "isMovie": true
+  },
+  {
+    "id": "now-you-see-me-2-291805",
+    "title": "Now You See Me 2",
+    "tmdb_id": 291805,
+    "poster_filename": "now-you-see-me-2.jpg",
+    "listType": "top",
+    "services": [
+      "moviesphere+amazonchannel"
+    ],
+    "release_date": "2016-06-10",
+    "isMovie": true
+  },
+  {
+    "id": "the-power-of-the-present-605928",
+    "title": "The Power of the Present",
+    "tmdb_id": 605928,
+    "poster_filename": "the-power-of-the-present.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2017-06-27",
+    "isMovie": true
+  },
+  {
+    "id": "spider-man-homecoming-315635",
+    "title": "Spider-Man: Homecoming",
+    "tmdb_id": 315635,
+    "poster_filename": "spider-man-homecoming.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "prime",
+      "fubotv",
+      "youtubetv",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2017-07-07",
+    "isMovie": true
+  },
+  {
+    "id": "marty-supreme-1317288",
+    "title": "Marty Supreme",
+    "tmdb_id": 1317288,
+    "poster_filename": "marty-supreme.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-12-19",
+    "isMovie": true
+  },
+  {
+    "id": "the-christmas-chronicles-527435",
+    "title": "The Christmas Chronicles",
+    "tmdb_id": 527435,
+    "poster_filename": "the-christmas-chronicles.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2018-11-22",
+    "isMovie": true
+  },
+  {
+    "id": "prisoner-of-war-1328803",
+    "title": "Prisoner of War",
+    "tmdb_id": 1328803,
+    "poster_filename": "prisoner-of-war.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-09-19",
+    "isMovie": true
+  },
+  {
+    "id": "avengers-endgame-299534",
+    "title": "Avengers: Endgame",
+    "tmdb_id": 299534,
+    "poster_filename": "avengers-endgame.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "tnt",
+      "tbs",
+      "trutv"
+    ],
+    "release_date": "2019-04-26",
+    "isMovie": true
+  },
+  {
+    "id": "jingle-bell-heist-1218762",
+    "title": "Jingle Bell Heist",
+    "tmdb_id": 1218762,
+    "poster_filename": "jingle-bell-heist.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-11-26",
+    "isMovie": true
+  },
+  {
+    "id": "boyka-undisputed-iv-348893",
+    "title": "Boyka: Undisputed IV",
+    "tmdb_id": 348893,
+    "poster_filename": "boyka-undisputed-iv.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "amazonprimevideowithads",
+      "shout!factoryamazonchannel"
+    ],
+    "release_date": "2016-09-22",
+    "isMovie": true
+  },
+  {
+    "id": "end-of-loyalty-1096563",
+    "title": "End of Loyalty",
+    "tmdb_id": 1096563,
+    "poster_filename": "end-of-loyalty.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2023-03-07",
+    "isMovie": true
+  },
+  {
+    "id": "venom-let-there-be-carnage-580489",
+    "title": "Venom: Let There Be Carnage",
+    "tmdb_id": 580489,
+    "poster_filename": "venom-let-there-be-carnage.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "starzrokupremiumchannel",
+      "starz",
+      "philo",
+      "starzamazonchannel"
+    ],
+    "release_date": "2021-10-01",
+    "isMovie": true
+  },
+  {
+    "id": "brawl-in-cell-block-99-398175",
+    "title": "Brawl in Cell Block 99",
+    "tmdb_id": 398175,
+    "poster_filename": "brawl-in-cell-block-99.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "philo",
+      "mubi",
+      "mubiamazonchannel"
+    ],
+    "release_date": "2017-10-06",
+    "isMovie": true
+  },
+  {
+    "id": "paulie-go-962256",
+    "title": "Paulie Go!",
+    "tmdb_id": 962256,
+    "poster_filename": "paulie-go.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv"
+    ],
+    "release_date": "2022-05-24",
+    "isMovie": true
+  },
+  {
+    "id": "mickey-17-696506",
+    "title": "Mickey 17",
+    "tmdb_id": 696506,
+    "poster_filename": "mickey-17.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hbomax",
+      "hbomaxamazonchannel",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-03-07",
+    "isMovie": true
+  },
+  {
+    "id": "indiana-jones-and-the-dial-of-destiny-335977",
+    "title": "Indiana Jones and the Dial of Destiny",
+    "tmdb_id": 335977,
+    "poster_filename": "indiana-jones-and-the-dial-of-destiny.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2023-06-30",
+    "isMovie": true
+  },
+  {
+    "id": "me-before-you-296096",
+    "title": "Me Before You",
+    "tmdb_id": 296096,
+    "poster_filename": "me-before-you.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "mgm+amazonchannel",
+      "mgmplusrokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2016-06-03",
+    "isMovie": true
+  },
+  {
+    "id": "after-the-hunt-1265063",
+    "title": "After the Hunt",
+    "tmdb_id": 1265063,
+    "poster_filename": "after-the-hunt.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-10-10",
+    "isMovie": true
+  },
+  {
+    "id": "inside-out-150540",
+    "title": "Inside Out",
+    "tmdb_id": 150540,
+    "poster_filename": "inside-out.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2015-06-19",
+    "isMovie": true
+  },
+  {
+    "id": "puss-in-boots-the-last-wish-315162",
+    "title": "Puss in Boots: The Last Wish",
+    "tmdb_id": 315162,
+    "poster_filename": "puss-in-boots-the-last-wish.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2022-12-21",
+    "isMovie": true
+  },
+  {
+    "id": "mission-impossible-dead-reckoning-part-one-575264",
+    "title": "Mission: Impossible - Dead Reckoning Part One",
+    "tmdb_id": 575264,
+    "poster_filename": "mission-impossible-dead-reckoning-part-one.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "mgm+amazonchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2023-07-10",
+    "isMovie": true
+  },
+  {
+    "id": "wonder-woman-297762",
+    "title": "Wonder Woman",
+    "tmdb_id": 297762,
+    "poster_filename": "wonder-woman.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2017-06-02",
+    "isMovie": true
+  },
+  {
+    "id": "the-batman-414906",
+    "title": "The Batman",
+    "tmdb_id": 414906,
+    "poster_filename": "the-batman.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2022-03-04",
+    "isMovie": true
+  },
+  {
+    "id": "spinal-tap-ii-the-end-continues-975225",
+    "title": "Spinal Tap II: The End Continues",
+    "tmdb_id": 975225,
+    "poster_filename": "spinal-tap-ii-the-end-continues.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2025-09-12",
+    "isMovie": true
+  },
+  {
+    "id": "how-to-date-billy-walsh-1017633",
+    "title": "How to Date Billy Walsh",
+    "tmdb_id": 1017633,
+    "poster_filename": "how-to-date-billy-walsh.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2024-04-04",
+    "isMovie": true
+  },
+  {
+    "id": "valerian-and-the-city-of-a-thousand-planets-339964",
+    "title": "Valerian and the City of a Thousand Planets",
+    "tmdb_id": 339964,
+    "poster_filename": "valerian-and-the-city-of-a-thousand-planets.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "cinemaxamazonchannel",
+      "cinemaxappletvchannel"
+    ],
+    "release_date": "2017-07-21",
+    "isMovie": true
+  },
+  {
+    "id": "john-wick-chapter-2-324552",
+    "title": "John Wick: Chapter 2",
+    "tmdb_id": 324552,
+    "poster_filename": "john-wick-chapter-2.jpg",
+    "listType": "top",
+    "services": [
+      "youtubetv"
+    ],
+    "release_date": "2017-02-10",
+    "isMovie": true
+  },
+  {
+    "id": "the-suicide-squad-436969",
+    "title": "The Suicide Squad",
+    "tmdb_id": 436969,
+    "poster_filename": "the-suicide-squad.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "release_date": "2021-08-06",
+    "isMovie": true
+  },
+  {
+    "id": "a-merry-little-ex-mas-1401318",
+    "title": "A Merry Little Ex-Mas",
+    "tmdb_id": 1401318,
+    "poster_filename": "a-merry-little-ex-mas.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-11-12",
+    "isMovie": true
+  },
+  {
+    "id": "freakier-friday-1125257",
+    "title": "Freakier Friday",
+    "tmdb_id": 1125257,
+    "poster_filename": "freakier-friday.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "hulu"
+    ],
+    "release_date": "2025-08-08",
+    "isMovie": true
+  },
+  {
+    "id": "bonjour-tristesse-1127648",
+    "title": "Bonjour Tristesse",
+    "tmdb_id": 1127648,
+    "poster_filename": "bonjour-tristesse.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "starzrokupremiumchannel",
+      "starz",
+      "philo",
+      "starzamazonchannel"
+    ],
+    "release_date": "2025-05-02",
+    "isMovie": true
+  },
+  {
+    "id": "if-i-had-legs-id-kick-you-1160360",
+    "title": "If I Had Legs I'd Kick You",
+    "tmdb_id": 1160360,
+    "poster_filename": "if-i-had-legs-id-kick-you.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-10-10",
+    "isMovie": true
+  },
+  {
+    "id": "stockholm-bloodbath-1051486",
+    "title": "Stockholm Bloodbath",
+    "tmdb_id": 1051486,
+    "poster_filename": "stockholm-bloodbath.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "starzrokupremiumchannel",
+      "starz",
+      "philo",
+      "starzamazonchannel"
+    ],
+    "release_date": "2024-11-08",
+    "isMovie": true
+  },
+  {
+    "id": "after-everything-820525",
+    "title": "After Everything",
+    "tmdb_id": 820525,
+    "poster_filename": "after-everything.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2023-09-13",
+    "isMovie": true
+  },
+  {
+    "id": "the-phoenician-scheme-1137350",
+    "title": "The Phoenician Scheme",
+    "tmdb_id": 1137350,
+    "poster_filename": "the-phoenician-scheme.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2025-05-30",
+    "isMovie": true
+  },
+  {
+    "id": "prey-766507",
+    "title": "Prey",
+    "tmdb_id": 766507,
+    "poster_filename": "prey.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2022-08-02",
+    "isMovie": true
+  },
+  {
+    "id": "hearts-around-the-table-sharis-second-act-1428267",
+    "title": "Hearts Around the Table: Shari's Second Act",
+    "tmdb_id": 1428267,
+    "poster_filename": "hearts-around-the-table-sharis-second-act.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "philo",
+      "hallmark+amazonchannel",
+      "hallmark+appletvchannel",
+      "hallmarktvamazonchannel"
+    ],
+    "release_date": "2025-03-29",
+    "isMovie": true
+  },
+  {
+    "id": "that-galwho-was-in-that-thing-that-guy-2-323555",
+    "title": "That Gal...Who Was in That Thing: That Guy 2",
+    "tmdb_id": 323555,
+    "poster_filename": "that-galwho-was-in-that-thing-that-guy-2.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2015-03-07",
+    "isMovie": true
+  },
+  {
+    "id": "after-537915",
+    "title": "After",
+    "tmdb_id": 537915,
+    "poster_filename": "after.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "filmbox+",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2019-04-12",
+    "isMovie": true
+  },
+  {
+    "id": "have-you-got-it-yet-the-story-of-syd-barrett-and-pink-floyd-1118723",
+    "title": "Have You Got It Yet? The Story of Syd Barrett and Pink Floyd",
+    "tmdb_id": 1118723,
+    "poster_filename": "have-you-got-it-yet-the-story-of-syd-barrett-and-pink-floyd.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2023-05-15",
+    "isMovie": true
+  },
+  {
+    "id": "el-camino-a-breaking-bad-movie-559969",
+    "title": "El Camino: A Breaking Bad Movie",
+    "tmdb_id": 559969,
+    "poster_filename": "el-camino-a-breaking-bad-movie.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2019-10-11",
+    "isMovie": true
+  },
+  {
+    "id": "a-house-of-dynamite-1290159",
+    "title": "A House of Dynamite",
+    "tmdb_id": 1290159,
+    "poster_filename": "a-house-of-dynamite.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2025-10-10",
+    "isMovie": true
+  },
+  {
+    "id": "live-in-front-of-a-studio-audience-all-in-the-family-and-good-times-657148",
+    "title": "Live in Front of a Studio Audience: \"All in the Family\" and \"Good Times\"",
+    "tmdb_id": 657148,
+    "poster_filename": "live-in-front-of-a-studio-audience-all-in-the-family-and-good-times.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2019-12-18",
+    "isMovie": true
+  },
+  {
+    "id": "snow-white-447273",
+    "title": "Snow White",
+    "tmdb_id": 447273,
+    "poster_filename": "snow-white.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2025-03-21",
+    "isMovie": true
+  },
+  {
+    "id": "spider-man-far-from-home-429617",
+    "title": "Spider-Man: Far From Home",
+    "tmdb_id": 429617,
+    "poster_filename": "spider-man-far-from-home.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "fubotv",
+      "youtubetv"
+    ],
+    "release_date": "2019-07-02",
+    "isMovie": true
+  },
+  {
+    "id": "the-hunger-games-mockingjay-part-2-131634",
+    "title": "The Hunger Games: Mockingjay - Part 2",
+    "tmdb_id": 131634,
+    "poster_filename": "the-hunger-games-mockingjay-part-2.jpg",
+    "listType": "top",
+    "services": [
+      "moviesphere+amazonchannel"
+    ],
+    "release_date": "2015-11-18",
+    "isMovie": true
+  },
+  {
+    "id": "how-to-plan-an-orgy-in-a-small-town-356300",
+    "title": "How to Plan an Orgy in a Small Town",
+    "tmdb_id": 356300,
+    "poster_filename": "how-to-plan-an-orgy-in-a-small-town.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2016-05-13",
+    "isMovie": true
+  },
+  {
+    "id": "gladiator-ii-558449",
+    "title": "Gladiator II",
+    "tmdb_id": 558449,
+    "poster_filename": "gladiator-ii.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "mgm+amazonchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "amazonprimevideowithads",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2024-11-22",
+    "isMovie": true
+  },
+  {
+    "id": "in-the-lost-lands-324544",
+    "title": "In the Lost Lands",
+    "tmdb_id": 324544,
+    "poster_filename": "in-the-lost-lands.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2025-03-07",
+    "isMovie": true
+  },
+  {
+    "id": "after-yang-585378",
+    "title": "After Yang",
+    "tmdb_id": 585378,
+    "poster_filename": "after-yang.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2022-03-04",
+    "isMovie": true
+  },
+  {
+    "id": "the-worlds-greatest-head-massage-an-asmr-journey-404020",
+    "title": "The World's Greatest Head Massage: An ASMR Journey",
+    "tmdb_id": 404020,
+    "poster_filename": "the-worlds-greatest-head-massage-an-asmr-journey.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2016-07-08",
+    "isMovie": true
+  },
+  {
+    "id": "daddys-home-2-419680",
+    "title": "Daddy's Home 2",
+    "tmdb_id": 419680,
+    "poster_filename": "daddys-home-2.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "release_date": "2017-11-10",
+    "isMovie": true
+  },
+  {
+    "id": "anora-1064213",
+    "title": "Anora",
+    "tmdb_id": 1064213,
+    "poster_filename": "anora.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2024-10-18",
+    "isMovie": true
+  },
+  {
+    "id": "moon-students-1137743",
+    "title": "Moon Students",
+    "tmdb_id": 1137743,
+    "poster_filename": "moon-students.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2023-06-13",
+    "isMovie": true
+  },
+  {
+    "id": "between-cuba-and-mexico-everything-is-bonito-sabroso-345910",
+    "title": "Between Cuba and Mexico, Everything is Bonito & Sabroso",
+    "tmdb_id": 345910,
+    "poster_filename": "between-cuba-and-mexico-everything-is-bonito-sabroso.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2016-01-29",
+    "isMovie": true
+  },
+  {
+    "id": "deadpool-293660",
+    "title": "Deadpool",
+    "tmdb_id": 293660,
+    "poster_filename": "deadpool.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "youtubetv"
+    ],
+    "release_date": "2016-02-12",
+    "isMovie": true
+  },
+  {
+    "id": "wonder-woman-1984-464052",
+    "title": "Wonder Woman 1984",
+    "tmdb_id": 464052,
+    "poster_filename": "wonder-woman-1984.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "tnt",
+      "tbs",
+      "trutv"
+    ],
+    "release_date": "2020-12-25",
+    "isMovie": true
+  },
+  {
+    "id": "the-beekeeper-866398",
+    "title": "The Beekeeper",
+    "tmdb_id": 866398,
+    "poster_filename": "the-beekeeper.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2024-01-12",
+    "isMovie": true
+  },
+  {
+    "id": "migration-940551",
+    "title": "Migration",
+    "tmdb_id": 940551,
+    "poster_filename": "migration.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2023-12-22",
+    "isMovie": true
+  },
+  {
+    "id": "you-are-so-not-invited-to-my-bat-mitzvah-999644",
+    "title": "You Are So Not Invited to My Bat Mitzvah",
+    "tmdb_id": 999644,
+    "poster_filename": "you-are-so-not-invited-to-my-bat-mitzvah.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "release_date": "2023-08-18",
+    "isMovie": true
+  },
+  {
+    "id": "the-boss-baby-family-business-459151",
+    "title": "The Boss Baby: Family Business",
+    "tmdb_id": 459151,
+    "poster_filename": "the-boss-baby-family-business.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "release_date": "2021-07-02",
+    "isMovie": true
+  },
+  {
+    "id": "elemental-976573",
+    "title": "Elemental",
+    "tmdb_id": 976573,
+    "poster_filename": "elemental.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "release_date": "2023-06-16",
+    "isMovie": true
+  },
+  {
+    "id": "the-idea-of-you-843527",
+    "title": "The Idea of You",
+    "tmdb_id": 843527,
+    "poster_filename": "the-idea-of-you.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "release_date": "2024-05-02",
+    "isMovie": true
+  },
+  {
+    "id": "all-is-true-558095",
+    "title": "All Is True",
+    "tmdb_id": 558095,
+    "poster_filename": "all-is-true.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2018-12-21",
+    "isMovie": true
+  },
+  {
+    "id": "too-soon-comedy-after-911-862576",
+    "title": "Too Soon: Comedy After 9/11",
+    "tmdb_id": 862576,
+    "poster_filename": "too-soon-comedy-after-911.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2021-09-11",
+    "isMovie": true
+  },
+  {
+    "id": "the-roses-1267905",
+    "title": "The Roses",
+    "tmdb_id": 1267905,
+    "poster_filename": "the-roses.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "release_date": "2025-08-29",
+    "isMovie": true
+  },
+  {
+    "id": "witchy-ways-1053987",
+    "title": "Witchy Ways",
+    "tmdb_id": 1053987,
+    "poster_filename": "witchy-ways.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2024-09-13",
+    "isMovie": true
+  },
+  {
+    "id": "dark-arts-inside-to-the-devil-a-daughter-856505",
+    "title": "Dark Arts: Inside 'To the Devil a Daughter'",
+    "tmdb_id": 856505,
+    "poster_filename": "dark-arts-inside-to-the-devil-a-daughter.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2018-01-28",
+    "isMovie": true
+  },
+  {
+    "id": "muzzle-city-of-wolves-1439112",
+    "title": "Muzzle: City of Wolves",
+    "tmdb_id": 1439112,
+    "poster_filename": "muzzle-city-of-wolves.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2025-11-14",
+    "isMovie": true
+  },
+  {
+    "id": "return-to-sender-333381",
+    "title": "Return to Sender",
+    "tmdb_id": 333381,
+    "poster_filename": "return-to-sender.jpg",
+    "listType": "top",
+    "services": [],
+    "release_date": "2015-05-31",
+    "isMovie": true
+  }
+]

@@ -9,24 +9,24 @@ interface ExploreTabProps {
   onAddItem: () => void;
 }
 
+const ITEMS_PER_LOAD = 20;
+
 export function ExploreTab({ }: ExploreTabProps) {
   const [allContent, setAllContent] = useState<ExploreItem[]>([]);
-  const [filteredContent, setFilteredContent] = useState<ExploreItem[]>([]);
   const [displayedContent, setDisplayedContent] = useState<ExploreItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({
-    type: 'all', // 'all', 'movie', 'show'
-    year: 'all',
-    service: 'all'
-  });
-  const [loadedCount, setLoadedCount] = useState(20);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [loadedCount, setLoadedCount] = useState(ITEMS_PER_LOAD);
+  const [hasMore, setHasMore] = useState(true);
   const observerTarget = useRef<HTMLDivElement>(null);
 
-  const loadContent = async () => {
+  const loadInitialContent = async () => {
     setLoading(true);
     try {
       const content = await getExploreContent();
       setAllContent(content);
+      setHasMore(content.length > ITEMS_PER_LOAD);
+      setDisplayedContent(content.slice(0, ITEMS_PER_LOAD));
     } catch (error) {
       console.error('Failed to load explore content:', error);
     } finally {
@@ -34,58 +34,42 @@ export function ExploreTab({ }: ExploreTabProps) {
     }
   };
 
+  const loadMore = () => {
+    if (loadingMore || !hasMore) return;
+    
+    setLoadingMore(true);
+    // Simulate a small delay for better UX
+    setTimeout(() => {
+      const nextCount = loadedCount + ITEMS_PER_LOAD;
+      const newItems = allContent.slice(loadedCount, nextCount);
+      
+      if (newItems.length > 0) {
+        setDisplayedContent(prev => [...prev, ...newItems]);
+        setLoadedCount(nextCount);
+        setHasMore(nextCount < allContent.length);
+      } else {
+        setHasMore(false);
+      }
+      setLoadingMore(false);
+    }, 100);
+  };
+
   useEffect(() => {
-    loadContent();
+    loadInitialContent();
   }, []);
-
-  useEffect(() => {
-    let filtered = [...allContent];
-
-    // Filter by type
-    if (filters.type === 'movie') {
-      filtered = filtered.filter(item => item.isMovie);
-    } else if (filters.type === 'show') {
-      filtered = filtered.filter(item => !item.isMovie);
-    }
-
-    // Filter by service
-    if (filters.service !== 'all') {
-      filtered = filtered.filter(item => 
-        item.services.some(s => s.toLowerCase() === filters.service.toLowerCase())
-      );
-    }
-
-    // Filter by year
-    if (filters.year !== 'all') {
-      const year = parseInt(filters.year);
-      filtered = filtered.filter(item => {
-        const date = item.isMovie ? item.release_date : item.first_air_date;
-        if (!date) return false;
-        const itemYear = new Date(date).getFullYear();
-        return itemYear === year;
-      });
-    }
-
-    setFilteredContent(filtered);
-    setLoadedCount(20); // Reset loaded count when filters change
-  }, [filters, allContent]);
-
-  useEffect(() => {
-    setDisplayedContent(filteredContent.slice(0, loadedCount));
-  }, [filteredContent, loadedCount]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && loadedCount < filteredContent.length) {
-          setLoadedCount(prev => Math.min(prev + 20, filteredContent.length));
+        if (entries[0].isIntersecting && hasMore && !loadingMore) {
+          loadMore();
         }
       },
       { threshold: 0.1 }
     );
 
     const currentTarget = observerTarget.current;
-    if (currentTarget && loadedCount < filteredContent.length) {
+    if (currentTarget && hasMore) {
       observer.observe(currentTarget);
     }
 
@@ -94,26 +78,7 @@ export function ExploreTab({ }: ExploreTabProps) {
         observer.unobserve(currentTarget);
       }
     };
-  }, [loadedCount, filteredContent.length]);
-
-  const getAvailableYears = (): number[] => {
-    const years = new Set<number>();
-    allContent.forEach(item => {
-      const date = item.isMovie ? item.release_date : item.first_air_date;
-      if (date) {
-        years.add(new Date(date).getFullYear());
-      }
-    });
-    return Array.from(years).sort((a, b) => b - a).slice(0, 20); // Last 20 years
-  };
-
-  const getAvailableServices = (): string[] => {
-    const services = new Set<string>();
-    allContent.forEach(item => {
-      item.services.forEach(s => services.add(s));
-    });
-    return Array.from(services).sort();
-  };
+  }, [hasMore, loadingMore, loadedCount, allContent.length]);
 
   const convertToWatchBoxItem = (item: ExploreItem): WatchBoxItem => {
     return {
@@ -130,49 +95,8 @@ export function ExploreTab({ }: ExploreTabProps) {
     return <div className="loading">Loading explore content...</div>;
   }
 
-  const availableYears = getAvailableYears();
-  const availableServices = getAvailableServices();
-
   return (
     <div className="explore-tab">
-      <div className="explore-filters">
-        <select
-          className="filter-select"
-          value={filters.type}
-          onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-        >
-          <option value="all">All</option>
-          <option value="movie">Movies</option>
-          <option value="show">Shows</option>
-        </select>
-        
-        <select
-          className="filter-select"
-          value={filters.service}
-          onChange={(e) => setFilters({ ...filters, service: e.target.value })}
-        >
-          <option value="all">All Services</option>
-          {availableServices.map(service => (
-            <option key={service} value={service}>
-              {service.charAt(0).toUpperCase() + service.slice(1)}
-            </option>
-          ))}
-        </select>
-        
-        <select
-          className="filter-select"
-          value={filters.year}
-          onChange={(e) => setFilters({ ...filters, year: e.target.value })}
-        >
-          <option value="all">All Years</option>
-          {availableYears.map(year => (
-            <option key={year} value={year.toString()}>
-              {year}
-            </option>
-          ))}
-        </select>
-      </div>
-
       <div className="explore-grid">
         {displayedContent.map((item) => {
           const watchBoxItem = convertToWatchBoxItem(item);
@@ -187,8 +111,10 @@ export function ExploreTab({ }: ExploreTabProps) {
         })}
       </div>
       
-      {loadedCount < displayedContent.length && (
-        <div ref={observerTarget} style={{ height: '20px', marginTop: '20px' }} />
+      {hasMore && (
+        <div ref={observerTarget} style={{ height: '20px', marginTop: '20px' }}>
+          {loadingMore && <div className="loading-more">Loading more...</div>}
+        </div>
       )}
     </div>
   );

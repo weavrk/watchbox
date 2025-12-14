@@ -1,0 +1,2783 @@
+[
+  {
+    "id": "stranger-things-66732",
+    "title": "Stranger Things",
+    "tmdb_id": 66732,
+    "poster_filename": "stranger-things.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2016-07-15",
+    "isMovie": false
+  },
+  {
+    "id": "it-welcome-to-derry-200875",
+    "title": "IT: Welcome to Derry",
+    "tmdb_id": 200875,
+    "poster_filename": "it-welcome-to-derry.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "spectrumondemand"
+    ],
+    "first_air_date": "2025-10-26",
+    "isMovie": false
+  },
+  {
+    "id": "spartacus-house-of-ashur-240459",
+    "title": "Spartacus: House of Ashur",
+    "tmdb_id": 240459,
+    "poster_filename": "spartacus-house-of-ashur.jpg",
+    "listType": "top",
+    "services": [
+      "starzappletvchannel",
+      "starzrokupremiumchannel",
+      "starz",
+      "philo",
+      "spectrumondemand",
+      "starzamazonchannel"
+    ],
+    "first_air_date": "2025-12-05",
+    "isMovie": false
+  },
+  {
+    "id": "supernatural-1622",
+    "title": "Supernatural",
+    "tmdb_id": 1622,
+    "poster_filename": "supernatural.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "youtubetv",
+      "tnt",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2005-09-13",
+    "isMovie": false
+  },
+  {
+    "id": "man-vs-baby-279601",
+    "title": "Man vs Baby",
+    "tmdb_id": 279601,
+    "poster_filename": "man-vs-baby.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2025-12-11",
+    "isMovie": false
+  },
+  {
+    "id": "greys-anatomy-1416",
+    "title": "Grey's Anatomy",
+    "tmdb_id": 1416,
+    "poster_filename": "greys-anatomy.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2005-03-27",
+    "isMovie": false
+  },
+  {
+    "id": "law-order-special-victims-unit-2734",
+    "title": "Law & Order: Special Victims Unit",
+    "tmdb_id": 2734,
+    "poster_filename": "law-order-special-victims-unit.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "peacockpremium",
+      "youtubetv",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "1999-09-20",
+    "isMovie": false
+  },
+  {
+    "id": "game-of-thrones-1399",
+    "title": "Game of Thrones",
+    "tmdb_id": 1399,
+    "poster_filename": "game-of-thrones.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "2011-04-17",
+    "isMovie": false
+  },
+  {
+    "id": "the-boys-from-brazil-rise-of-the-bolsonaros-210318",
+    "title": "The Boys from Brazil: Rise of the Bolsonaros",
+    "tmdb_id": 210318,
+    "poster_filename": "the-boys-from-brazil-rise-of-the-bolsonaros.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2022-09-05",
+    "isMovie": false
+  },
+  {
+    "id": "the-simpsons-456",
+    "title": "The Simpsons",
+    "tmdb_id": 456,
+    "poster_filename": "the-simpsons.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "hulu",
+      "fubotv",
+      "youtubetv"
+    ],
+    "first_air_date": "1989-12-17",
+    "isMovie": false
+  },
+  {
+    "id": "the-rookie-79744",
+    "title": "The Rookie",
+    "tmdb_id": 79744,
+    "poster_filename": "the-rookie.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "philo"
+    ],
+    "first_air_date": "2018-10-16",
+    "isMovie": false
+  },
+  {
+    "id": "ncis-4614",
+    "title": "NCIS",
+    "tmdb_id": 4614,
+    "poster_filename": "ncis.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu",
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "youtubetv",
+      "philo",
+      "netflixstandardwithads",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2003-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "record-of-ragnarok-114868",
+    "title": "Record of Ragnarok",
+    "tmdb_id": 114868,
+    "poster_filename": "record-of-ragnarok.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2021-06-17",
+    "isMovie": false
+  },
+  {
+    "id": "dexter-1405",
+    "title": "Dexter",
+    "tmdb_id": 1405,
+    "poster_filename": "dexter.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "spectrumondemand",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2006-10-01",
+    "isMovie": false
+  },
+  {
+    "id": "pluribus-225171",
+    "title": "Pluribus",
+    "tmdb_id": 225171,
+    "poster_filename": "pluribus.jpg",
+    "listType": "top",
+    "services": [
+      "appletv",
+      "appletvamazonchannel"
+    ],
+    "first_air_date": "2025-11-06",
+    "isMovie": false
+  },
+  {
+    "id": "shameless-34307",
+    "title": "Shameless",
+    "tmdb_id": 34307,
+    "poster_filename": "shameless.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2011-01-09",
+    "isMovie": false
+  },
+  {
+    "id": "family-guy-1434",
+    "title": "Family Guy",
+    "tmdb_id": 1434,
+    "poster_filename": "family-guy.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "adultswim"
+    ],
+    "first_air_date": "1999-01-31",
+    "isMovie": false
+  },
+  {
+    "id": "breaking-bad-1396",
+    "title": "Breaking Bad",
+    "tmdb_id": 1396,
+    "poster_filename": "breaking-bad.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2008-01-20",
+    "isMovie": false
+  },
+  {
+    "id": "house-1408",
+    "title": "House",
+    "tmdb_id": 1408,
+    "poster_filename": "house.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hulu",
+      "peacockpremium",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2004-11-16",
+    "isMovie": false
+  },
+  {
+    "id": "law-order-549",
+    "title": "Law & Order",
+    "tmdb_id": 549,
+    "poster_filename": "law-order.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "peacockpremium",
+      "youtubetv",
+      "philo",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "1990-09-13",
+    "isMovie": false
+  },
+  {
+    "id": "the-blacklist-46952",
+    "title": "The Blacklist",
+    "tmdb_id": 46952,
+    "poster_filename": "the-blacklist.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2013-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "criminal-minds-4057",
+    "title": "Criminal Minds",
+    "tmdb_id": 4057,
+    "poster_filename": "criminal-minds.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "philo",
+      "paramount+originalsamazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2005-09-22",
+    "isMovie": false
+  },
+  {
+    "id": "esref-ruya-283123",
+    "title": "Esref Ruya",
+    "tmdb_id": 283123,
+    "poster_filename": "esref-ruya.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-03-19",
+    "isMovie": false
+  },
+  {
+    "id": "the-war-between-the-land-and-the-sea-259886",
+    "title": "The War Between the Land and the Sea",
+    "tmdb_id": 259886,
+    "poster_filename": "the-war-between-the-land-and-the-sea.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-12-07",
+    "isMovie": false
+  },
+  {
+    "id": "midsomer-murders-764",
+    "title": "Midsomer Murders",
+    "tmdb_id": 764,
+    "poster_filename": "midsomer-murders.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "acorntv",
+      "acorntvamazonchannel",
+      "spectrumondemand",
+      "acorntvappletv"
+    ],
+    "first_air_date": "1997-03-23",
+    "isMovie": false
+  },
+  {
+    "id": "the-witcher-71912",
+    "title": "The Witcher",
+    "tmdb_id": 71912,
+    "poster_filename": "the-witcher.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2019-12-20",
+    "isMovie": false
+  },
+  {
+    "id": "friends-1668",
+    "title": "Friends",
+    "tmdb_id": 1668,
+    "poster_filename": "friends.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "tbs"
+    ],
+    "first_air_date": "1994-09-22",
+    "isMovie": false
+  },
+  {
+    "id": "homeland-1407",
+    "title": "Homeland",
+    "tmdb_id": 1407,
+    "poster_filename": "homeland.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu"
+    ],
+    "first_air_date": "2011-10-02",
+    "isMovie": false
+  },
+  {
+    "id": "the-daily-show-2224",
+    "title": "The Daily Show",
+    "tmdb_id": 2224,
+    "poster_filename": "the-daily-show.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "philo",
+      "sweatflixamazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "1996-07-22",
+    "isMovie": false
+  },
+  {
+    "id": "the-boys-76479",
+    "title": "The Boys",
+    "tmdb_id": 76479,
+    "poster_filename": "the-boys.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2019-07-25",
+    "isMovie": false
+  },
+  {
+    "id": "spartacus-46296",
+    "title": "Spartacus",
+    "tmdb_id": 46296,
+    "poster_filename": "spartacus.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "starzappletvchannel",
+      "starz",
+      "philo",
+      "spectrumondemand",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2010-01-22",
+    "isMovie": false
+  },
+  {
+    "id": "the-mentalist-5920",
+    "title": "The Mentalist",
+    "tmdb_id": 5920,
+    "poster_filename": "the-mentalist.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2008-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "vikings-44217",
+    "title": "Vikings",
+    "tmdb_id": 44217,
+    "poster_filename": "vikings.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "first_air_date": "2013-03-03",
+    "isMovie": false
+  },
+  {
+    "id": "tulsa-king-153312",
+    "title": "Tulsa King",
+    "tmdb_id": 153312,
+    "poster_filename": "tulsa-king.jpg",
+    "listType": "top",
+    "services": [
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramount+originalsamazonchannel",
+      "paramount+mtvamazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2022-11-13",
+    "isMovie": false
+  },
+  {
+    "id": "percy-jackson-and-the-olympians-103540",
+    "title": "Percy Jackson and the Olympians",
+    "tmdb_id": 103540,
+    "poster_filename": "percy-jackson-and-the-olympians.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "hulu"
+    ],
+    "first_air_date": "2023-12-19",
+    "isMovie": false
+  },
+  {
+    "id": "heated-rivalry-301507",
+    "title": "Heated Rivalry",
+    "tmdb_id": 301507,
+    "poster_filename": "heated-rivalry.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "2025-11-28",
+    "isMovie": false
+  },
+  {
+    "id": "one-punch-man-63926",
+    "title": "One-Punch Man",
+    "tmdb_id": 63926,
+    "poster_filename": "one-punch-man.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2015-10-05",
+    "isMovie": false
+  },
+  {
+    "id": "the-walking-dead-1402",
+    "title": "The Walking Dead",
+    "tmdb_id": 1402,
+    "poster_filename": "the-walking-dead.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "amcplusappletvchannel",
+      "amc+rokupremiumchannel",
+      "amc+",
+      "youtubetv",
+      "philo",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2010-10-31",
+    "isMovie": false
+  },
+  {
+    "id": "my-gift-lvl-9999-unlimited-gacha-backstabbed-in-a-backwater-dungeon-im-out-for-revenge-278635",
+    "title": "My Gift Lvl 9999 Unlimited Gacha: Backstabbed in a Backwater Dungeon, I'm Out for Revenge!",
+    "tmdb_id": 278635,
+    "poster_filename": "my-gift-lvl-9999-unlimited-gacha-backstabbed-in-a-backwater-dungeon-im-out-for-revenge.jpg",
+    "listType": "top",
+    "services": [
+      "hidive",
+      "hidiveamazonchannel"
+    ],
+    "first_air_date": "2025-10-03",
+    "isMovie": false
+  },
+  {
+    "id": "lucifer-63174",
+    "title": "Lucifer",
+    "tmdb_id": 63174,
+    "poster_filename": "lucifer.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2016-01-25",
+    "isMovie": false
+  },
+  {
+    "id": "the-flash-60735",
+    "title": "The Flash",
+    "tmdb_id": 60735,
+    "poster_filename": "the-flash.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2014-10-07",
+    "isMovie": false
+  },
+  {
+    "id": "wednesday-119051",
+    "title": "Wednesday",
+    "tmdb_id": 119051,
+    "poster_filename": "wednesday.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2022-11-23",
+    "isMovie": false
+  },
+  {
+    "id": "suits-37680",
+    "title": "Suits",
+    "tmdb_id": 37680,
+    "poster_filename": "suits.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "peacockpremium",
+      "netflixstandardwithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2011-06-23",
+    "isMovie": false
+  },
+  {
+    "id": "the-abandons-223300",
+    "title": "The Abandons",
+    "tmdb_id": 223300,
+    "poster_filename": "the-abandons.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2025-12-04",
+    "isMovie": false
+  },
+  {
+    "id": "csi-crime-scene-investigation-1431",
+    "title": "CSI: Crime Scene Investigation",
+    "tmdb_id": 1431,
+    "poster_filename": "csi-crime-scene-investigation.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2000-10-06",
+    "isMovie": false
+  },
+  {
+    "id": "the-vampire-diaries-18165",
+    "title": "The Vampire Diaries",
+    "tmdb_id": 18165,
+    "poster_filename": "the-vampire-diaries.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2009-09-10",
+    "isMovie": false
+  },
+  {
+    "id": "modern-family-1421",
+    "title": "Modern Family",
+    "tmdb_id": 1421,
+    "poster_filename": "modern-family.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "peacockpremium",
+      "youtubetv",
+      "tbs",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2009-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "dinasta-casillas-302463",
+    "title": "Dinastía Casillas",
+    "tmdb_id": 302463,
+    "poster_filename": "dinasta-casillas.jpg",
+    "listType": "top",
+    "services": [
+      "spectrumondemand"
+    ],
+    "first_air_date": "2025-10-07",
+    "isMovie": false
+  },
+  {
+    "id": "the-tonight-show-starring-jimmy-fallon-59941",
+    "title": "The Tonight Show Starring Jimmy Fallon",
+    "tmdb_id": 59941,
+    "poster_filename": "the-tonight-show-starring-jimmy-fallon.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2014-02-17",
+    "isMovie": false
+  },
+  {
+    "id": "bones-1911",
+    "title": "Bones",
+    "tmdb_id": 1911,
+    "poster_filename": "bones.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hulu",
+      "peacockpremium",
+      "youtubetv",
+      "bbcamerica",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2005-09-13",
+    "isMovie": false
+  },
+  {
+    "id": "golden-boy-210865",
+    "title": "Golden Boy",
+    "tmdb_id": 210865,
+    "poster_filename": "golden-boy.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2022-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "prison-break-2288",
+    "title": "Prison Break",
+    "tmdb_id": 2288,
+    "poster_filename": "prison-break.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "disneyplus",
+      "hulu",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2005-08-29",
+    "isMovie": false
+  },
+  {
+    "id": "miraculous-tales-of-ladybug-cat-noir-65334",
+    "title": "Miraculous: Tales of Ladybug & Cat Noir",
+    "tmdb_id": 65334,
+    "poster_filename": "miraculous-tales-of-ladybug-cat-noir.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "disneyplus",
+      "fubotv",
+      "youtubetv",
+      "disneynow",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2015-10-19",
+    "isMovie": false
+  },
+  {
+    "id": "two-and-a-half-men-2691",
+    "title": "Two and a Half Men",
+    "tmdb_id": 2691,
+    "poster_filename": "two-and-a-half-men.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "youtubetv",
+      "philo",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2003-09-22",
+    "isMovie": false
+  },
+  {
+    "id": "lost-4607",
+    "title": "Lost",
+    "tmdb_id": 4607,
+    "poster_filename": "lost.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2004-09-22",
+    "isMovie": false
+  },
+  {
+    "id": "american-dad-1433",
+    "title": "American Dad!",
+    "tmdb_id": 1433,
+    "poster_filename": "american-dad.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "youtubetv",
+      "adultswim",
+      "tbs"
+    ],
+    "first_air_date": "2005-02-06",
+    "isMovie": false
+  },
+  {
+    "id": "absentia-72755",
+    "title": "Absentia",
+    "tmdb_id": 72755,
+    "poster_filename": "absentia.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2017-09-25",
+    "isMovie": false
+  },
+  {
+    "id": "landman-157741",
+    "title": "Landman",
+    "tmdb_id": 157741,
+    "poster_filename": "landman.jpg",
+    "listType": "top",
+    "services": [
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramount+originalsamazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2024-11-17",
+    "isMovie": false
+  },
+  {
+    "id": "yellowstone-73586",
+    "title": "Yellowstone",
+    "tmdb_id": 73586,
+    "poster_filename": "yellowstone.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "peacockpremium",
+      "philo",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2018-06-20",
+    "isMovie": false
+  },
+  {
+    "id": "peaky-blinders-60574",
+    "title": "Peaky Blinders",
+    "tmdb_id": 60574,
+    "poster_filename": "peaky-blinders.jpg",
+    "listType": "top",
+    "services": [
+      "netflix"
+    ],
+    "first_air_date": "2013-09-12",
+    "isMovie": false
+  },
+  {
+    "id": "rick-and-morty-60625",
+    "title": "Rick and Morty",
+    "tmdb_id": 60625,
+    "poster_filename": "rick-and-morty.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "adultswim",
+      "adultswimamazonchannel"
+    ],
+    "first_air_date": "2013-12-02",
+    "isMovie": false
+  },
+  {
+    "id": "gachiakuta-256721",
+    "title": "Gachiakuta",
+    "tmdb_id": 256721,
+    "poster_filename": "gachiakuta.jpg",
+    "listType": "top",
+    "services": [
+      "crunchyroll",
+      "crunchyrollamazonchannel"
+    ],
+    "first_air_date": "2025-07-06",
+    "isMovie": false
+  },
+  {
+    "id": "castle-1419",
+    "title": "Castle",
+    "tmdb_id": 1419,
+    "poster_filename": "castle.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hulu",
+      "philo",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2009-03-09",
+    "isMovie": false
+  },
+  {
+    "id": "how-i-met-your-mother-1100",
+    "title": "How I Met Your Mother",
+    "tmdb_id": 1100,
+    "poster_filename": "how-i-met-your-mother.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2005-09-19",
+    "isMovie": false
+  },
+  {
+    "id": "the-sopranos-1398",
+    "title": "The Sopranos",
+    "tmdb_id": 1398,
+    "poster_filename": "the-sopranos.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "1999-01-10",
+    "isMovie": false
+  },
+  {
+    "id": "24-1973",
+    "title": "24",
+    "tmdb_id": 1973,
+    "poster_filename": "24.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2001-11-06",
+    "isMovie": false
+  },
+  {
+    "id": "from-124364",
+    "title": "FROM",
+    "tmdb_id": 124364,
+    "poster_filename": "from.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "mgm+amazonchannel",
+      "mgmplusrokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "spectrumondemand"
+    ],
+    "first_air_date": "2022-02-20",
+    "isMovie": false
+  },
+  {
+    "id": "the-office-2316",
+    "title": "The Office",
+    "tmdb_id": 2316,
+    "poster_filename": "the-office.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "youtubetv",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2005-03-24",
+    "isMovie": false
+  },
+  {
+    "id": "arrow-1412",
+    "title": "Arrow",
+    "tmdb_id": 1412,
+    "poster_filename": "arrow.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2012-10-10",
+    "isMovie": false
+  },
+  {
+    "id": "smallville-4604",
+    "title": "Smallville",
+    "tmdb_id": 4604,
+    "poster_filename": "smallville.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2001-10-16",
+    "isMovie": false
+  },
+  {
+    "id": "robin-hood-272418",
+    "title": "Robin Hood",
+    "tmdb_id": 272418,
+    "poster_filename": "robin-hood.jpg",
+    "listType": "top",
+    "services": [
+      "mgm+amazonchannel",
+      "mgmplusrokupremiumchannel",
+      "mgmplus",
+      "philo",
+      "spectrumondemand"
+    ],
+    "first_air_date": "2025-11-02",
+    "isMovie": false
+  },
+  {
+    "id": "the-manipulated-239385",
+    "title": "The Manipulated",
+    "tmdb_id": 239385,
+    "poster_filename": "the-manipulated.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2025-11-05",
+    "isMovie": false
+  },
+  {
+    "id": "teen-wolf-34524",
+    "title": "Teen Wolf",
+    "tmdb_id": 34524,
+    "poster_filename": "teen-wolf.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "prime",
+      "hulu",
+      "netflixstandardwithads",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2011-06-05",
+    "isMovie": false
+  },
+  {
+    "id": "doctor-who-57243",
+    "title": "Doctor Who",
+    "tmdb_id": 57243,
+    "poster_filename": "doctor-who.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2005-03-26",
+    "isMovie": false
+  },
+  {
+    "id": "columbo-873",
+    "title": "Columbo",
+    "tmdb_id": 873,
+    "poster_filename": "columbo.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "peacockpremium",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "1971-09-15",
+    "isMovie": false
+  },
+  {
+    "id": "chicago-fire-44006",
+    "title": "Chicago Fire",
+    "tmdb_id": 44006,
+    "poster_filename": "chicago-fire.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "youtubetv",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2012-10-10",
+    "isMovie": false
+  },
+  {
+    "id": "the-x-files-4087",
+    "title": "The X-Files",
+    "tmdb_id": 4087,
+    "poster_filename": "the-x-files.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "1993-09-10",
+    "isMovie": false
+  },
+  {
+    "id": "the-tonight-show-starring-johnny-carson-2261",
+    "title": "The Tonight Show Starring Johnny Carson",
+    "tmdb_id": 2261,
+    "poster_filename": "the-tonight-show-starring-johnny-carson.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv"
+    ],
+    "first_air_date": "1962-10-01",
+    "isMovie": false
+  },
+  {
+    "id": "jujutsu-kaisen-95479",
+    "title": "JUJUTSU KAISEN",
+    "tmdb_id": 95479,
+    "poster_filename": "jujutsu-kaisen.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu",
+      "crunchyroll",
+      "crunchyrollamazonchannel",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2020-10-03",
+    "isMovie": false
+  },
+  {
+    "id": "tagesschau-94722",
+    "title": "Tagesschau",
+    "tmdb_id": 94722,
+    "poster_filename": "tagesschau.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1952-12-26",
+    "isMovie": false
+  },
+  {
+    "id": "boundless-love-231100",
+    "title": "Boundless Love",
+    "tmdb_id": 231100,
+    "poster_filename": "boundless-love.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2023-09-21",
+    "isMovie": false
+  },
+  {
+    "id": "the-last-frontier-221079",
+    "title": "The Last Frontier",
+    "tmdb_id": 221079,
+    "poster_filename": "the-last-frontier.jpg",
+    "listType": "top",
+    "services": [
+      "appletv"
+    ],
+    "first_air_date": "2025-10-09",
+    "isMovie": false
+  },
+  {
+    "id": "the-good-doctor-71712",
+    "title": "The Good Doctor",
+    "tmdb_id": 71712,
+    "poster_filename": "the-good-doctor.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2017-09-25",
+    "isMovie": false
+  },
+  {
+    "id": "mayor-of-kingstown-97951",
+    "title": "Mayor of Kingstown",
+    "tmdb_id": 97951,
+    "poster_filename": "mayor-of-kingstown.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "spectrumondemand",
+      "amazonprimevideowithads",
+      "paramount+originalsamazonchannel",
+      "paramount+mtvamazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2021-11-14",
+    "isMovie": false
+  },
+  {
+    "id": "stargate-sg-1-4629",
+    "title": "Stargate SG-1",
+    "tmdb_id": 4629,
+    "poster_filename": "stargate-sg-1.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "mgm+amazonchannel",
+      "mgmplusrokupremiumchannel",
+      "youtubetv",
+      "mgmplus",
+      "philo",
+      "spectrumondemand",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "1997-07-27",
+    "isMovie": false
+  },
+  {
+    "id": "silence-298651",
+    "title": "Silence",
+    "tmdb_id": 298651,
+    "poster_filename": "silence.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-12-01",
+    "isMovie": false
+  },
+  {
+    "id": "spy-x-family-120089",
+    "title": "SPY x FAMILY",
+    "tmdb_id": 120089,
+    "poster_filename": "spy-x-family.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "crunchyroll",
+      "crunchyrollamazonchannel"
+    ],
+    "first_air_date": "2022-04-09",
+    "isMovie": false
+  },
+  {
+    "id": "south-park-2190",
+    "title": "South Park",
+    "tmdb_id": 2190,
+    "poster_filename": "south-park.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "youtubetv",
+      "philo",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "1997-08-13",
+    "isMovie": false
+  },
+  {
+    "id": "squid-game-93405",
+    "title": "Squid Game",
+    "tmdb_id": 93405,
+    "poster_filename": "squid-game.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2021-09-17",
+    "isMovie": false
+  },
+  {
+    "id": "kurulu-osman-95603",
+    "title": "Kuruluş Osman",
+    "tmdb_id": 95603,
+    "poster_filename": "kurulu-osman.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2019-11-20",
+    "isMovie": false
+  },
+  {
+    "id": "swat-71790",
+    "title": "S.W.A.T.",
+    "tmdb_id": 71790,
+    "poster_filename": "swat.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "fubotv",
+      "youtubetv",
+      "philo",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2017-11-02",
+    "isMovie": false
+  },
+  {
+    "id": "you-78191",
+    "title": "You",
+    "tmdb_id": 78191,
+    "poster_filename": "you.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2018-09-09",
+    "isMovie": false
+  },
+  {
+    "id": "fbi-80748",
+    "title": "FBI",
+    "tmdb_id": 80748,
+    "poster_filename": "fbi.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+rokupremiumchannel",
+      "youtubetv",
+      "philo",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2018-09-25",
+    "isMovie": false
+  },
+  {
+    "id": "the-price-of-confession-209110",
+    "title": "The Price of Confession",
+    "tmdb_id": 209110,
+    "poster_filename": "the-price-of-confession.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2025-12-05",
+    "isMovie": false
+  },
+  {
+    "id": "dynamite-kiss-281013",
+    "title": "Dynamite Kiss",
+    "tmdb_id": 281013,
+    "poster_filename": "dynamite-kiss.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2025-11-12",
+    "isMovie": false
+  },
+  {
+    "id": "reacher-108978",
+    "title": "Reacher",
+    "tmdb_id": 108978,
+    "poster_filename": "reacher.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2022-02-03",
+    "isMovie": false
+  },
+  {
+    "id": "the-great-celebrity-bake-off-for-stand-up-to-cancer-77588",
+    "title": "The Great Celebrity Bake Off for Stand Up To Cancer",
+    "tmdb_id": 77588,
+    "poster_filename": "the-great-celebrity-bake-off-for-stand-up-to-cancer.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2018-03-06",
+    "isMovie": false
+  },
+  {
+    "id": "chicago-pd-58841",
+    "title": "Chicago P.D.",
+    "tmdb_id": 58841,
+    "poster_filename": "chicago-pd.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "youtubetv",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2014-01-08",
+    "isMovie": false
+  },
+  {
+    "id": "hazbin-hotel-94954",
+    "title": "Hazbin Hotel",
+    "tmdb_id": 94954,
+    "poster_filename": "hazbin-hotel.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2024-01-18",
+    "isMovie": false
+  },
+  {
+    "id": "csi-miami-1620",
+    "title": "CSI: Miami",
+    "tmdb_id": 1620,
+    "poster_filename": "csi-miami.jpg",
+    "listType": "top",
+    "services": [
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2002-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "campfire-cooking-in-another-world-with-my-absurd-skill-213402",
+    "title": "Campfire Cooking in Another World with My Absurd Skill",
+    "tmdb_id": 213402,
+    "poster_filename": "campfire-cooking-in-another-world-with-my-absurd-skill.jpg",
+    "listType": "top",
+    "services": [
+      "crunchyroll",
+      "crunchyrollamazonchannel"
+    ],
+    "first_air_date": "2023-01-11",
+    "isMovie": false
+  },
+  {
+    "id": "dragon-ball-z-12971",
+    "title": "Dragon Ball Z",
+    "tmdb_id": 12971,
+    "poster_filename": "dragon-ball-z.jpg",
+    "listType": "top",
+    "services": [
+      "crunchyroll",
+      "crunchyrollamazonchannel"
+    ],
+    "first_air_date": "1989-04-26",
+    "isMovie": false
+  },
+  {
+    "id": "clairebell-282471",
+    "title": "ClaireBell",
+    "tmdb_id": 282471,
+    "poster_filename": "clairebell.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-10-27",
+    "isMovie": false
+  },
+  {
+    "id": "the-jewel-of-section-e-281009",
+    "title": "The Jewel of Section E",
+    "tmdb_id": 281009,
+    "poster_filename": "the-jewel-of-section-e.jpg",
+    "listType": "top",
+    "services": [
+      "rakutenviki"
+    ],
+    "first_air_date": "2025-01-03",
+    "isMovie": false
+  },
+  {
+    "id": "sons-of-anarchy-1409",
+    "title": "Sons of Anarchy",
+    "tmdb_id": 1409,
+    "poster_filename": "sons-of-anarchy.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2008-09-03",
+    "isMovie": false
+  },
+  {
+    "id": "black-mirror-42009",
+    "title": "Black Mirror",
+    "tmdb_id": 42009,
+    "poster_filename": "black-mirror.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2011-12-04",
+    "isMovie": false
+  },
+  {
+    "id": "underbelly-13796",
+    "title": "Underbelly",
+    "tmdb_id": 13796,
+    "poster_filename": "underbelly.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads",
+      "magnoliaselectsamazonchannel",
+      "warriorsandgangstersamazonchannel"
+    ],
+    "first_air_date": "2008-02-13",
+    "isMovie": false
+  },
+  {
+    "id": "young-sheldon-71728",
+    "title": "Young Sheldon",
+    "tmdb_id": 71728,
+    "poster_filename": "young-sheldon.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "tbs",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2017-09-25",
+    "isMovie": false
+  },
+  {
+    "id": "kamen-rider-2661",
+    "title": "Kamen Rider",
+    "tmdb_id": 2661,
+    "poster_filename": "kamen-rider.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "crunchyrollamazonchannel",
+      "amazonprimevideowithads",
+      "shout!factoryamazonchannel"
+    ],
+    "first_air_date": "1971-04-03",
+    "isMovie": false
+  },
+  {
+    "id": "9-1-1-75219",
+    "title": "9-1-1",
+    "tmdb_id": 75219,
+    "poster_filename": "9-1-1.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "philo",
+      "wetv"
+    ],
+    "first_air_date": "2018-01-03",
+    "isMovie": false
+  },
+  {
+    "id": "monk-1695",
+    "title": "Monk",
+    "tmdb_id": 1695,
+    "poster_filename": "monk.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "philo",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2002-07-12",
+    "isMovie": false
+  },
+  {
+    "id": "the-100-48866",
+    "title": "The 100",
+    "tmdb_id": 48866,
+    "poster_filename": "the-100.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2014-03-19",
+    "isMovie": false
+  },
+  {
+    "id": "seinfeld-1400",
+    "title": "Seinfeld",
+    "tmdb_id": 1400,
+    "poster_filename": "seinfeld.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "1989-07-05",
+    "isMovie": false
+  },
+  {
+    "id": "late-night-with-seth-meyers-61818",
+    "title": "Late Night with Seth Meyers",
+    "tmdb_id": 61818,
+    "poster_filename": "late-night-with-seth-meyers.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2014-02-25",
+    "isMovie": false
+  },
+  {
+    "id": "scene-of-the-crime-3034",
+    "title": "Scene of the Crime",
+    "tmdb_id": 3034,
+    "poster_filename": "scene-of-the-crime.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "mzchoiceamazonchannel",
+      "mhzchoice",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "1970-11-29",
+    "isMovie": false
+  },
+  {
+    "id": "adams-sweet-agony-241002",
+    "title": "Adam's Sweet Agony",
+    "tmdb_id": 241002,
+    "poster_filename": "adams-sweet-agony.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2024-01-08",
+    "isMovie": false
+  },
+  {
+    "id": "pokmon-60572",
+    "title": "Pokémon",
+    "tmdb_id": 60572,
+    "poster_filename": "pokmon.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu"
+    ],
+    "first_air_date": "1997-04-01",
+    "isMovie": false
+  },
+  {
+    "id": "adventure-time-15260",
+    "title": "Adventure Time",
+    "tmdb_id": 15260,
+    "poster_filename": "adventure-time.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "hbomax",
+      "hbomaxamazonchannel",
+      "cartoonnetworkamazonchannel",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "2010-04-05",
+    "isMovie": false
+  },
+  {
+    "id": "sturm-der-liebe-45789",
+    "title": "Sturm der Liebe",
+    "tmdb_id": 45789,
+    "poster_filename": "sturm-der-liebe.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2005-09-26",
+    "isMovie": false
+  },
+  {
+    "id": "the-kelly-clarkson-show-82873",
+    "title": "The Kelly Clarkson Show",
+    "tmdb_id": 82873,
+    "poster_filename": "the-kelly-clarkson-show.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv"
+    ],
+    "first_air_date": "2019-09-09",
+    "isMovie": false
+  },
+  {
+    "id": "pili-19530",
+    "title": "Pili",
+    "tmdb_id": 19530,
+    "poster_filename": "pili.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1988-06-01",
+    "isMovie": false
+  },
+  {
+    "id": "paw-patrol-57532",
+    "title": "PAW Patrol",
+    "tmdb_id": 57532,
+    "poster_filename": "paw-patrol.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "prime",
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "philo",
+      "netflixkids",
+      "netflixstandardwithads",
+      "amazonprimevideowithads",
+      "hopsteramazonchannel",
+      "kidstreamamazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2013-08-12",
+    "isMovie": false
+  },
+  {
+    "id": "blue-bloods-32692",
+    "title": "Blue Bloods",
+    "tmdb_id": 32692,
+    "poster_filename": "blue-bloods.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "youtubetv",
+      "philo",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2010-09-24",
+    "isMovie": false
+  },
+  {
+    "id": "speed-and-love-279041",
+    "title": "Speed and Love",
+    "tmdb_id": 279041,
+    "poster_filename": "speed-and-love.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-12-12",
+    "isMovie": false
+  },
+  {
+    "id": "karma-305062",
+    "title": "Karma",
+    "tmdb_id": 305062,
+    "poster_filename": "karma.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-11-07",
+    "isMovie": false
+  },
+  {
+    "id": "playing-gracie-darling-271823",
+    "title": "Playing Gracie Darling",
+    "tmdb_id": 271823,
+    "poster_filename": "playing-gracie-darling.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2025-08-14",
+    "isMovie": false
+  },
+  {
+    "id": "solo-leveling-127532",
+    "title": "Solo Leveling",
+    "tmdb_id": 127532,
+    "poster_filename": "solo-leveling.jpg",
+    "listType": "top",
+    "services": [
+      "crunchyroll",
+      "crunchyrollamazonchannel"
+    ],
+    "first_air_date": "2024-01-07",
+    "isMovie": false
+  },
+  {
+    "id": "bleach-30984",
+    "title": "Bleach",
+    "tmdb_id": 30984,
+    "poster_filename": "bleach.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2004-10-05",
+    "isMovie": false
+  },
+  {
+    "id": "charmed-1981",
+    "title": "Charmed",
+    "tmdb_id": 1981,
+    "poster_filename": "charmed.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "peacockpremium",
+      "youtubetv",
+      "tnt",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "1998-10-07",
+    "isMovie": false
+  },
+  {
+    "id": "desperate-housewives-693",
+    "title": "Desperate Housewives",
+    "tmdb_id": 693,
+    "poster_filename": "desperate-housewives.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hulu",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2004-10-03",
+    "isMovie": false
+  },
+  {
+    "id": "fargo-60622",
+    "title": "Fargo",
+    "tmdb_id": 60622,
+    "poster_filename": "fargo.jpg",
+    "listType": "top",
+    "services": [
+      "hulu"
+    ],
+    "first_air_date": "2014-04-15",
+    "isMovie": false
+  },
+  {
+    "id": "hawaii-five-0-32798",
+    "title": "Hawaii Five-0",
+    "tmdb_id": 32798,
+    "poster_filename": "hawaii-five-0.jpg",
+    "listType": "top",
+    "services": [
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2010-09-20",
+    "isMovie": false
+  },
+  {
+    "id": "regular-show-31132",
+    "title": "Regular Show",
+    "tmdb_id": 31132,
+    "poster_filename": "regular-show.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "youtubetv"
+    ],
+    "first_air_date": "2010-09-06",
+    "isMovie": false
+  },
+  {
+    "id": "invincible-95557",
+    "title": "INVINCIBLE",
+    "tmdb_id": 95557,
+    "poster_filename": "invincible.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2021-03-25",
+    "isMovie": false
+  },
+  {
+    "id": "perry-mason-4177",
+    "title": "Perry Mason",
+    "tmdb_id": 4177,
+    "poster_filename": "perry-mason.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "paramount+amazonchannel",
+      "youtubetv",
+      "philo",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "1957-09-21",
+    "isMovie": false
+  },
+  {
+    "id": "american-horror-story-1413",
+    "title": "American Horror Story",
+    "tmdb_id": 1413,
+    "poster_filename": "american-horror-story.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hulu",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2011-10-05",
+    "isMovie": false
+  },
+  {
+    "id": "the-day-of-the-jackal-222766",
+    "title": "The Day of the Jackal",
+    "tmdb_id": 222766,
+    "poster_filename": "the-day-of-the-jackal.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2024-11-07",
+    "isMovie": false
+  },
+  {
+    "id": "ninja-boy-rantaro-34860",
+    "title": "Ninja Boy Rantaro",
+    "tmdb_id": 34860,
+    "poster_filename": "ninja-boy-rantaro.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1993-04-10",
+    "isMovie": false
+  },
+  {
+    "id": "room-of-guilty-pleasure-288577",
+    "title": "Room of Guilty Pleasure",
+    "tmdb_id": 288577,
+    "poster_filename": "room-of-guilty-pleasure.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2025-10-06",
+    "isMovie": false
+  },
+  {
+    "id": "death-in-paradise-41956",
+    "title": "Death in Paradise",
+    "tmdb_id": 41956,
+    "poster_filename": "death-in-paradise.jpg",
+    "listType": "top",
+    "services": [
+      "britboxappletvchannel",
+      "britbox",
+      "britboxamazonchannel"
+    ],
+    "first_air_date": "2011-10-25",
+    "isMovie": false
+  },
+  {
+    "id": "better-call-saul-60059",
+    "title": "Better Call Saul",
+    "tmdb_id": 60059,
+    "poster_filename": "better-call-saul.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2015-02-08",
+    "isMovie": false
+  },
+  {
+    "id": "brooklyn-nine-nine-48891",
+    "title": "Brooklyn Nine-Nine",
+    "tmdb_id": 48891,
+    "poster_filename": "brooklyn-nine-nine.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "peacockpremium",
+      "netflixstandardwithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2013-09-17",
+    "isMovie": false
+  },
+  {
+    "id": "doraemon-57911",
+    "title": "Doraemon",
+    "tmdb_id": 57911,
+    "poster_filename": "doraemon.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1979-04-02",
+    "isMovie": false
+  },
+  {
+    "id": "agatha-christies-poirot-790",
+    "title": "Agatha Christie's Poirot",
+    "tmdb_id": 790,
+    "poster_filename": "agatha-christies-poirot.jpg",
+    "listType": "top",
+    "services": [
+      "britboxappletvchannel",
+      "acorntv",
+      "britbox",
+      "pbsmasterpieceamazonchannel",
+      "acorntvamazonchannel",
+      "britboxamazonchannel",
+      "spectrumondemand",
+      "acorntvappletv",
+      "thirteen",
+      "weta+"
+    ],
+    "first_air_date": "1989-01-08",
+    "isMovie": false
+  },
+  {
+    "id": "sesame-street-502",
+    "title": "Sesame Street",
+    "tmdb_id": 502,
+    "poster_filename": "sesame-street.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "netflixkids",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "1969-11-10",
+    "isMovie": false
+  },
+  {
+    "id": "weak-hero-200709",
+    "title": "Weak Hero",
+    "tmdb_id": 200709,
+    "poster_filename": "weak-hero.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "ondemandkorea",
+      "netflixstandardwithads",
+      "kocowaamazonchannel",
+      "kocowa"
+    ],
+    "first_air_date": "2022-11-18",
+    "isMovie": false
+  },
+  {
+    "id": "arjun-58616",
+    "title": "Arjun",
+    "tmdb_id": 58616,
+    "poster_filename": "arjun.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2012-08-11",
+    "isMovie": false
+  },
+  {
+    "id": "kangsi-coming-6836",
+    "title": "Kangsi Coming",
+    "tmdb_id": 6836,
+    "poster_filename": "kangsi-coming.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2004-01-05",
+    "isMovie": false
+  },
+  {
+    "id": "chibi-maruko-chan-57775",
+    "title": "Chibi Maruko-chan",
+    "tmdb_id": 57775,
+    "poster_filename": "chibi-maruko-chan.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1990-01-07",
+    "isMovie": false
+  },
+  {
+    "id": "binnelanders-206559",
+    "title": "Binnelanders",
+    "tmdb_id": 206559,
+    "poster_filename": "binnelanders.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2005-10-13",
+    "isMovie": false
+  },
+  {
+    "id": "gilmore-girls-4586",
+    "title": "Gilmore Girls",
+    "tmdb_id": 4586,
+    "poster_filename": "gilmore-girls.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2000-10-05",
+    "isMovie": false
+  },
+  {
+    "id": "futurama-615",
+    "title": "Futurama",
+    "tmdb_id": 615,
+    "poster_filename": "futurama.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "adultswim"
+    ],
+    "first_air_date": "1999-03-28",
+    "isMovie": false
+  },
+  {
+    "id": "true-detective-46648",
+    "title": "True Detective",
+    "tmdb_id": 46648,
+    "poster_filename": "true-detective.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "tnt"
+    ],
+    "first_air_date": "2014-01-12",
+    "isMovie": false
+  },
+  {
+    "id": "raw-4656",
+    "title": "Raw",
+    "tmdb_id": 4656,
+    "poster_filename": "raw.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "1993-01-11",
+    "isMovie": false
+  },
+  {
+    "id": "elementary-1415",
+    "title": "Elementary",
+    "tmdb_id": 1415,
+    "poster_filename": "elementary.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "hulu",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2012-09-27",
+    "isMovie": false
+  },
+  {
+    "id": "the-big-game-107703",
+    "title": "The Big Game",
+    "tmdb_id": 107703,
+    "poster_filename": "the-big-game.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2020-08-31",
+    "isMovie": false
+  },
+  {
+    "id": "grimm-39351",
+    "title": "Grimm",
+    "tmdb_id": 39351,
+    "poster_filename": "grimm.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "peacockpremium",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2011-10-28",
+    "isMovie": false
+  },
+  {
+    "id": "doraemon-65733",
+    "title": "Doraemon",
+    "tmdb_id": 65733,
+    "poster_filename": "doraemon.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2005-04-22",
+    "isMovie": false
+  },
+  {
+    "id": "jag-4376",
+    "title": "JAG",
+    "tmdb_id": 4376,
+    "poster_filename": "jag.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "amazonprimevideowithads",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "1995-09-23",
+    "isMovie": false
+  },
+  {
+    "id": "tracker-211288",
+    "title": "Tracker",
+    "tmdb_id": 211288,
+    "poster_filename": "tracker.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "youtubetv",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2024-02-11",
+    "isMovie": false
+  },
+  {
+    "id": "smiling-friends-126506",
+    "title": "Smiling Friends",
+    "tmdb_id": 126506,
+    "poster_filename": "smiling-friends.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "adultswim",
+      "adultswimamazonchannel"
+    ],
+    "first_air_date": "2020-04-01",
+    "isMovie": false
+  },
+  {
+    "id": "watch-what-happens-live-with-andy-cohen-22980",
+    "title": "Watch What Happens Live with Andy Cohen",
+    "tmdb_id": 22980,
+    "poster_filename": "watch-what-happens-live-with-andy-cohen.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "bravotv",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2009-07-16",
+    "isMovie": false
+  },
+  {
+    "id": "gute-zeiten-schlechte-zeiten-13945",
+    "title": "Gute Zeiten, schlechte Zeiten",
+    "tmdb_id": 13945,
+    "poster_filename": "gute-zeiten-schlechte-zeiten.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1992-05-11",
+    "isMovie": false
+  },
+  {
+    "id": "charmsukh-97072",
+    "title": "Charmsukh",
+    "tmdb_id": 97072,
+    "poster_filename": "charmsukh.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2019-11-22",
+    "isMovie": false
+  },
+  {
+    "id": "running-man-33238",
+    "title": "Running Man",
+    "tmdb_id": 33238,
+    "poster_filename": "running-man.jpg",
+    "listType": "top",
+    "services": [
+      "rakutenviki",
+      "ondemandkorea",
+      "kocowaamazonchannel",
+      "kocowa"
+    ],
+    "first_air_date": "2010-07-11",
+    "isMovie": false
+  },
+  {
+    "id": "teen-titans-go-45140",
+    "title": "Teen Titans Go!",
+    "tmdb_id": 45140,
+    "poster_filename": "teen-titans-go.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv"
+    ],
+    "first_air_date": "2013-04-23",
+    "isMovie": false
+  },
+  {
+    "id": "phineas-and-ferb-1877",
+    "title": "Phineas and Ferb",
+    "tmdb_id": 1877,
+    "poster_filename": "phineas-and-ferb.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "disneynow"
+    ],
+    "first_air_date": "2007-08-17",
+    "isMovie": false
+  },
+  {
+    "id": "conan-32415",
+    "title": "Conan",
+    "tmdb_id": 32415,
+    "poster_filename": "conan.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2010-11-08",
+    "isMovie": false
+  },
+  {
+    "id": "elite-76669",
+    "title": "Elite",
+    "tmdb_id": 76669,
+    "poster_filename": "elite.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2018-10-05",
+    "isMovie": false
+  },
+  {
+    "id": "the-return-of-superman-64356",
+    "title": "The Return of Superman",
+    "tmdb_id": 64356,
+    "poster_filename": "the-return-of-superman.jpg",
+    "listType": "top",
+    "services": [
+      "ondemandkorea",
+      "kocowaamazonchannel",
+      "kocowa"
+    ],
+    "first_air_date": "2013-11-03",
+    "isMovie": false
+  },
+  {
+    "id": "hk-80s-228091",
+    "title": "HK 80's",
+    "tmdb_id": 228091,
+    "poster_filename": "hk-80s.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1981-06-08",
+    "isMovie": false
+  },
+  {
+    "id": "it-19614",
+    "title": "It",
+    "tmdb_id": 19614,
+    "poster_filename": "it.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "1990-11-18",
+    "isMovie": false
+  },
+  {
+    "id": "avn-awards-71932",
+    "title": "AVN Awards",
+    "tmdb_id": 71932,
+    "poster_filename": "avn-awards.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": null,
+    "isMovie": false
+  },
+  {
+    "id": "naruto-46260",
+    "title": "Naruto",
+    "tmdb_id": 46260,
+    "poster_filename": "naruto.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "prime",
+      "hulu",
+      "crunchyroll",
+      "crunchyrollamazonchannel",
+      "peacockpremium",
+      "adultswim",
+      "netflixstandardwithads",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2002-10-03",
+    "isMovie": false
+  },
+  {
+    "id": "hunter-x-hunter-46298",
+    "title": "Hunter x Hunter",
+    "tmdb_id": 46298,
+    "poster_filename": "hunter-x-hunter.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "prime",
+      "hulu",
+      "crunchyroll",
+      "crunchyrollamazonchannel",
+      "peacockpremium",
+      "netflixstandardwithads",
+      "amazonprimevideowithads",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2011-10-02",
+    "isMovie": false
+  },
+  {
+    "id": "euphoria-85552",
+    "title": "Euphoria",
+    "tmdb_id": 85552,
+    "poster_filename": "euphoria.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "2019-06-16",
+    "isMovie": false
+  },
+  {
+    "id": "the-late-show-with-stephen-colbert-63770",
+    "title": "The Late Show with Stephen Colbert",
+    "tmdb_id": 63770,
+    "poster_filename": "the-late-show-with-stephen-colbert.jpg",
+    "listType": "top",
+    "services": [
+      "fubotv",
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2015-09-08",
+    "isMovie": false
+  },
+  {
+    "id": "the-wire-1438",
+    "title": "The Wire",
+    "tmdb_id": 1438,
+    "poster_filename": "the-wire.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "2002-06-02",
+    "isMovie": false
+  },
+  {
+    "id": "star-trek-the-next-generation-655",
+    "title": "Star Trek: The Next Generation",
+    "tmdb_id": 655,
+    "poster_filename": "star-trek-the-next-generation.jpg",
+    "listType": "top",
+    "services": [
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "1987-09-28",
+    "isMovie": false
+  },
+  {
+    "id": "house-of-the-dragon-94997",
+    "title": "House of the Dragon",
+    "tmdb_id": 94997,
+    "poster_filename": "house-of-the-dragon.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel"
+    ],
+    "first_air_date": "2022-08-21",
+    "isMovie": false
+  },
+  {
+    "id": "marvels-agents-of-shield-1403",
+    "title": "Marvel's Agents of S.H.I.E.L.D.",
+    "tmdb_id": 1403,
+    "poster_filename": "marvels-agents-of-shield.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus"
+    ],
+    "first_air_date": "2013-09-24",
+    "isMovie": false
+  },
+  {
+    "id": "malcolm-in-the-middle-2004",
+    "title": "Malcolm in the Middle",
+    "tmdb_id": 2004,
+    "poster_filename": "malcolm-in-the-middle.jpg",
+    "listType": "top",
+    "services": [
+      "disneyplus",
+      "hulu"
+    ],
+    "first_air_date": "2000-01-09",
+    "isMovie": false
+  },
+  {
+    "id": "the-chosen-85077",
+    "title": "The Chosen",
+    "tmdb_id": 85077,
+    "poster_filename": "the-chosen.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "fubotv",
+      "pureflix",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2019-04-21",
+    "isMovie": false
+  },
+  {
+    "id": "the-good-wife-1435",
+    "title": "The Good Wife",
+    "tmdb_id": 1435,
+    "poster_filename": "the-good-wife.jpg",
+    "listType": "top",
+    "services": [
+      "paramountplusappletvchannel",
+      "paramount+amazonchannel",
+      "paramount+rokupremiumchannel",
+      "paramountplusessential",
+      "paramountpluspremium"
+    ],
+    "first_air_date": "2009-09-22",
+    "isMovie": false
+  },
+  {
+    "id": "inazuma-eleven-42912",
+    "title": "Inazuma Eleven",
+    "tmdb_id": 42912,
+    "poster_filename": "inazuma-eleven.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2008-10-05",
+    "isMovie": false
+  },
+  {
+    "id": "the-graham-norton-show-1220",
+    "title": "The Graham Norton Show",
+    "tmdb_id": 1220,
+    "poster_filename": "the-graham-norton-show.jpg",
+    "listType": "top",
+    "services": [
+      "amcplusappletvchannel",
+      "amc+amazonchannel",
+      "amc+rokupremiumchannel",
+      "amc+",
+      "youtubetv",
+      "philo",
+      "acorntv",
+      "acorntvamazonchannel",
+      "bbcamerica",
+      "spectrumondemand",
+      "acorntvappletv"
+    ],
+    "first_air_date": "2007-02-22",
+    "isMovie": false
+  },
+  {
+    "id": "ncis-los-angeles-17610",
+    "title": "NCIS: Los Angeles",
+    "tmdb_id": 17610,
+    "poster_filename": "ncis-los-angeles.jpg",
+    "listType": "top",
+    "services": [
+      "youtubetv"
+    ],
+    "first_air_date": "2009-09-22",
+    "isMovie": false
+  },
+  {
+    "id": "bobs-burgers-32726",
+    "title": "Bob's Burgers",
+    "tmdb_id": 32726,
+    "poster_filename": "bobs-burgers.jpg",
+    "listType": "top",
+    "services": [
+      "hulu",
+      "fubotv",
+      "youtubetv",
+      "adultswim"
+    ],
+    "first_air_date": "2011-01-09",
+    "isMovie": false
+  },
+  {
+    "id": "xxx-uncensored-82619",
+    "title": "X.X.X: Uncensored",
+    "tmdb_id": 82619,
+    "poster_filename": "xxx-uncensored.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2018-09-27",
+    "isMovie": false
+  },
+  {
+    "id": "one-piece-37854",
+    "title": "One Piece",
+    "tmdb_id": 37854,
+    "poster_filename": "one-piece.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "hulu",
+      "crunchyroll",
+      "crunchyrollamazonchannel",
+      "youtubetv",
+      "adultswim",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "1999-10-20",
+    "isMovie": false
+  },
+  {
+    "id": "the-lord-of-the-rings-the-rings-of-power-84773",
+    "title": "The Lord of the Rings: The Rings of Power",
+    "tmdb_id": 84773,
+    "poster_filename": "the-lord-of-the-rings-the-rings-of-power.jpg",
+    "listType": "top",
+    "services": [
+      "prime",
+      "amazonprimevideowithads"
+    ],
+    "first_air_date": "2022-09-01",
+    "isMovie": false
+  },
+  {
+    "id": "alice-in-borderland-110316",
+    "title": "Alice in Borderland",
+    "tmdb_id": 110316,
+    "poster_filename": "alice-in-borderland.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2020-12-10",
+    "isMovie": false
+  },
+  {
+    "id": "sean-combs-the-reckoning-255251",
+    "title": "Sean Combs: The Reckoning",
+    "tmdb_id": 255251,
+    "poster_filename": "sean-combs-the-reckoning.jpg",
+    "listType": "top",
+    "services": [
+      "netflix",
+      "netflixstandardwithads"
+    ],
+    "first_air_date": "2025-12-02",
+    "isMovie": false
+  },
+  {
+    "id": "the-big-bang-theory-1418",
+    "title": "The Big Bang Theory",
+    "tmdb_id": 1418,
+    "poster_filename": "the-big-bang-theory.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "youtubetv",
+      "tbs"
+    ],
+    "first_air_date": "2007-09-24",
+    "isMovie": false
+  },
+  {
+    "id": "saturday-night-live-1667",
+    "title": "Saturday Night Live",
+    "tmdb_id": 1667,
+    "poster_filename": "saturday-night-live.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "youtubetv",
+      "nbc",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "1975-10-11",
+    "isMovie": false
+  },
+  {
+    "id": "chicago-med-62650",
+    "title": "Chicago Med",
+    "tmdb_id": 62650,
+    "poster_filename": "chicago-med.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "youtubetv",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2015-11-17",
+    "isMovie": false
+  },
+  {
+    "id": "mad-men-1104",
+    "title": "Mad Men",
+    "tmdb_id": 1104,
+    "poster_filename": "mad-men.jpg",
+    "listType": "top",
+    "services": [
+      "hbomax",
+      "hbomaxamazonchannel",
+      "amcplusappletvchannel",
+      "amc+amazonchannel",
+      "amc+",
+      "philo",
+      "spectrumondemand"
+    ],
+    "first_air_date": "2007-07-19",
+    "isMovie": false
+  },
+  {
+    "id": "overflow-95897",
+    "title": "Overflow",
+    "tmdb_id": 95897,
+    "poster_filename": "overflow.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2020-01-06",
+    "isMovie": false
+  },
+  {
+    "id": "mr-mercedes-70485",
+    "title": "Mr. Mercedes",
+    "tmdb_id": 70485,
+    "poster_filename": "mr-mercedes.jpg",
+    "listType": "top",
+    "services": [
+      "peacockpremium",
+      "peacockpremiumplus"
+    ],
+    "first_air_date": "2017-08-09",
+    "isMovie": false
+  },
+  {
+    "id": "mehmed-sultan-of-conquests-246621",
+    "title": "Mehmed: Sultan of Conquests",
+    "tmdb_id": 246621,
+    "poster_filename": "mehmed-sultan-of-conquests.jpg",
+    "listType": "top",
+    "services": [],
+    "first_air_date": "2024-02-27",
+    "isMovie": false
+  }
+]
