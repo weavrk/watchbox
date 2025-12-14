@@ -6,11 +6,11 @@ import { getPosterUrl, getItemDetails } from '../services/api';
 
 interface TitleCardProps {
   item: WatchBoxItem;
-  onDelete: (id: string) => void;
-  onMove: (id: string, newListType: 'top' | 'watch') => void;
+  onDelete?: (id: string) => void;
+  onMove?: (id: string, newListType: 'top' | 'watch') => void;
 }
 
-export function TitleCard({ item, onDelete, onMove }: TitleCardProps) {
+export function TitleCard({ item }: TitleCardProps) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [extendedData, setExtendedData] = useState<Partial<WatchBoxItem> | null>(null);
   const [loadingDetails, setLoadingDetails] = useState(false);
@@ -35,7 +35,10 @@ export function TitleCard({ item, onDelete, onMove }: TitleCardProps) {
       setExtendedData(null);
       
       try {
-        const result = await getItemDetails(item.tmdb_id, item.isMovie ?? true);
+        // Determine if it's a movie or TV show based on item properties
+        // TV shows have number_of_seasons or number_of_episodes
+        const isMovie = !item.number_of_seasons && !item.number_of_episodes;
+        const result = await getItemDetails(item.tmdb_id, isMovie);
         if (result.success && result.data) {
           setExtendedData(result.data);
         } else {
