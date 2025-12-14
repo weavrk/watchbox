@@ -242,11 +242,11 @@ async function fetchPopularShows() {
 }
 
 /**
- * Get movie details including certification
+ * Get movie details including certification, credits, keywords, videos, recommendations, similar, and translations
  */
 async function getMovieDetails(tmdbId) {
   try {
-    const url = `${TMDB_BASE_URL}/movie/${tmdbId}?language=en-US&append_to_response=release_dates`;
+    const url = `${TMDB_BASE_URL}/movie/${tmdbId}?language=en-US&append_to_response=release_dates,credits,keywords,videos,recommendations,similar,translations`;
     const response = await fetch(url, {
       headers: {
         'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
@@ -263,6 +263,127 @@ async function getMovieDetails(tmdbId) {
     console.error(`Error fetching movie details for ${tmdbId}:`, error.message);
     return null;
   }
+}
+
+/**
+ * Extract extended data from movie details
+ */
+function extractMovieExtendedData(movieDetails) {
+  if (!movieDetails) return {};
+  
+  const extendedData = {};
+  
+  // Genres (full objects with id and name)
+  if (movieDetails.genres && movieDetails.genres.length > 0) {
+    extendedData.genres = movieDetails.genres.map(g => ({ id: g.id, name: g.name }));
+  }
+  
+  // Overview
+  if (movieDetails.overview) {
+    extendedData.overview = movieDetails.overview;
+  }
+  
+  // Ratings
+  if (movieDetails.vote_average !== undefined) {
+    extendedData.vote_average = movieDetails.vote_average;
+  }
+  if (movieDetails.vote_count !== undefined) {
+    extendedData.vote_count = movieDetails.vote_count;
+  }
+  
+  // Runtime (in minutes)
+  if (movieDetails.runtime) {
+    extendedData.runtime = movieDetails.runtime;
+  }
+  
+  // Cast (first 15 actors)
+  if (movieDetails.credits && movieDetails.credits.cast) {
+    extendedData.cast = movieDetails.credits.cast.slice(0, 15).map(c => ({
+      id: c.id,
+      name: c.name,
+      character: c.character,
+      profile_path: c.profile_path || null
+    }));
+  }
+  
+  // Crew (directors, writers, producers - key roles)
+  if (movieDetails.credits && movieDetails.credits.crew) {
+    const keyRoles = ['Director', 'Writer', 'Screenplay', 'Producer', 'Executive Producer'];
+    extendedData.crew = movieDetails.credits.crew
+      .filter(c => keyRoles.includes(c.job))
+      .slice(0, 10)
+      .map(c => ({
+        id: c.id,
+        name: c.name,
+        job: c.job,
+        profile_path: c.profile_path || null
+      }));
+  }
+  
+  // Keywords (first 15)
+  if (movieDetails.keywords && movieDetails.keywords.keywords) {
+    extendedData.keywords = movieDetails.keywords.keywords.slice(0, 15).map(k => ({
+      id: k.id,
+      name: k.name
+    }));
+  }
+  
+  // Videos (trailers and teasers, prefer official YouTube)
+  if (movieDetails.videos && movieDetails.videos.results) {
+    const trailerTypes = ['Trailer', 'Teaser'];
+    extendedData.videos = movieDetails.videos.results
+      .filter(v => trailerTypes.includes(v.type) && v.site === 'YouTube')
+      .slice(0, 5)
+      .map(v => ({
+        id: v.id,
+        key: v.key,
+        name: v.name,
+        site: v.site,
+        type: v.type,
+        official: v.official,
+        published_at: v.published_at || null
+      }));
+  }
+  
+  // Recommendations (first 10)
+  if (movieDetails.recommendations && movieDetails.recommendations.results) {
+    extendedData.recommendations = movieDetails.recommendations.results
+      .slice(0, 10)
+      .map(r => ({
+        id: r.id,
+        title: r.title,
+        poster_path: r.poster_path || null,
+        vote_average: r.vote_average,
+        isMovie: true
+      }));
+  }
+  
+  // Similar movies (first 10)
+  if (movieDetails.similar && movieDetails.similar.results) {
+    extendedData.similar = movieDetails.similar.results
+      .slice(0, 10)
+      .map(s => ({
+        id: s.id,
+        title: s.title,
+        poster_path: s.poster_path || null,
+        vote_average: s.vote_average,
+        isMovie: true
+      }));
+  }
+  
+  // Translations (all available)
+  if (movieDetails.translations && movieDetails.translations.translations) {
+    extendedData.translations = movieDetails.translations.translations
+      .slice(0, 20) // Limit to 20 translations
+      .map(t => ({
+        iso_639_1: t.iso_639_1,
+        iso_3166_1: t.iso_3166_1,
+        name: t.name,
+        english_name: t.english_name
+      }));
+  }
+  
+  return extendedData;
 }
 
 /**
@@ -309,11 +430,11 @@ async function getMovieProviders(tmdbId) {
 }
 
 /**
- * Get TV show details including content ratings
+ * Get TV show details including content ratings, credits, keywords, videos, recommendations, similar, and translations
  */
 async function getShowDetails(tmdbId) {
   try {
-    const url = `${TMDB_BASE_URL}/tv/${tmdbId}?language=en-US&append_to_response=content_ratings`;
+    const url = `${TMDB_BASE_URL}/tv/${tmdbId}?language=en-US&append_to_response=content_ratings,credits,keywords,videos,recommendations,similar,translations`;
     const response = await fetch(url, {
       headers: {
         'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
@@ -330,6 +451,156 @@ async function getShowDetails(tmdbId) {
     console.error(`Error fetching show details for ${tmdbId}:`, error.message);
     return null;
   }
+}
+
+/**
+ * Extract extended data from show details
+ */
+function extractShowExtendedData(showDetails) {
+  if (!showDetails) return {};
+  
+  const extendedData = {};
+  
+  // Genres (full objects with id and name)
+  if (showDetails.genres && showDetails.genres.length > 0) {
+    extendedData.genres = showDetails.genres.map(g => ({ id: g.id, name: g.name }));
+  }
+  
+  // Overview
+  if (showDetails.overview) {
+    extendedData.overview = showDetails.overview;
+  }
+  
+  // Ratings
+  if (showDetails.vote_average !== undefined) {
+    extendedData.vote_average = showDetails.vote_average;
+  }
+  if (showDetails.vote_count !== undefined) {
+    extendedData.vote_count = showDetails.vote_count;
+  }
+  
+  // Runtime (average episode runtime - take first value if array)
+  if (showDetails.episode_run_time && showDetails.episode_run_time.length > 0) {
+    extendedData.runtime = showDetails.episode_run_time[0];
+  }
+  
+  // Cast (first 15 actors)
+  if (showDetails.credits && showDetails.credits.cast) {
+    extendedData.cast = showDetails.credits.cast.slice(0, 15).map(c => ({
+      id: c.id,
+      name: c.name,
+      character: c.character,
+      profile_path: c.profile_path || null
+    }));
+  }
+  
+  // Crew (creators, executive producers - key roles)
+  if (showDetails.credits && showDetails.credits.crew) {
+    const keyRoles = ['Creator', 'Executive Producer', 'Showrunner', 'Director', 'Writer'];
+    extendedData.crew = showDetails.credits.crew
+      .filter(c => keyRoles.includes(c.job))
+      .slice(0, 10)
+      .map(c => ({
+        id: c.id,
+        name: c.name,
+        job: c.job,
+        profile_path: c.profile_path || null
+      }));
+  }
+  
+  // Also include created_by if available (TV shows have this)
+  if (showDetails.created_by && showDetails.created_by.length > 0) {
+    const creators = showDetails.created_by.map(c => ({
+      id: c.id,
+      name: c.name,
+      job: 'Creator',
+      profile_path: c.profile_path || null
+    }));
+    extendedData.crew = [...creators, ...(extendedData.crew || [])].slice(0, 10);
+  }
+  
+  // Keywords (TV shows use 'results' instead of 'keywords')
+  if (showDetails.keywords && showDetails.keywords.results) {
+    extendedData.keywords = showDetails.keywords.results.slice(0, 15).map(k => ({
+      id: k.id,
+      name: k.name
+    }));
+  }
+  
+  // Videos (trailers and teasers, prefer official YouTube)
+  if (showDetails.videos && showDetails.videos.results) {
+    const trailerTypes = ['Trailer', 'Teaser'];
+    extendedData.videos = showDetails.videos.results
+      .filter(v => trailerTypes.includes(v.type) && v.site === 'YouTube')
+      .slice(0, 5)
+      .map(v => ({
+        id: v.id,
+        key: v.key,
+        name: v.name,
+        site: v.site,
+        type: v.type,
+        official: v.official,
+        published_at: v.published_at || null
+      }));
+  }
+  
+  // Networks (where the show originally aired)
+  if (showDetails.networks && showDetails.networks.length > 0) {
+    extendedData.networks = showDetails.networks.map(n => ({
+      id: n.id,
+      name: n.name,
+      logo_path: n.logo_path || null,
+      origin_country: n.origin_country || null
+    }));
+  }
+  
+  // Number of seasons and episodes
+  if (showDetails.number_of_seasons !== undefined) {
+    extendedData.number_of_seasons = showDetails.number_of_seasons;
+  }
+  if (showDetails.number_of_episodes !== undefined) {
+    extendedData.number_of_episodes = showDetails.number_of_episodes;
+  }
+  
+  // Recommendations (first 10)
+  if (showDetails.recommendations && showDetails.recommendations.results) {
+    extendedData.recommendations = showDetails.recommendations.results
+      .slice(0, 10)
+      .map(r => ({
+        id: r.id,
+        title: r.name, // TV shows use 'name' instead of 'title'
+        poster_path: r.poster_path || null,
+        vote_average: r.vote_average,
+        isMovie: false
+      }));
+  }
+  
+  // Similar shows (first 10)
+  if (showDetails.similar && showDetails.similar.results) {
+    extendedData.similar = showDetails.similar.results
+      .slice(0, 10)
+      .map(s => ({
+        id: s.id,
+        title: s.name, // TV shows use 'name' instead of 'title'
+        poster_path: s.poster_path || null,
+        vote_average: s.vote_average,
+        isMovie: false
+      }));
+  }
+  
+  // Translations (all available)
+  if (showDetails.translations && showDetails.translations.translations) {
+    extendedData.translations = showDetails.translations.translations
+      .slice(0, 20) // Limit to 20 translations
+      .map(t => ({
+        iso_639_1: t.iso_639_1,
+        iso_3166_1: t.iso_3166_1,
+        name: t.name,
+        english_name: t.english_name
+      }));
+  }
+  
+  return extendedData;
 }
 
 /**
@@ -552,6 +823,9 @@ async function processMovies() {
       await delay(250);
     }
     
+    // Extract extended TMDB data
+    const extendedData = extractMovieExtendedData(movieDetails);
+    
     // Create result object with priority flag
     const result = {
       id: `${posterFilename.replace('.jpg', '')}-${tmdbId}`,
@@ -562,6 +836,8 @@ async function processMovies() {
       services: services,
       release_date: movie.release_date || null,
       isMovie: true,
+      // Extended TMDB data
+      ...extendedData,
       _priority: isDeprioritized ? 0 : 1 // 1 = high priority, 0 = low priority
     };
     
@@ -636,6 +912,9 @@ async function processShows() {
       await delay(250);
     }
     
+    // Extract extended TMDB data
+    const extendedData = extractShowExtendedData(showDetails);
+    
     // Create result object with priority flag
     const result = {
       id: `${posterFilename.replace('.jpg', '')}-${tmdbId}`,
@@ -646,6 +925,8 @@ async function processShows() {
       services: services,
       first_air_date: show.first_air_date || null,
       isMovie: false,
+      // Extended TMDB data
+      ...extendedData,
       _priority: isDeprioritized ? 0 : 1 // 1 = high priority, 0 = low priority
     };
     

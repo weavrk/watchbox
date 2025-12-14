@@ -287,12 +287,46 @@ export interface ExploreItem {
   first_air_date?: string;
   release_date?: string;
   isMovie: boolean;
+  // Extended TMDB data (optional for backward compatibility)
+  genres?: import('../types').Genre[];
+  overview?: string;
+  vote_average?: number;
+  vote_count?: number;
+  runtime?: number;
+  cast?: import('../types').CastMember[];
+  crew?: import('../types').CrewMember[];
+  keywords?: import('../types').Keyword[];
+  videos?: import('../types').Video[]; // Trailers, teasers, etc.
+  // Additional TMDB data
+  recommendations?: import('../types').RelatedContent[];
+  similar?: import('../types').RelatedContent[];
+  translations?: import('../types').Translation[];
+  networks?: import('../types').Network[]; // TV shows only
+  number_of_seasons?: number; // TV shows only
+  number_of_episodes?: number; // TV shows only
+}
+
+/**
+ * Check if content has extended TMDB data
+ */
+function hasExtendedData(content: ExploreItem[]): boolean {
+  if (content.length === 0) return false;
+  // Check first few items to see if they have extended data
+  const sample = content.slice(0, 5);
+  return sample.some(item => 
+    item.genres || 
+    item.overview || 
+    item.cast || 
+    item.crew || 
+    item.videos
+  );
 }
 
 /**
  * Fetch top movies and shows for explore tab
+ * Optionally triggers background regeneration if extended data is missing
  */
-export async function getExploreContent(): Promise<ExploreItem[]> {
+export async function getExploreContent(triggerBackgroundRefresh = true): Promise<ExploreItem[]> {
   try {
     // Fetch both movies and shows
     const [moviesResponse, showsResponse] = await Promise.all([
@@ -309,6 +343,16 @@ export async function getExploreContent(): Promise<ExploreItem[]> {
     // Up to 400 movies and 400 shows (800 total)
     // Non-anime, non-G-rated, non-horror content appears first
     const allContent = [...movies, ...shows];
+    
+    // If content is missing extended data and background refresh is enabled,
+    // trigger regeneration in the background (non-blocking)
+    if (triggerBackgroundRefresh && !hasExtendedData(allContent)) {
+      // Trigger regeneration in background - don't wait for it
+      regenerateExploreContent('all').catch(err => {
+        console.error('Background content regeneration failed:', err);
+      });
+    }
+    
     return allContent;
   } catch (error) {
     console.error('Failed to fetch explore content:', error);
@@ -338,6 +382,32 @@ export async function regenerateExploreContent(type: 'movies' | 'shows' | 'all' 
     return { success: true, results: data.results };
   } catch (error) {
     console.error('Failed to regenerate explore content:', error);
+    return { success: false, error: 'Network error' };
+  }
+}
+
+/**
+ * Get extended TMDB details for a single movie or TV show
+ * Fetches on-demand when user clicks the details button
+ */
+export async function getItemDetails(tmdbId: number, isMovie: boolean): Promise<{ success: boolean; data?: Partial<import('../types').WatchBoxItem>; error?: string }> {
+  try {
+    const response = await fetch(`/api/get_item_details.php?tmdb_id=${tmdbId}&is_movie=${isMovie ? 'true' : 'false'}`);
+    
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      return { success: false, error: errorData.error || 'Failed to fetch details' };
+    }
+    
+    const result = await response.json();
+    
+    if (!result.success) {
+      return { success: false, error: result.error || 'Failed to fetch details' };
+    }
+    
+    return { success: true, data: result.data };
+  } catch (error) {
+    console.error('Failed to fetch item details:', error);
     return { success: false, error: 'Network error' };
   }
 }

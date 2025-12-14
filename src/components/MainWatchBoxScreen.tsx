@@ -1,13 +1,14 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { CopyPlus, Funnel, Tv, Search, Sparkles, X } from 'lucide-react';
 import { useUser } from '../contexts/UserContext';
 import { Header } from './Header';
 import { SectionList } from './SectionList';
 import { ExploreTab } from './ExploreTab';
 import { EditProfileModal } from './EditProfileModal';
-import { saveUser, getUser, getAvatarUrl } from '../services/api';
+import { saveUser, getUser, getAvatarUrl, getExploreContent } from '../services/api';
 import { extractDominantColor } from '../utils/colorExtraction';
 import type { WatchBoxItem, UserSummary } from '../types';
+import type { ExploreItem } from '../services/api';
 
 export function MainWatchBoxScreen() {
   const { currentUser, logout, loadUser } = useUser();
@@ -22,8 +23,33 @@ export function MainWatchBoxScreen() {
   const [filterButtonActive, setFilterButtonActive] = useState(false);
   const [avatarColor, setAvatarColor] = useState<string>('#4A90E2');
   const avatarImageRef = useRef<HTMLImageElement | null>(null);
+  const [exploreContent, setExploreContent] = useState<ExploreItem[]>([]);
   
-  const categories = ['Action', 'Comedy', 'Drama', 'Horror', 'Sci-Fi'];
+  // Load explore content to get available genres
+  useEffect(() => {
+    getExploreContent().then(content => {
+      setExploreContent(content);
+    }).catch(err => {
+      console.error('Failed to load explore content for genres:', err);
+    });
+  }, []);
+  
+  // Extract unique genres from both user items and explore content
+  const availableGenres = useMemo(() => {
+    const genreSet = new Set<string>();
+    
+    // Get genres from user's watchbox items
+    items.forEach(item => {
+      item.genres?.forEach(genre => genreSet.add(genre.name));
+    });
+    
+    // Get genres from explore content
+    exploreContent.forEach(item => {
+      item.genres?.forEach(genre => genreSet.add(genre.name));
+    });
+    
+    return Array.from(genreSet).sort();
+  }, [items, exploreContent]);
 
   useEffect(() => {
     if (currentUser) {
@@ -318,17 +344,17 @@ export function MainWatchBoxScreen() {
                     </div>
                     <div className="filter-bottom-sheet-content">
                       <div className="filter-section">
-                        <h3 className="filter-section-title">Categories</h3>
+                        <h3 className="filter-section-title">Genres</h3>
                         <div className="filter-chips-container">
-                          {categories.map((category) => {
-                            const isSelected = selectedCategories.includes(category);
+                          {availableGenres.map((genre) => {
+                            const isSelected = selectedCategories.includes(genre);
                             return (
                               <button
-                                key={category}
+                                key={genre}
                                 className={`filter-chip-chip ${isSelected ? 'active' : ''}`}
-                                onClick={() => handleCategoryToggle(category)}
+                                onClick={() => handleCategoryToggle(genre)}
                               >
-                                {category}
+                                {genre}
                               </button>
                             );
                           })}
@@ -391,17 +417,17 @@ export function MainWatchBoxScreen() {
               </div>
               <div className="filter-bottom-sheet-content">
                 <div className="filter-section">
-                  <h3 className="filter-section-title">Categories</h3>
+                  <h3 className="filter-section-title">Genres</h3>
                   <div className="filter-chips-container">
-                    {categories.map((category) => {
-                      const isSelected = selectedCategories.includes(category);
+                    {availableGenres.map((genre) => {
+                      const isSelected = selectedCategories.includes(genre);
                       return (
                         <button
-                          key={category}
+                          key={genre}
                           className={`filter-chip-chip ${isSelected ? 'active' : ''}`}
-                          onClick={() => handleCategoryToggle(category)}
+                          onClick={() => handleCategoryToggle(genre)}
                         >
-                          {category}
+                          {genre}
                         </button>
                       );
                     })}

@@ -87,7 +87,24 @@ export function ExploreTab({ }: ExploreTabProps) {
       tmdb_id: item.tmdb_id,
       poster_filename: item.poster_filename,
       listType: 'watch',
-      services: item.services
+      services: item.services,
+      // Include extended TMDB data
+      genres: item.genres,
+      overview: item.overview,
+      vote_average: item.vote_average,
+      vote_count: item.vote_count,
+      runtime: item.runtime,
+      cast: item.cast,
+      crew: item.crew,
+      keywords: item.keywords,
+      videos: item.videos,
+      // Additional TMDB data
+      recommendations: item.recommendations,
+      similar: item.similar,
+      translations: item.translations,
+      networks: item.networks,
+      number_of_seasons: item.number_of_seasons,
+      number_of_episodes: item.number_of_episodes
     };
   };
 

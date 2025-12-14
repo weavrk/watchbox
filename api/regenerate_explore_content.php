@@ -215,10 +215,10 @@ function fetchPopularShows() {
 }
 
 /**
- * Get movie details including certification
+ * Get movie details including certification, credits, keywords, videos, recommendations, similar, and translations
  */
 function getMovieDetails($tmdbId) {
-    $url = TMDB_BASE_URL . '/movie/' . $tmdbId . '?language=en-US&append_to_response=release_dates';
+    $url = TMDB_BASE_URL . '/movie/' . $tmdbId . '?language=en-US&append_to_response=release_dates,credits,keywords,videos,recommendations,similar,translations';
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -233,6 +233,134 @@ function getMovieDetails($tmdbId) {
     
     $data = json_decode($response, true);
     return $data;
+}
+
+/**
+ * Extract extended data from movie details
+ */
+function extractMovieExtendedData($movieDetails) {
+    if (!$movieDetails) return [];
+    
+    $extendedData = [];
+    
+    // Genres (full objects with id and name)
+    if (isset($movieDetails['genres']) && !empty($movieDetails['genres'])) {
+        $extendedData['genres'] = array_map(function($g) {
+            return ['id' => $g['id'], 'name' => $g['name']];
+        }, $movieDetails['genres']);
+    }
+    
+    // Overview
+    if (isset($movieDetails['overview']) && $movieDetails['overview']) {
+        $extendedData['overview'] = $movieDetails['overview'];
+    }
+    
+    // Ratings
+    if (isset($movieDetails['vote_average'])) {
+        $extendedData['vote_average'] = $movieDetails['vote_average'];
+    }
+    if (isset($movieDetails['vote_count'])) {
+        $extendedData['vote_count'] = $movieDetails['vote_count'];
+    }
+    
+    // Runtime (in minutes)
+    if (isset($movieDetails['runtime']) && $movieDetails['runtime']) {
+        $extendedData['runtime'] = $movieDetails['runtime'];
+    }
+    
+    // Cast (first 15 actors)
+    if (isset($movieDetails['credits']['cast'])) {
+        $extendedData['cast'] = array_map(function($c) {
+            return [
+                'id' => $c['id'],
+                'name' => $c['name'],
+                'character' => $c['character'] ?? '',
+                'profile_path' => $c['profile_path'] ?? null
+            ];
+        }, array_slice($movieDetails['credits']['cast'], 0, 15));
+    }
+    
+    // Crew (directors, writers, producers - key roles)
+    if (isset($movieDetails['credits']['crew'])) {
+        $keyRoles = ['Director', 'Writer', 'Screenplay', 'Producer', 'Executive Producer'];
+        $filteredCrew = array_filter($movieDetails['credits']['crew'], function($c) use ($keyRoles) {
+            return in_array($c['job'] ?? '', $keyRoles);
+        });
+        $extendedData['crew'] = array_map(function($c) {
+            return [
+                'id' => $c['id'],
+                'name' => $c['name'],
+                'job' => $c['job'],
+                'profile_path' => $c['profile_path'] ?? null
+            ];
+        }, array_slice(array_values($filteredCrew), 0, 10));
+    }
+    
+    // Keywords (first 15)
+    if (isset($movieDetails['keywords']['keywords'])) {
+        $extendedData['keywords'] = array_map(function($k) {
+            return ['id' => $k['id'], 'name' => $k['name']];
+        }, array_slice($movieDetails['keywords']['keywords'], 0, 15));
+    }
+    
+    // Videos (trailers and teasers, prefer official YouTube)
+    if (isset($movieDetails['videos']['results'])) {
+        $trailerTypes = ['Trailer', 'Teaser'];
+        $filteredVideos = array_filter($movieDetails['videos']['results'], function($v) use ($trailerTypes) {
+            return in_array($v['type'] ?? '', $trailerTypes) && ($v['site'] ?? '') === 'YouTube';
+        });
+        $extendedData['videos'] = array_map(function($v) {
+            return [
+                'id' => $v['id'],
+                'key' => $v['key'],
+                'name' => $v['name'],
+                'site' => $v['site'],
+                'type' => $v['type'],
+                'official' => $v['official'] ?? false,
+                'published_at' => $v['published_at'] ?? null
+            ];
+        }, array_slice(array_values($filteredVideos), 0, 5));
+    }
+    
+    // Recommendations (first 10)
+    if (isset($movieDetails['recommendations']['results'])) {
+        $extendedData['recommendations'] = array_map(function($r) {
+            return [
+                'id' => $r['id'],
+                'title' => $r['title'],
+                'poster_path' => $r['poster_path'] ?? null,
+                'vote_average' => $r['vote_average'] ?? null,
+                'isMovie' => true
+            ];
+        }, array_slice($movieDetails['recommendations']['results'], 0, 10));
+    }
+    
+    // Similar movies (first 10)
+    if (isset($movieDetails['similar']['results'])) {
+        $extendedData['similar'] = array_map(function($s) {
+            return [
+                'id' => $s['id'],
+                'title' => $s['title'],
+                'poster_path' => $s['poster_path'] ?? null,
+                'vote_average' => $s['vote_average'] ?? null,
+                'isMovie' => true
+            ];
+        }, array_slice($movieDetails['similar']['results'], 0, 10));
+    }
+    
+    // Translations (limit to 20)
+    if (isset($movieDetails['translations']['translations'])) {
+        $extendedData['translations'] = array_map(function($t) {
+            return [
+                'iso_639_1' => $t['iso_639_1'],
+                'iso_3166_1' => $t['iso_3166_1'],
+                'name' => $t['name'],
+                'english_name' => $t['english_name']
+            ];
+        }, array_slice($movieDetails['translations']['translations'], 0, 20));
+    }
+    
+    return $extendedData;
 }
 
 /**
@@ -295,10 +423,10 @@ function getMovieProviders($tmdbId) {
 }
 
 /**
- * Get TV show details including content ratings
+ * Get TV show details including content ratings, credits, keywords, videos, recommendations, similar, and translations
  */
 function getShowDetails($tmdbId) {
-    $url = TMDB_BASE_URL . '/tv/' . $tmdbId . '?language=en-US&append_to_response=content_ratings';
+    $url = TMDB_BASE_URL . '/tv/' . $tmdbId . '?language=en-US&append_to_response=content_ratings,credits,keywords,videos,recommendations,similar,translations';
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -313,6 +441,170 @@ function getShowDetails($tmdbId) {
     
     $data = json_decode($response, true);
     return $data;
+}
+
+/**
+ * Extract extended data from show details
+ */
+function extractShowExtendedData($showDetails) {
+    if (!$showDetails) return [];
+    
+    $extendedData = [];
+    
+    // Genres (full objects with id and name)
+    if (isset($showDetails['genres']) && !empty($showDetails['genres'])) {
+        $extendedData['genres'] = array_map(function($g) {
+            return ['id' => $g['id'], 'name' => $g['name']];
+        }, $showDetails['genres']);
+    }
+    
+    // Overview
+    if (isset($showDetails['overview']) && $showDetails['overview']) {
+        $extendedData['overview'] = $showDetails['overview'];
+    }
+    
+    // Ratings
+    if (isset($showDetails['vote_average'])) {
+        $extendedData['vote_average'] = $showDetails['vote_average'];
+    }
+    if (isset($showDetails['vote_count'])) {
+        $extendedData['vote_count'] = $showDetails['vote_count'];
+    }
+    
+    // Runtime (average episode runtime - take first value if array)
+    if (isset($showDetails['episode_run_time']) && !empty($showDetails['episode_run_time'])) {
+        $extendedData['runtime'] = $showDetails['episode_run_time'][0];
+    }
+    
+    // Cast (first 15 actors)
+    if (isset($showDetails['credits']['cast'])) {
+        $extendedData['cast'] = array_map(function($c) {
+            return [
+                'id' => $c['id'],
+                'name' => $c['name'],
+                'character' => $c['character'] ?? '',
+                'profile_path' => $c['profile_path'] ?? null
+            ];
+        }, array_slice($showDetails['credits']['cast'], 0, 15));
+    }
+    
+    // Start with created_by if available (TV shows have this)
+    $crew = [];
+    if (isset($showDetails['created_by']) && !empty($showDetails['created_by'])) {
+        foreach ($showDetails['created_by'] as $creator) {
+            $crew[] = [
+                'id' => $creator['id'],
+                'name' => $creator['name'],
+                'job' => 'Creator',
+                'profile_path' => $creator['profile_path'] ?? null
+            ];
+        }
+    }
+    
+    // Crew (executive producers, showrunners - key roles)
+    if (isset($showDetails['credits']['crew'])) {
+        $keyRoles = ['Creator', 'Executive Producer', 'Showrunner', 'Director', 'Writer'];
+        $filteredCrew = array_filter($showDetails['credits']['crew'], function($c) use ($keyRoles) {
+            return in_array($c['job'] ?? '', $keyRoles);
+        });
+        foreach (array_slice(array_values($filteredCrew), 0, 10 - count($crew)) as $c) {
+            $crew[] = [
+                'id' => $c['id'],
+                'name' => $c['name'],
+                'job' => $c['job'],
+                'profile_path' => $c['profile_path'] ?? null
+            ];
+        }
+    }
+    if (!empty($crew)) {
+        $extendedData['crew'] = array_slice($crew, 0, 10);
+    }
+    
+    // Keywords (TV shows use 'results' instead of 'keywords')
+    if (isset($showDetails['keywords']['results'])) {
+        $extendedData['keywords'] = array_map(function($k) {
+            return ['id' => $k['id'], 'name' => $k['name']];
+        }, array_slice($showDetails['keywords']['results'], 0, 15));
+    }
+    
+    // Videos (trailers and teasers, prefer official YouTube)
+    if (isset($showDetails['videos']['results'])) {
+        $trailerTypes = ['Trailer', 'Teaser'];
+        $filteredVideos = array_filter($showDetails['videos']['results'], function($v) use ($trailerTypes) {
+            return in_array($v['type'] ?? '', $trailerTypes) && ($v['site'] ?? '') === 'YouTube';
+        });
+        $extendedData['videos'] = array_map(function($v) {
+            return [
+                'id' => $v['id'],
+                'key' => $v['key'],
+                'name' => $v['name'],
+                'site' => $v['site'],
+                'type' => $v['type'],
+                'official' => $v['official'] ?? false,
+                'published_at' => $v['published_at'] ?? null
+            ];
+        }, array_slice(array_values($filteredVideos), 0, 5));
+    }
+    
+    // Networks (where the show originally aired)
+    if (isset($showDetails['networks']) && !empty($showDetails['networks'])) {
+        $extendedData['networks'] = array_map(function($n) {
+            return [
+                'id' => $n['id'],
+                'name' => $n['name'],
+                'logo_path' => $n['logo_path'] ?? null,
+                'origin_country' => $n['origin_country'] ?? null
+            ];
+        }, $showDetails['networks']);
+    }
+    
+    // Number of seasons and episodes
+    if (isset($showDetails['number_of_seasons'])) {
+        $extendedData['number_of_seasons'] = $showDetails['number_of_seasons'];
+    }
+    if (isset($showDetails['number_of_episodes'])) {
+        $extendedData['number_of_episodes'] = $showDetails['number_of_episodes'];
+    }
+    
+    // Recommendations (first 10)
+    if (isset($showDetails['recommendations']['results'])) {
+        $extendedData['recommendations'] = array_map(function($r) {
+            return [
+                'id' => $r['id'],
+                'title' => $r['name'], // TV shows use 'name' instead of 'title'
+                'poster_path' => $r['poster_path'] ?? null,
+                'vote_average' => $r['vote_average'] ?? null,
+                'isMovie' => false
+            ];
+        }, array_slice($showDetails['recommendations']['results'], 0, 10));
+    }
+    
+    // Similar shows (first 10)
+    if (isset($showDetails['similar']['results'])) {
+        $extendedData['similar'] = array_map(function($s) {
+            return [
+                'id' => $s['id'],
+                'title' => $s['name'], // TV shows use 'name' instead of 'title'
+                'poster_path' => $s['poster_path'] ?? null,
+                'vote_average' => $s['vote_average'] ?? null,
+                'isMovie' => false
+            ];
+        }, array_slice($showDetails['similar']['results'], 0, 10));
+    }
+    
+    // Translations (limit to 20)
+    if (isset($showDetails['translations']['translations'])) {
+        $extendedData['translations'] = array_map(function($t) {
+            return [
+                'iso_639_1' => $t['iso_639_1'],
+                'iso_3166_1' => $t['iso_3166_1'],
+                'name' => $t['name'],
+                'english_name' => $t['english_name']
+            ];
+        }, array_slice($showDetails['translations']['translations'], 0, 20));
+    }
+    
+    return $extendedData;
 }
 
 /**
@@ -559,6 +851,9 @@ function processMovies() {
             }
         }
         
+        // Extract extended TMDB data
+        $extendedData = extractMovieExtendedData($movieDetails);
+        
         $result = [
             'id' => str_replace('.jpg', '', $posterFilename) . '-' . $tmdbId,
             'title' => $movie['title'],
@@ -570,6 +865,9 @@ function processMovies() {
             'isMovie' => true,
             '_priority' => $isDeprioritized ? 0 : 1 // 1 = high priority, 0 = low priority
         ];
+        
+        // Merge extended data
+        $result = array_merge($result, $extendedData);
         
         $results[] = $result;
     }
@@ -636,6 +934,9 @@ function processShows() {
             }
         }
         
+        // Extract extended TMDB data
+        $extendedData = extractShowExtendedData($showDetails);
+        
         $result = [
             'id' => str_replace('.jpg', '', $posterFilename) . '-' . $tmdbId,
             'title' => $show['name'],
@@ -647,6 +948,9 @@ function processShows() {
             'isMovie' => false,
             '_priority' => $isDeprioritized ? 0 : 1 // 1 = high priority, 0 = low priority
         ];
+        
+        // Merge extended data
+        $result = array_merge($result, $extendedData);
         
         $results[] = $result;
     }
