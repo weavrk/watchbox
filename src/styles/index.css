@@ -988,7 +988,7 @@ img {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
 }
 
@@ -1671,7 +1671,8 @@ img {
   cursor: pointer;
 }
 
-.details-modal-add-button {
+/* Reusable Details Modal Action Button (for + Add, Move to Queue, etc.) */
+.details-modal-action-button {
   background: rgba(0, 0, 0, 0.5);
   border: none;
   border-radius: 999px;
@@ -1689,11 +1690,11 @@ img {
   margin-right: 8px;
 }
 
-.details-modal-add-button:hover {
+.details-modal-action-button:hover {
   background: var(--accent);
 }
 
-.details-modal-add-button:active {
+.details-modal-action-button:active {
   transform: scale(0.98);
 }
 
@@ -2896,7 +2897,7 @@ img {
   }
   
   .cards-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .details-cast-grid {
@@ -2915,7 +2916,7 @@ img {
   }
   
   .cards-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .details-cast-grid {
@@ -2946,7 +2947,7 @@ img {
   }
   
   .cards-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .details-cast-grid {

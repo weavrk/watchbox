@@ -32,6 +32,26 @@ function CardActionButton({ icon, onClick, ariaLabel, className = '', position =
   );
 }
 
+// Reusable Details Modal Action Button Component (for + Add, Move, etc.)
+interface DetailsModalActionButtonProps {
+  label: string;
+  onClick: (e: React.MouseEvent) => void;
+  ariaLabel: string;
+  className?: string;
+}
+
+function DetailsModalActionButton({ label, onClick, ariaLabel, className = '' }: DetailsModalActionButtonProps) {
+  return (
+    <button
+      className={`details-modal-action-button ${className}`}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    >
+      {label}
+    </button>
+  );
+}
+
 interface CastMemberPage {
   type: 'cast';
   castMember: {
@@ -415,8 +435,8 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist }: TitleCar
               </button>
               <div className="details-modal-header-right">
                 {currentPage === 'item' && onAddToWatchlist && (
-                  <button 
-                    className="details-modal-add-button"
+                  <DetailsModalActionButton
+                    label="+ Add"
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
@@ -425,29 +445,16 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist }: TitleCar
                         setIsAdded(true);
                       }
                     }}
-                    aria-label="Add to watchlist"
-                  >
-                    + Add
-                  </button>
+                    ariaLabel="Add to watchlist"
+                  />
                 )}
-                {currentPage === 'item' && handleDelete && (
-                  <button 
-                    className="details-modal-delete-button"
-                    onClick={handleDelete}
-                    aria-label="Delete"
-                  >
-                    Delete
-                  </button>
-                )}
-                {currentPage === 'item' && handleMove && (
-                  <button 
-                    className="details-modal-move-button"
+                {currentPage === 'item' && onMove && !onAddToWatchlist && (
+                  <DetailsModalActionButton
+                    label={item.listType === 'top' ? 'Move to Watchlist' : 'Move to Queue'}
                     onClick={handleMove}
-                    aria-label="Move"
-                  >
-                    Move
-                  </button>
-          )}
+                    ariaLabel="Move"
+                  />
+                )}
           <button 
                   className="details-modal-close"
                   onClick={handleCloseModal}
