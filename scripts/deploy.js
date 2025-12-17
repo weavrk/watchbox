@@ -263,6 +263,22 @@ async function deploy() {
           console.log('   Uploaded data/posters/ files');
         }
         
+        // Upload public/design-tokens.json if it exists
+        const designTokensFile = path.join(ROOT_DIR, 'public', 'design-tokens.json');
+        if (fs.existsSync(designTokensFile)) {
+          const designTokensRemotePath = env.FTP_REMOTE_PATH + '/design-tokens.json';
+          await client.uploadFrom(designTokensFile, designTokensRemotePath);
+          console.log('   Uploaded design-tokens.json');
+        }
+        
+        // Upload public/icon-192.png if it exists (should be in dist already, but ensure it's there)
+        const icon192File = path.join(ROOT_DIR, 'public', 'icon-192.png');
+        if (fs.existsSync(icon192File)) {
+          const icon192RemotePath = env.FTP_REMOTE_PATH + '/icon-192.png';
+          await client.uploadFrom(icon192File, icon192RemotePath);
+          console.log('   Uploaded icon-192.png');
+        }
+        
         client.close();
         console.log('✅ FTP upload complete\n');
       } catch (error) {

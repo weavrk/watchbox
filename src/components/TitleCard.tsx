@@ -118,11 +118,6 @@ function ReusableTitleCard({
   const currentImageSrc = imageError && fallbackPosterSrc 
     ? fallbackPosterSrc 
     : posterSrc;
-  
-  // Debug logging
-  if (!currentImageSrc && !shouldShowPlaceholder) {
-    console.warn(`[ReusableTitleCard] No image source for "${title}", showPlaceholderOnMissingPoster:`, showPlaceholderOnMissingPoster);
-  }
 
   return (
     <div className="title-card" onClick={onCardClick}>
@@ -235,10 +230,6 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
   // Update currentItem when item prop changes
   useEffect(() => {
     setCurrentItem(item);
-    // Debug: log poster_path to see if it's present
-    if (!item.poster_path) {
-      console.warn(`[TitleCard] Missing poster_path for "${item.title}" (tmdb_id: ${item.tmdb_id})`);
-    }
   }, [item]);
 
   // Reset scroll to top when navigating to a new page
@@ -514,9 +505,6 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
   const cardVariant: TitleCardVariant = variant;
 
   const posterUrl = getPosterUrl(currentItem.poster_path);
-  
-  // Debug: log poster URL generation
-  console.log(`[TitleCard] "${currentItem.title}": poster_path="${currentItem.poster_path}", posterUrl="${posterUrl}", showPlaceholder=${!currentItem.poster_path}`);
   
   return (
     <>

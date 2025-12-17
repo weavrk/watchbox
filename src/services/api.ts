@@ -89,6 +89,11 @@ export function getPosterUrl(posterPath?: string | null): string | null {
   if (posterPath.startsWith('http://') || posterPath.startsWith('https://')) {
     return posterPath;
   }
+  // Reject invalid poster paths (old local filenames like "1.svg", "1", etc.)
+  // Valid TMDB poster paths start with "/" and contain a file extension
+  if (!posterPath.startsWith('/') || posterPath.match(/^\/\d+\.(svg|jpg|png)$/i)) {
+    return null; // Invalid path, show placeholder instead
+  }
   // Build TMDB CDN URL (w500 is a good balance of quality and size)
   return `https://image.tmdb.org/t/p/w500${posterPath}`;
 }
