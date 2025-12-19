@@ -79,86 +79,146 @@ function getShowDetails($tmdbId) {
  * Get watch providers for a movie
  */
 function getMovieProviders($tmdbId) {
-    $url = TMDB_BASE_URL . '/movie/' . $tmdbId . '/watch/providers?language=en-US&watch_region=US';
-    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        'Authorization: Bearer ' . TMDB_ACCESS_TOKEN,
-        'Content-Type: application/json'
-    ]);
-    
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-    
-    if ($httpCode !== 200) {
+    try {
+        $url = TMDB_BASE_URL . '/movie/' . $tmdbId . '/watch/providers?language=en-US&watch_region=US';
+        
+        $ch = curl_init();
+        if ($ch === false) {
+            return [];
+        }
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Authorization: Bearer ' . TMDB_ACCESS_TOKEN,
+            'Content-Type: application/json'
+        ]);
+        
+        $response = curl_exec($ch);
+        $curlError = curl_error($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        if ($curlError) {
+            error_log("getMovieProviders curl error for $tmdbId: $curlError");
+            return [];
+        }
+        
+        if ($httpCode !== 200) {
+            error_log("getMovieProviders HTTP error for $tmdbId: HTTP $httpCode");
+            return [];
+        }
+        
+        $data = json_decode($response, true);
+        if (json_last_error() !== JSON_ERROR_NONE || !is_array($data)) {
+            error_log("getMovieProviders JSON decode error for $tmdbId: " . json_last_error_msg());
+            return [];
+        }
+        
+        // Get flatrate (subscription) providers from US region - with proper null checking
+        $providers = [];
+        if (isset($data['results']) && is_array($data['results']) && 
+            isset($data['results']['US']) && is_array($data['results']['US']) &&
+            isset($data['results']['US']['flatrate']) && is_array($data['results']['US']['flatrate'])) {
+            $providers = $data['results']['US']['flatrate'];
+        }
+        
+        $mappedProviders = array_map(function($provider) {
+            return [
+                'provider_id' => $provider['provider_id'] ?? 0,
+                'provider_name' => $provider['provider_name'] ?? '',
+                'logo_path' => $provider['logo_path'] ?? null,
+                'display_priority' => $provider['display_priority'] ?? 999
+            ];
+        }, $providers);
+        
+        // Sort by display_priority (lower is better)
+        usort($mappedProviders, function($a, $b) {
+            return $a['display_priority'] - $b['display_priority'];
+        });
+        
+        return $mappedProviders;
+    } catch (Exception $e) {
+        error_log("getMovieProviders exception: " . $e->getMessage());
         return [];
     }
-    
-    $data = json_decode($response, true);
-    // Get flatrate (subscription) providers from US region
-    $providers = $data['results']['US']['flatrate'] ?? [];
-    
-    $mappedProviders = array_map(function($provider) {
-        return [
-            'provider_id' => $provider['provider_id'],
-            'provider_name' => $provider['provider_name'],
-            'logo_path' => $provider['logo_path'] ?? null,
-            'display_priority' => $provider['display_priority'] ?? 999
-        ];
-    }, $providers);
-    
-    // Sort by display_priority (lower is better)
-    usort($mappedProviders, function($a, $b) {
-        return $a['display_priority'] - $b['display_priority'];
-    });
-    
-    return $mappedProviders;
 }
 
 /**
  * Get watch providers for a TV show
  */
 function getShowProviders($tmdbId) {
-    $url = TMDB_BASE_URL . '/tv/' . $tmdbId . '/watch/providers?language=en-US&watch_region=US';
-    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        'Authorization: Bearer ' . TMDB_ACCESS_TOKEN,
-        'Content-Type: application/json'
-    ]);
-    
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-    
-    if ($httpCode !== 200) {
+    try {
+        $url = TMDB_BASE_URL . '/tv/' . $tmdbId . '/watch/providers?language=en-US&watch_region=US';
+        
+        $ch = curl_init();
+        if ($ch === false) {
+            return [];
+        }
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Authorization: Bearer ' . TMDB_ACCESS_TOKEN,
+            'Content-Type: application/json'
+        ]);
+        
+        $response = curl_exec($ch);
+        $curlError = curl_error($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        if ($curlError) {
+            error_log("getShowProviders curl error for $tmdbId: $curlError");
+            return [];
+        }
+        
+        if ($httpCode !== 200) {
+            error_log("getShowProviders HTTP error for $tmdbId: HTTP $httpCode");
+            return [];
+        }
+        
+        $data = json_decode($response, true);
+        if (json_last_error() !== JSON_ERROR_NONE || !is_array($data)) {
+            error_log("getShowProviders JSON decode error for $tmdbId: " . json_last_error_msg());
+            return [];
+        }
+        
+        // Get flatrate (subscription) providers from US region - with proper null checking
+        $providers = [];
+        if (isset($data['results']) && is_array($data['results']) && 
+            isset($data['results']['US']) && is_array($data['results']['US']) &&
+            isset($data['results']['US']['flatrate']) && is_array($data['results']['US']['flatrate'])) {
+            $providers = $data['results']['US']['flatrate'];
+        }
+        
+        $mappedProviders = array_map(function($provider) {
+            return [
+                'provider_id' => $provider['provider_id'] ?? 0,
+                'provider_name' => $provider['provider_name'] ?? '',
+                'logo_path' => $provider['logo_path'] ?? null,
+                'display_priority' => $provider['display_priority'] ?? 999
+            ];
+        }, $providers);
+        
+        // Sort by display_priority (lower is better)
+        usort($mappedProviders, function($a, $b) {
+            return $a['display_priority'] - $b['display_priority'];
+        });
+        
+        return $mappedProviders;
+    } catch (Exception $e) {
+        error_log("getShowProviders exception: " . $e->getMessage());
         return [];
     }
-    
-    $data = json_decode($response, true);
-    // Get flatrate (subscription) providers from US region
-    $providers = $data['results']['US']['flatrate'] ?? [];
-    
-    $mappedProviders = array_map(function($provider) {
-        return [
-            'provider_id' => $provider['provider_id'],
-            'provider_name' => $provider['provider_name'],
-            'logo_path' => $provider['logo_path'] ?? null,
-            'display_priority' => $provider['display_priority'] ?? 999
-        ];
-    }, $providers);
-    
-    // Sort by display_priority (lower is better)
-    usort($mappedProviders, function($a, $b) {
-        return $a['display_priority'] - $b['display_priority'];
-    });
-    
-    return $mappedProviders;
 }
 
 /**
@@ -454,10 +514,36 @@ if ($isMovie) {
         exit;
     }
     $extendedData = extractMovieExtendedData($details);
-    // Get watch providers
+    // Ensure it's an array
+    if (!is_array($extendedData)) {
+        $extendedData = [];
+    }
+    
+    // Get watch providers (non-critical, continue even if it fails)
     $providers = getMovieProviders($tmdbId);
-    if (!empty($providers)) {
-        $extendedData['providers'] = $providers;
+    $extendedData['providers'] = is_array($providers) ? $providers : [];
+    
+    // Debug logging - also log to response for debugging
+    if (empty($providers)) {
+        error_log("get_item_details: No providers returned for movie $tmdbId");
+        // Add debug info to response (remove in production)
+        $extendedData['_debug_providers'] = [
+            'function_called' => 'getMovieProviders',
+            'tmdb_id' => $tmdbId,
+            'returned_count' => 0,
+            'returned_type' => gettype($providers),
+            'is_array' => is_array($providers)
+        ];
+    } else {
+        error_log("get_item_details: Found " . count($providers) . " providers for movie $tmdbId");
+        $extendedData['_debug_providers'] = [
+            'function_called' => 'getMovieProviders',
+            'tmdb_id' => $tmdbId,
+            'returned_count' => count($providers),
+            'providers' => array_map(function($p) {
+                return $p['provider_name'];
+            }, $providers)
+        ];
     }
 } else {
     $details = getShowDetails($tmdbId);
@@ -467,10 +553,36 @@ if ($isMovie) {
         exit;
     }
     $extendedData = extractShowExtendedData($details);
-    // Get watch providers
+    // Ensure it's an array
+    if (!is_array($extendedData)) {
+        $extendedData = [];
+    }
+    
+    // Get watch providers (non-critical, continue even if it fails)
     $providers = getShowProviders($tmdbId);
-    if (!empty($providers)) {
-        $extendedData['providers'] = $providers;
+    $extendedData['providers'] = is_array($providers) ? $providers : [];
+    
+    // Debug logging - also log to response for debugging
+    if (empty($providers)) {
+        error_log("get_item_details: No providers returned for show $tmdbId");
+        // Add debug info to response (remove in production)
+        $extendedData['_debug_providers'] = [
+            'function_called' => 'getShowProviders',
+            'tmdb_id' => $tmdbId,
+            'returned_count' => 0,
+            'returned_type' => gettype($providers),
+            'is_array' => is_array($providers)
+        ];
+    } else {
+        error_log("get_item_details: Found " . count($providers) . " providers for show $tmdbId");
+        $extendedData['_debug_providers'] = [
+            'function_called' => 'getShowProviders',
+            'tmdb_id' => $tmdbId,
+            'returned_count' => count($providers),
+            'providers' => array_map(function($p) {
+                return $p['provider_name'];
+            }, $providers)
+        ];
     }
 }
 
@@ -479,4 +591,3 @@ echo json_encode([
     'data' => $extendedData,
     'tmdb_image_base_url' => 'https://image.tmdb.org/t/p/original'
 ]);
-

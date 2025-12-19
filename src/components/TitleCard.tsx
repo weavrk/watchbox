@@ -12,7 +12,7 @@ interface TitleCardProps {
   /**
    * Visual/behavior variant for the small grid card:
    * - "add": shows + add button
-   * - "manage": shows Move to Queue + Delete
+   * - "manage": shows Add to Queue + Delete
    * Defaults to "add" for explore cards.
    */
   variant?: 'add' | 'manage';
@@ -142,13 +142,13 @@ function ReusableTitleCard({
 
         {/* Action buttons - upper right */}
         <div className="card-actions-container">
-          {/* Watchlist card actions: Move to Queue (left) and Delete (right) */}
+          {/* Watchlist card actions: Add to Queue (left) and Delete (right) */}
           {showManageActions && (
             <>
               <CardActionButton
                 icon={<ListOrdered size={16} />}
                 onClick={onMoveToQueueClick}
-                ariaLabel="Move to Queue"
+                ariaLabel="Add to Queue"
                 position="left"
               />
               <CardActionButton
@@ -329,15 +329,39 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
     const hasExtendedData = itemToShow.genres || itemToShow.overview || itemToShow.cast || itemToShow.crew || 
       itemToShow.videos || itemToShow.recommendations || itemToShow.similar || itemToShow.keywords;
     
-    // If we don't have extended data, fetch it on-demand
-    if (!hasExtendedData && itemToShow.tmdb_id) {
+    // Check if we need to fetch providers (they're not in the explore content)
+    const needsProviders = !itemToShow.providers || (Array.isArray(itemToShow.providers) && itemToShow.providers.length === 0);
+    
+    // If we don't have extended data OR we need providers, fetch it on-demand
+    if ((!hasExtendedData || needsProviders) && itemToShow.tmdb_id) {
       setLoadingDetails(true);
       
       try {
         // Use the isMovie field directly from the item
         const result = await getItemDetails(itemToShow.tmdb_id, itemToShow.isMovie);
+        console.log('[TitleCard] Raw API result:', result);
+        console.log('[TitleCard] Result success:', result.success);
+        console.log('[TitleCard] Result data exists:', !!result.data);
+        
         if (result.success && result.data) {
-          setExtendedData(result.data);
+          console.log('[TitleCard] Data keys:', Object.keys(result.data || {}));
+          console.log('[TitleCard] Providers in response:', result.data.providers);
+          console.log('[TitleCard] Providers type:', typeof result.data.providers);
+          console.log('[TitleCard] Providers is array:', Array.isArray(result.data.providers));
+          console.log('[TitleCard] Debug providers:', (result.data as any)._debug_providers);
+          
+          // Merge with existing data if we already had some extended data
+          if (hasExtendedData) {
+            setExtendedData({
+              ...itemToShow,
+              ...result.data,
+              // Preserve existing data but prefer new data
+              providers: result.data.providers !== undefined ? result.data.providers : itemToShow.providers
+            });
+          } else {
+            setExtendedData(result.data);
+          }
+          
           if (result.imageBaseUrl) {
             setImageBaseUrl(result.imageBaseUrl);
           }
@@ -349,6 +373,7 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
             }));
           }
         } else {
+          console.log('[TitleCard] API call failed:', result);
           setDetailsError(result.error || 'Failed to load details');
         }
       } catch (error) {
@@ -486,10 +511,26 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
     similar: extendedData?.similar || item.similar,
     translations: extendedData?.translations || item.translations,
     networks: extendedData?.networks || item.networks,
-    providers: extendedData?.providers || item.providers,
+    providers: extendedData?.providers !== undefined ? extendedData.providers : item.providers,
     number_of_seasons: extendedData?.number_of_seasons !== undefined ? extendedData.number_of_seasons : item.number_of_seasons,
     number_of_episodes: extendedData?.number_of_episodes !== undefined ? extendedData.number_of_episodes : item.number_of_episodes,
   };
+  
+  // Debug providers
+  if (detailsOpen) {
+    console.log('[TitleCard] displayData providers check:', {
+      hasProviders: !!displayData.providers,
+      providersLength: displayData.providers?.length,
+      providers: displayData.providers,
+      extendedDataProviders: extendedData?.providers,
+      extendedDataType: typeof extendedData?.providers,
+      extendedDataIsArray: Array.isArray(extendedData?.providers),
+      itemProviders: item.providers,
+      extendedDataKeys: Object.keys(extendedData || {}),
+      displayDataKeys: Object.keys(displayData),
+      extendedDataFull: extendedData
+    });
+  }
   
   // Check if we have any extended data to display
   const hasExtendedData = displayData.genres || displayData.overview || displayData.cast || displayData.crew || 
@@ -573,7 +614,7 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
                 )}
                 {currentPage === 'item' && cardVariant === 'manage' && onMove && (
                   <DetailsModalActionButton
-                    label={item.listType === 'top' ? 'Move to Watchlist' : 'Move to Queue'}
+                    label={item.listType === 'top' ? 'Move to Watchlist' : 'Add to Queue'}
                     onClick={handleMove}
                     ariaLabel="Move"
             />
@@ -738,11 +779,14 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
                 </div>
               )}
 
-              {/* Error state - only show if we have no data at all */}
-              {detailsError && !loadingDetails && !displayData.overview && !displayData.genres && (
-                <div className="details-section">
-                  <p className="details-overview" style={{ color: 'var(--error)', fontStyle: 'italic' }}>
+              {/* Error state - show error message prominently */}
+              {detailsError && !loadingDetails && (
+                <div className="details-section" style={{ textAlign: 'center', padding: '2rem' }}>
+                  <p style={{ color: 'var(--error)', fontSize: '1rem', marginBottom: '0.5rem' }}>
                     {detailsError}
+                  </p>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+                    Some details may be unavailable. Basic information is shown above.
                   </p>
                 </div>
               )}
@@ -772,56 +816,97 @@ export function TitleCard({ item, onDelete, onMove, onAddToWatchlist, variant = 
               )}
 
               {/* Available On (Streaming Providers) */}
-              {displayData.providers && displayData.providers.length > 0 && (
-                <div className="details-section">
-                  <h3 className="details-section-title">
-                    <Monitor size={18} className="section-icon" />
-                    Available On
-                  </h3>
-                  <div className="details-providers">
-                    {displayData.providers.map(provider => (
-                      <div key={provider.provider_id} className="provider-item">
-                        {provider.logo_path && (
-                          <img
-                            src={`${imageBaseUrl}${provider.logo_path}`}
-                            alt={provider.provider_name}
-                            className="provider-logo"
-                          />
-                        )}
-                        {!provider.logo_path && (
-                          <span className="provider-name-fallback">{provider.provider_name}</span>
-                        )}
-                      </div>
-                    ))}
+              {(() => {
+                const providers = displayData.providers;
+                const hasProviders = Array.isArray(providers) && providers.length > 0;
+                
+                // Debug log
+                if (detailsOpen && !hasProviders) {
+                  console.log('[TitleCard] Providers section not showing:', {
+                    providers,
+                    isArray: Array.isArray(providers),
+                    length: providers?.length,
+                    extendedDataProviders: extendedData?.providers,
+                    itemProviders: item.providers
+                  });
+                }
+                
+                return hasProviders && (
+                  <div className="details-section">
+                    <h3 className="details-section-title">
+                      <Monitor size={18} className="section-icon" />
+                      Available On
+                    </h3>
+                    <div className="details-providers">
+                      {providers.map(provider => (
+                        <div key={provider.provider_id} className="provider-item">
+                          {provider.logo_path && (
+                            <img
+                              src={`${imageBaseUrl}${provider.logo_path}`}
+                              alt={provider.provider_name}
+                              className="provider-logo"
+                            />
+                          )}
+                          {!provider.logo_path && (
+                            <span className="provider-name-fallback">{provider.provider_name}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                );
+              })()}
 
               {/* Trailers */}
-              {displayData.videos && displayData.videos.length > 0 && (
-                <div className="details-section">
-                  <h3 className="details-section-title">
-                    <Play size={18} className="section-icon" />
-                    Trailers
-                  </h3>
-                  <div className="details-trailers-grid">
-                    {displayData.videos.map(video => (
-                      <div 
-                        key={video.id} 
-                        className="trailer-card"
-                        onClick={(e) => handleTrailerClick(e, video.key)}
-                      >
-                        <div className="trailer-image-container">
-                          <div className="trailer-placeholder">
-                            <Film size={32} className="trailer-play-icon" />
+              {displayData.videos && displayData.videos.length > 0 && (() => {
+                // Filter to only trailers and prioritize
+                const trailers = displayData.videos
+                  .filter(video => 
+                    video.type === 'Trailer' || 
+                    video.name.toLowerCase().includes('trailer')
+                  )
+                  .sort((a, b) => {
+                    // Prioritize "Official Trailer" first
+                    const aIsOfficial = a.name.toLowerCase().includes('official trailer');
+                    const bIsOfficial = b.name.toLowerCase().includes('official trailer');
+                    if (aIsOfficial && !bIsOfficial) return -1;
+                    if (!aIsOfficial && bIsOfficial) return 1;
+                    
+                    // Then prioritize anything with "Trailer" in the name
+                    const aHasTrailer = a.name.toLowerCase().includes('trailer');
+                    const bHasTrailer = b.name.toLowerCase().includes('trailer');
+                    if (aHasTrailer && !bHasTrailer) return -1;
+                    if (!aHasTrailer && bHasTrailer) return 1;
+                    
+                    return 0;
+                  })
+                  .slice(0, 3); // Max 3 trailers
+                
+                return trailers.length > 0 ? (
+                  <div className="details-section">
+                    <h3 className="details-section-title">
+                      <Play size={18} className="section-icon" />
+                      Trailers
+                    </h3>
+                    <div className="details-trailers-grid">
+                      {trailers.map(video => (
+                        <div 
+                          key={video.id} 
+                          className="trailer-card"
+                          onClick={(e) => handleTrailerClick(e, video.key)}
+                        >
+                          <div className="trailer-image-container">
+                            <div className="trailer-placeholder">
+                              <Film size={32} className="trailer-play-icon" />
+                            </div>
                           </div>
+                          <span className="trailer-name">{video.name}</span>
                         </div>
-                        <span className="trailer-name">{video.name}</span>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                ) : null;
+              })()}
 
               {/* Cast */}
               {displayData.cast && displayData.cast.length > 0 && (

@@ -1594,7 +1594,7 @@ img {
   z-index: 5;
 }
 
-/* Reusable Card Action Button (used for Move to Queue, Delete, and Add to Watchlist) */
+/* Reusable Card Action Button (used for Add to Queue, Delete, and Add to Watchlist) */
 .card-action-button,
 .add-to-watchlist-button {
   background: rgba(0, 0, 0, 0.75);
@@ -1723,7 +1723,7 @@ img {
   cursor: pointer;
 }
 
-/* Reusable Details Modal Action Button (for + Add, Move to Queue, etc.) */
+/* Reusable Details Modal Action Button (for + Add, Add to Queue, etc.) */
 .details-modal-action-button {
   background: rgba(0, 0, 0, 0.5);
   border: none;

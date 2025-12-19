@@ -345,7 +345,8 @@ function mockApiPlugin() {
         }
 
         // Handle get_item_details.php with Node.js (no PHP needed)
-        if (pathname === '/api/get_item_details.php') {
+        if (pathname === '/get_item_details.php') {
+          const fullUrl = req.url || ''
           const queryParams = new URLSearchParams(fullUrl.split('?')[1] || '')
           const tmdbId = queryParams.get('tmdb_id')
           const isMovie = queryParams.get('is_movie') === 'true'
@@ -358,54 +359,177 @@ function mockApiPlugin() {
             return
           }
           
-          try {
-            const tmdbApiKey = process.env.VITE_TMDB_API_KEY || '15d2ea6d0dc1d476efbca3eba2b9bbfb'
+          // TMDB API configuration (using Bearer token from PHP files)
+          const TMDB_ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NGEzNjhkMDJlN2Y2NTI0MmU2M2YxMGFhMTMwZTkxZiIsIm5iZiI6MTY1Nzg0MDg4OS44NTY5OTk5LCJzdWIiOiI2MmQwYTRmOTYyZmNkMzAwNTU0NWFjZWEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.TxRfKQMNiojwSNluc8kpo0SxCev8mwIC_RDQXmvjRAg'
+          const TMDB_BASE_URL = 'https://api.themoviedb.org/3'
             const endpoint = isMovie ? 'movie' : 'tv'
-            const url = `https://api.themoviedb.org/3/${endpoint}/${tmdbId}?api_key=${tmdbApiKey}&append_to_response=credits,videos,keywords,recommendations,similar,translations`
+          const tmdbUrl = `${TMDB_BASE_URL}/${endpoint}/${tmdbId}?language=en-US&append_to_response=release_dates,credits,keywords,videos,recommendations,similar,translations`
+          const urlObj = new URL(tmdbUrl)
+          
+          const options = {
+            hostname: urlObj.hostname,
+            path: urlObj.pathname + urlObj.search,
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
+              'Content-Type': 'application/json'
+            }
+          }
+          
+          const tmdbReq = https.request(options, (tmdbRes) => {
+            let data = ''
             
-            const tmdbData = await new Promise((resolve, reject) => {
-              httpsGet(url, (data) => {
-                resolve(data)
-              }).catch(reject)
+            if (tmdbRes.statusCode && tmdbRes.statusCode !== 200) {
+              res.statusCode = tmdbRes.statusCode
+              res.setHeader('Content-Type', 'application/json')
+              res.setHeader('Access-Control-Allow-Origin', '*')
+              res.end(JSON.stringify({ success: false, error: `TMDB API returned ${tmdbRes.statusCode}` }))
+              return
+            }
+            
+            tmdbRes.on('data', (chunk) => {
+              data += chunk
             })
             
-            // Extract the data we need
-            const extendedData = {
-              poster_path: tmdbData.poster_path || null,
-              backdrop_path: tmdbData.backdrop_path || null,
-              genres: tmdbData.genres || [],
-              overview: tmdbData.overview || '',
-              vote_average: tmdbData.vote_average || 0,
-              vote_count: tmdbData.vote_count || 0,
-              runtime: tmdbData.runtime || tmdbData.episode_run_time?.[0] || null,
-              release_date: tmdbData.release_date || tmdbData.first_air_date || '',
-              cast: tmdbData.credits?.cast?.slice(0, 20).map(member => ({
+            tmdbRes.on('end', () => {
+              try {
+                const tmdbData = JSON.parse(data)
+                
+                if (tmdbData.status_code) {
+                  res.statusCode = 500
+                  res.setHeader('Content-Type', 'application/json')
+                  res.setHeader('Access-Control-Allow-Origin', '*')
+                  res.end(JSON.stringify({ success: false, error: tmdbData.status_message || 'API error' }))
+                  return
+                }
+                
+                // Extract the data we need (matching PHP structure)
+                const extendedData: any = {}
+                
+                // Poster path
+                if (tmdbData.poster_path) {
+                  extendedData.poster_path = tmdbData.poster_path
+                }
+                
+                // Genres
+                if (tmdbData.genres && Array.isArray(tmdbData.genres) && tmdbData.genres.length > 0) {
+                  extendedData.genres = tmdbData.genres.map((g: any) => ({ id: g.id, name: g.name }))
+                }
+                
+                // Overview
+                if (tmdbData.overview) {
+                  extendedData.overview = tmdbData.overview
+                }
+                
+                // Ratings
+                if (tmdbData.vote_average !== undefined) {
+                  extendedData.vote_average = tmdbData.vote_average
+                }
+                if (tmdbData.vote_count !== undefined) {
+                  extendedData.vote_count = tmdbData.vote_count
+                }
+                
+                // Runtime
+                if (isMovie && tmdbData.runtime) {
+                  extendedData.runtime = tmdbData.runtime
+                } else if (!isMovie && tmdbData.episode_run_time && tmdbData.episode_run_time.length > 0) {
+                  extendedData.runtime = tmdbData.episode_run_time[0]
+                }
+                
+                // TV show specific
+                if (!isMovie) {
+                  if (tmdbData.number_of_seasons !== undefined) {
+                    extendedData.number_of_seasons = tmdbData.number_of_seasons
+                  }
+                  if (tmdbData.number_of_episodes !== undefined) {
+                    extendedData.number_of_episodes = tmdbData.number_of_episodes
+                  }
+                  if (tmdbData.networks && Array.isArray(tmdbData.networks) && tmdbData.networks.length > 0) {
+                    extendedData.networks = tmdbData.networks.map((n: any) => ({
+                      id: n.id,
+                      name: n.name,
+                      logo_path: n.logo_path || null,
+                      origin_country: n.origin_country || null
+                    }))
+                  }
+                }
+                
+                // Cast
+                if (tmdbData.credits?.cast && Array.isArray(tmdbData.credits.cast)) {
+                  extendedData.cast = tmdbData.credits.cast.slice(0, 15).map((actor: any) => ({
+                    id: actor.id,
+                    name: actor.name,
+                    character: actor.character || '',
+                    profile_path: actor.profile_path || null
+                  }))
+                }
+                
+                // Crew
+                if (tmdbData.credits?.crew && Array.isArray(tmdbData.credits.crew)) {
+                  const importantJobs = isMovie 
+                    ? ['Director', 'Writer', 'Screenplay', 'Producer', 'Executive Producer']
+                    : ['Creator', 'Executive Producer', 'Producer', 'Writer']
+                  const crew = tmdbData.credits.crew.filter((m: any) => importantJobs.includes(m.job))
+                  extendedData.crew = crew.slice(0, 10).map((member: any) => ({
                 id: member.id,
                 name: member.name,
-                character: member.character,
-                profile_path: member.profile_path
-              })) || [],
-              crew: tmdbData.credits?.crew || [],
-              videos: tmdbData.videos?.results || [],
-              keywords: tmdbData.keywords?.keywords || tmdbData.keywords?.results || [],
-              recommendations: tmdbData.recommendations?.results?.slice(0, 20).map(item => ({
-                id: item.id,
-                title: item.title || item.name,
-                poster_path: item.poster_path,
-                vote_average: item.vote_average,
-                isMovie: !!item.title
-              })) || [],
-              similar: tmdbData.similar?.results?.slice(0, 20).map(item => ({
-                id: item.id,
-                title: item.title || item.name,
-                poster_path: item.poster_path,
-                vote_average: item.vote_average,
-                isMovie: !!item.title
-              })) || [],
-              translations: tmdbData.translations?.translations || [],
-              networks: tmdbData.networks || [],
-              number_of_seasons: tmdbData.number_of_seasons,
-              number_of_episodes: tmdbData.number_of_episodes
+                    job: member.job,
+                    profile_path: member.profile_path || null
+                  }))
+                }
+                
+                // Keywords
+                const keywordsArray = tmdbData.keywords?.keywords || tmdbData.keywords?.results
+                if (keywordsArray && Array.isArray(keywordsArray)) {
+                  extendedData.keywords = keywordsArray.slice(0, 15).map((k: any) => ({
+                    id: k.id,
+                    name: k.name
+                  }))
+                }
+                
+                // Videos
+                if (tmdbData.videos?.results && Array.isArray(tmdbData.videos.results)) {
+                  extendedData.videos = tmdbData.videos.results.map((v: any) => ({
+                    id: v.id,
+                    key: v.key,
+                    name: v.name,
+                    site: v.site,
+                    type: v.type,
+                    official: v.official || false,
+                    published_at: v.published_at || null
+                  }))
+                }
+                
+                // Recommendations
+                if (tmdbData.recommendations?.results && Array.isArray(tmdbData.recommendations.results)) {
+                  extendedData.recommendations = tmdbData.recommendations.results.slice(0, 10).map((rec: any) => ({
+                    id: rec.id,
+                    title: rec.title || rec.name || '',
+                    poster_path: rec.poster_path || null,
+                    vote_average: rec.vote_average || null,
+                    isMovie: isMovie
+                  }))
+                }
+                
+                // Similar
+                if (tmdbData.similar?.results && Array.isArray(tmdbData.similar.results)) {
+                  extendedData.similar = tmdbData.similar.results.slice(0, 10).map((sim: any) => ({
+                    id: sim.id,
+                    title: sim.title || sim.name || '',
+                    poster_path: sim.poster_path || null,
+                    vote_average: sim.vote_average || null,
+                    isMovie: isMovie
+                  }))
+                }
+                
+                // Translations
+                if (tmdbData.translations?.translations && Array.isArray(tmdbData.translations.translations)) {
+                  extendedData.translations = tmdbData.translations.translations.map((trans: any) => ({
+                    iso_639_1: trans.iso_639_1,
+                    iso_3166_1: trans.iso_3166_1,
+                    name: trans.name,
+                    english_name: trans.english_name
+                  }))
             }
             
             res.statusCode = 200
@@ -416,20 +540,32 @@ function mockApiPlugin() {
               data: extendedData,
               tmdb_image_base_url: 'https://image.tmdb.org/t/p/original'
             }))
-            return
-          } catch (error) {
-            console.error('TMDB API error:', error)
+              } catch (parseErr) {
+                console.error('Error parsing TMDB response:', parseErr)
+                res.statusCode = 500
+                res.setHeader('Content-Type', 'application/json')
+                res.setHeader('Access-Control-Allow-Origin', '*')
+                res.end(JSON.stringify({ success: false, error: 'Failed to parse API response' }))
+              }
+            })
+          })
+          
+          tmdbReq.on('error', (err) => {
+            console.error('Error fetching item details:', err)
             res.statusCode = 500
             res.setHeader('Content-Type', 'application/json')
             res.setHeader('Access-Control-Allow-Origin', '*')
-            res.end(JSON.stringify({ success: false, error: 'Failed to fetch from TMDB' }))
+            res.end(JSON.stringify({ success: false, error: 'Failed to fetch from TMDB', details: err.message }))
+          })
+          
+          tmdbReq.end()
             return
-          }
         }
         
         // Handle get_person_filmography.php - call TMDB API directly from Node.js
-        if (pathname === '/api/get_person_filmography.php') {
-          const url = new URL(req.url || '', `http://${req.headers.host}`)
+        if (pathname === '/get_person_filmography.php') {
+          const fullUrl = req.url || ''
+          const url = new URL(fullUrl, `http://${req.headers.host}`)
           const personId = url.searchParams.get('person_id')
           
           if (!personId) {
@@ -489,12 +625,46 @@ function mockApiPlugin() {
                 // Extract filmography
                 const combinedCredits: any[] = []
                 
+                // Exclude late night shows, talk shows, and news programs
+                const excludedShowPatterns = [
+                  'late night',
+                  'late show',
+                  'tonight show',
+                  'jimmy fallon',
+                  'jimmy kimmel',
+                  'stephen colbert',
+                  'seth meyers',
+                  'conan',
+                  'james corden',
+                  'graham norton',
+                  'ellen',
+                  'the view',
+                  'good morning',
+                  '60 minutes',
+                  'chelsea',
+                  'ant & dec',
+                  'saturday night live',
+                  'snl',
+                  'daily show',
+                  'real time with',
+                  'last week tonight',
+                  'full frontal'
+                ]
+                
                 if (personDetails.combined_credits?.cast && Array.isArray(personDetails.combined_credits.cast)) {
                   for (const credit of personDetails.combined_credits.cast) {
                     if (!credit.title && !credit.name) continue
                     
                     const isMovie = !!credit.title
                     const title = isMovie ? credit.title : (credit.name || 'Unknown')
+                    const titleLower = title.toLowerCase()
+                    
+                    // Skip if title matches any excluded pattern
+                    const isExcluded = excludedShowPatterns.some(pattern => 
+                      titleLower.includes(pattern)
+                    )
+                    
+                    if (isExcluded) continue
                     
                     combinedCredits.push({
                       id: credit.id || 0,
@@ -550,8 +720,8 @@ function mockApiPlugin() {
         
         // Execute PHP files using PHP CLI (only for /api/*.php requests that aren't handled above)
         // Skip files already handled by Node.js
-        const isHandledFile = pathname === '/api/get_item_details.php' || 
-                              pathname === '/api/get_person_filmography.php';
+        const isHandledFile = pathname === '/get_item_details.php' || 
+                              pathname === '/get_person_filmography.php';
         
         if (pathname.startsWith('/') && pathname.endsWith('.php') && !pathname.startsWith('/@') && !isHandledFile) {
           try {

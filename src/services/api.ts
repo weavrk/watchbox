@@ -510,11 +510,35 @@ export async function getItemDetails(tmdbId: number, isMovie: boolean): Promise<
     const response = await fetch(`/api/get_item_details.php?tmdb_id=${tmdbId}&is_movie=${isMovie ? 'true' : 'false'}`);
     
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      return { success: false, error: errorData.error || 'Failed to fetch details' };
+      // Try to parse JSON error response, but handle cases where it might be HTML/text
+      let errorMessage = 'Failed to fetch details';
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.error || errorMessage;
+      } catch {
+        // If JSON parsing fails, try to get text
+        try {
+          const errorText = await response.text();
+          // Check if it's a PHP error message
+          if (errorText.includes('PHP') || errorText.includes('php')) {
+            errorMessage = 'Server error: PHP may not be configured correctly';
+          } else {
+            errorMessage = `Server error (${response.status})`;
+          }
+        } catch {
+          errorMessage = `Server error (${response.status})`;
+        }
+      }
+      return { success: false, error: errorMessage };
     }
     
     const result = await response.json();
+    
+    console.log('[API] Full result keys:', Object.keys(result));
+    console.log('[API] Has providers in result.data:', !!result.data?.providers);
+    console.log('[API] Providers value:', result.data?.providers);
+    console.log('[API] Providers type:', typeof result.data?.providers);
+    console.log('[API] Full result.data keys:', Object.keys(result.data || {}));
     
     if (!result.success) {
       return { success: false, error: result.error || 'Failed to fetch details' };
@@ -527,7 +551,7 @@ export async function getItemDetails(tmdbId: number, isMovie: boolean): Promise<
     };
   } catch (error) {
     console.error('Failed to fetch item details:', error);
-    return { success: false, error: 'Network error' };
+    return { success: false, error: 'Network error: Unable to connect to server' };
   }
 }
 
